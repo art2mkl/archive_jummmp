@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hobbies index{% endblock %}
+
+{% block body %}
+    <h1>Hobbies index</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Icon</th>
+                <th>HobbyName</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for hobby in hobbies %}
+{% if app.user  and (app.user is same as(hobby.userId) )%}
+            <tr>
+                <td>{{ hobby.id }}</td>
+                <td><i class="{{ hobby.icon }}"></i></td>
+                <td>{{ hobby.hobbyName }}</td>
+                <td>
+                    <a href="{{ path('hobbies_show', {'id': hobby.id}) }}">show</a>
+                    <a href="{{ path('hobbies_edit', {'id': hobby.id}) }}">edit</a>
+                </td>
+            </tr>
+     {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('hobbies_new') }}">Create new</a>
+    <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">retour</a>
+{% endblock %}

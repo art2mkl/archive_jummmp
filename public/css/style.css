@@ -1,0 +1,136 @@
+:root {
+    --color-primary: #3282b8;
+    --color-secondary: #bbe1fa;
+    --color-tertiary: #ffc878;
+    --color-regular: #333;
+    --color-bg: #f1f1f1;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  a {
+    color: inherit;
+  }
+  main {
+    padding: 2rem;
+  }
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    box-shadow:0 0 1rem rgba(0,0,0,0.2);
+    cursor: pointer;
+    margin-right: 2rem;
+    object-fit: cover;
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  .cv {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    margin: 2rem;
+    width: 15rem;
+    height: 250px;
+    background-color: var(--color-secondary);
+    color: var(--color-regular);
+    border: solid 2px var(--color-secondary);
+    box-shadow: 2.5px 2.5px 5px var(--color-regular);
+    border-radius: 10px;
+    padding: 2rem;
+  }
+  
+  .cv-card-links {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  
+  .card-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .card-add p {
+    color: var(--color-bg);
+    font-size: 60px;
+    font-weight: bolder;
+  }
+  
+  .registration-form {
+    padding: 2rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  footer {
+    width: 100%;
+    position: fixed;
+    bottom: 40px;
+    text-align: center;
+  }
+  
+  button,
+  .btn {
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: orangered;
+    text-decoration: none;
+    color: var(--color-bg);
+    font-weight: bold;
+  }
+  
+  button:hover,
+  .btn:hover {
+    background-color: var(--color-secondary);
+  }
+  
+  .btn-edit {
+    background-color: var(--color-tertiary);
+  }
+
+
+.box{
+  display:flex;
+  justify-content: space-around;
+}  
+  .boxLeft {
+width:60%;
+  }
+  .boxRight {
+width:20%    
+  }
+
+  

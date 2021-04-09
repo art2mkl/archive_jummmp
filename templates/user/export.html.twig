@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>dxport</h1>
+    <h2>{{user.firstName}}</h2>
+
+     <div>
+       
+<p>{{cv.title}} {{cv.model}} {{cv.jobCv}}</p>
+
+
+<div>
+<p>Mes hobbies</p>
+{% for hobby in hobbies %}
+<p><i class="{{hobby.icon}}"></i> {{hobby.hobbyName}}</p>
+{% endfor %}
+</div>
+<hr>  
+        </div>
+
+{% endblock %}

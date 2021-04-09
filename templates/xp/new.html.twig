@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Xp{% endblock %}
+
+{% block body %}
+    <h1>Create new Xp</h1>
+
+    {{ include('xp/_form.html.twig') }}
+
+    <a href="{{ path('xp_index') }}">back to list</a>
+{% endblock %}
