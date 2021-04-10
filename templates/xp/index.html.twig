@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Expériences</h1>
+	<h1>Expériences <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}"><i class="fas fa-undo-alt"></i></a> </h1>
 
 	{% for xp in xps %}
 		<div class="box">
@@ -48,19 +48,14 @@
 	{% endfor %}
 
 
-	{# <form action="{{ path('xp_new') }}" method="POST">
-		input
-	</form>
-<br> #}
+	<h1><i class="fas fa-plus-circle"></i> Ajoute une nouvelle expérience</h1>
+
+    {{ include('xp/_form.html.twig') }}
+<br>
+<br>
 <br>
 
 
 
-
-
-
-
-	<a class="btn" href="{{ path('xp_new') }}"><i class="fas fa-plus-circle fa"></i></a>
-
-	<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">retour</a>
+	
 {% endblock %}

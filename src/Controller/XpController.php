@@ -16,46 +16,36 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class XpController extends AbstractController
 {
     /**
-     * @Route("/", name="xp_index", methods={"GET"})
+     * @Route("/", name="xp_index", methods={"GET","POST"})
      */
-    public function index(XpRepository $xpRepository): Response
+    public function index(XpRepository $xpRepository, Request $request): Response
     {
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_login');
         }
-        
-        return $this->render('xp/index.html.twig', [
-            'xps' => $xpRepository->findAll(),
-        ]);
-    }
 
-    /**
-     * @Route("/new", name="xp_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        if (!$this->getUser()) {
-            return $this->redirectToRoute('app_login');
-        }
-        
         $xp = new Xp();
         $form = $this->createForm(XpType::class, $xp);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $xp->setUserId($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($xp);
             $entityManager->flush();
 
             return $this->redirectToRoute('xp_index');
         }
-
-        return $this->render('xp/new.html.twig', [
+        
+        return $this->render('xp/index.html.twig', [
+            'xps' => $xpRepository->findAll(),
             'xp' => $xp,
             'form' => $form->createView(),
         ]);
     }
 
+    
     /**
      * @Route("/{id<\d+>}", name="xp_show", methods={"GET"})
      */
