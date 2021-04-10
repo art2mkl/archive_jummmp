@@ -5,8 +5,12 @@
 
 {% block body %}
 	<main>
-		<h1><i class="far fa-clipboard"></i> TABLEAU DE BORD</h1>
-		<h2>Hello {{ app.user.firstName}} !</h2>
+		<h1>
+			<i class="far fa-clipboard"></i>
+			TABLEAU DE BORD</h1>
+		<h2>Hello
+			{{ app.user.firstName}}
+			!</h2>
 
 		<section
 			class="cv">
@@ -18,23 +22,29 @@
 							<a href="{{ path('cv_show', {'id': cv.id}) }}">{{cv.title}}</a>
 						</p>
 
-							<form method="post" action="{{ path('cv_delete', {'id': cv.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-								<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ cv.id) }}">
-								<button class="btn">
-									<i class="far fa-trash-alt"></i>
-								</button>
-							</form>
+						<form method="post" action="{{ path('cv_delete', {'id': cv.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ cv.id) }}">
+							<button class="btn">
+								<i class="far fa-trash-alt"></i>
+							</button>
+						</form>
 
 						<h2>{{cv.jobCv}}</h2>
 
-                        <p><em>{{cv.updatedAt | date('d M y')}}</em></p>
+						<p>
+							<em>{{cv.updatedAt | date('d M y')}}</em>
+						</p>
 
-                        {% if cv.shortUrl != "" %}
-                        <a href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }}">ADRESS SERVER{{cv.shortUrl}} <i class="fas fa-copy"></i></a>
-                        {% endif %}
-                        
+						{% if cv.shortUrl != "" %}
+							<a href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }}">ADRESS SERVER{{cv.shortUrl}}
+								<i class="fas fa-copy"></i>
+							</a>
+						{% endif %}
+
 						<div class='cv-card-links'>
-							<a href="{{ path('cv_show', {'id': cv.id}) }}" class="btn  btn-edit"><i class="far fa-eye"></i></a>
+							<a href="{{ path('cv_show', {'id': cv.id}) }}" class="btn  btn-edit">
+								<i class="far fa-eye"></i>
+							</a>
 							{# <a href="{{ path('cv_edit', {'id': cv.id}) }}" class="btn  btn-edit">edit</a> #}
 						</div>
 					</div>

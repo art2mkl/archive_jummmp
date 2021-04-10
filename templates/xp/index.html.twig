@@ -4,55 +4,63 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Xp index</h1>
+	<h1>Expériences</h1>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Debut</th>
-				<th>Fin</th>
-				<th>Nom</th>
-				<th>Entreprise</th>
-				<th>Localisation</th>
-				<th>Description</th>
-				<th>actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			{% for xp in xps %}
-				<tr>
-					<td>{{ xp.jobDateFrom ? xp.jobDateFrom|date('Y-m-d') : '' }}</td>
-					<td>{{ xp.jobDateTo ? xp.jobDateTo|date('Y-m-d') : '' }}</td>
-					<td>{{ xp.jobName }}</td>
-					<td>{{ xp.companyName }}</td>
-					<td>{{ xp.jobLocation }}</td>
-					<td>{{ xp.jobDescription }}</td>
-					<td>
-						{# <a href="{{ path('xp_show', {'id': xp.id}) }}">show</a> #}
-						<div class="box">
-                        <a class="btn" href="{{ path('xp_edit', {'id': xp.id}) }}">edit</a>
-						<form method="post" action="{{ path('xp_delete', {'id': xp.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-							<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ xp.id) }}">
-							<button class="btn">X</button>
-						</form>
-                        </div>
-					</td>
-				</tr>
-			{% else %}
-				<tr>
-					<td colspan="8">no records found</td>
-				</tr>
-			{% endfor %}
-		</tbody>
-	</table>
+	{% for xp in xps %}
+		<div class="box">
+			<div class="boxLeft">
+				<p>
+					De
+					<em>
+						{{ xp.jobDateFrom ? xp.jobDateFrom|date('M-y') : '' }}
+						à
+						{{ xp.jobDateTo ? xp.jobDateTo|date('M-y') : '' }}
+					</em>
+					-
+					<strong>{{ xp.companyName }}</strong>
+					-
+					{{ xp.jobName }}
+					-<em>{{ xp.jobLocation }}</em>
+				</p>
+				<p>
+				<em>
+				{{ xp.jobDescription }}</p>
+				</em>
+			</div>
+			<div class="box">
+				<a class="btn" href="{{ path('xp_edit', {'id': xp.id}) }}">
+					<i class="fas fa-edit"></i>
+				</a>
+				<form method="post" action="{{ path('xp_delete', {'id': xp.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ xp.id) }}">
+					<button class="btn">
+						<i class="far fa-trash-alt"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		<hr>
 
-    <form action="{{ path('xp_new') }}" method="POST">
-    input
-    </form>
+	{% else %}
 
-	<a class="btn" href="{{ path('xp_new') }}">Create new</a>
-	
+		<p>no records found</p>
+
+	{% endfor %}
+
+
+	{# <form action="{{ path('xp_new') }}" method="POST">
+		input
+	</form>
+<br> #}
+<br>
+
+
+
+
+
+
+
+	<a class="btn" href="{{ path('xp_new') }}"><i class="fas fa-plus-circle fa"></i></a>
+
 	<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">retour</a>
 {% endblock %}
-
-
