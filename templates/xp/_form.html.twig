@@ -1,4 +1,29 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<div class="mb-3">
+	{{ form_label(form.jobDateFrom, 'De :', {'label_attr': {'class': 'form-label'}}) }}
+    <div>{{ form_widget(form.jobDateFrom, {'attr': {'class': 'form-control'}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.jobDateTo, 'A :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.jobDateTo, {'attr': {'class': 'form-control'}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.jobName, 'Poste :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.jobName, {'attr': {'class': 'form-control','placeholder':"nom du poste"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.companyName, 'Entreprise :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.companyName, {'attr': {'class': 'form-control','placeholder':"nom de l'entrerpise"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.jobLocation, 'Lieu :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.jobLocation, {'attr': {'class': 'form-control','placeholder':"lieu"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.jobDescription, 'Description :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.jobDescription, {'attr': {'class': 'form-control','placeholder':"Entre une brève description des missions"}}) }}</div>
+</div>
+
+<button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

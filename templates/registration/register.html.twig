@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}S'enregistrer{% endblock %}
+{% block title %}S'enregistrer
+{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
 
-    <h1>Inscris-toi</h1>
+	<h1>Inscris-toi</h1>
 
-    {{ form_start(registrationForm) }}
-        <div class="mb-3">
+	{{ form_start(registrationForm) }}
+	<div class="mb-3">
 		{{ form_label(registrationForm.firstName, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
 		{{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control'}}) }}
 	</div>
@@ -58,6 +59,7 @@
 		{{ form_label(registrationForm.agreeTerms, "En cochant cette case, je confirme que j'ai lu et que j'accepte la politique de confidentialité de jummmp", {'label_attr': {'class': ''}}) }}
 	</div>
 
-        <button type="submit" class="btn">C'est parti ! </button>
-    {{ form_end(registrationForm) }}
+	<button type="submit" class="btn">C'est parti !
+	</button>
+	{{ form_end(registrationForm) }}
 {% endblock %}
