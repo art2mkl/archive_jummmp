@@ -12,13 +12,13 @@ class CvType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('model')
+            // ->add('model')
             ->add('title')
             ->add('jobCv')
             ->add('about')
             // ->add('createdAt')
             // ->add('updatedAt')
-            ->add('shortUrl')
+            // ->add('shortUrl')
             // ->add('userId')
         ;
     }

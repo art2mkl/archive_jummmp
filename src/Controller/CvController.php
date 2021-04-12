@@ -78,7 +78,15 @@ class CvController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
        $session = $request->getSession();
-       $session->set('id',$id);   
+       $session->set('id',$id);
+
+        $shortUrl = '/user/'.$this->getUser()->getId().'/'.$id;
+        $cv->setShortUrl($shortUrl);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($cv);
+        $entityManager->flush();
+
         return $this->render('cv/show.html.twig', [
             'cv' => $cv,       
         ]);

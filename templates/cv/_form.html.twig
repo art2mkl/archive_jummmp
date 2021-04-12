@@ -1,4 +1,19 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+
+<div class="mb-3">
+	{{ form_label(form.title, 'Titre du Cv :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.title, {'attr': {'class': 'form-control','placeholder':"nom du poste"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.jobCv, 'Intitulé du poste :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.jobCv, {'attr': {'class': 'form-control','placeholder':"nom de l'entrerpise"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.about, 'A propos de toi :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.about, {'attr': {'class': 'form-control','placeholder':"lieu"}}) }}</div>
+
+	<button title="Sauvegarder le Cv" class="btn">
+		<i class="far fa-save"></i>
+	</button>
+
+	{{ form_end(form) }}
