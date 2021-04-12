@@ -4,7 +4,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Expériences <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}"><i class="fas fa-undo-alt"></i></a> </h1>
+	<h1>Expériences
+		<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
+			<i class="fas fa-undo-alt"></i>
+		</a>
+	</h1>
 
 	{% for xp in xps %}
 		<div class="box">
@@ -23,39 +27,37 @@
 					-<em>{{ xp.jobLocation }}</em>
 				</p>
 				<p>
-				<em>
-				{{ xp.jobDescription }}</p>
-				</em>
-			</div>
-			<div class="box">
-				<a class="btn" href="{{ path('xp_edit', {'id': xp.id}) }}">
-					<i class="fas fa-edit"></i>
-				</a>
-				<form method="post" action="{{ path('xp_delete', {'id': xp.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ xp.id) }}">
-					<button class="btn">
-						<i class="far fa-trash-alt"></i>
-					</button>
-				</form>
-			</div>
+					<em>
+						{{ xp.jobDescription }}</p>
+				</p>
+			</em>
 		</div>
-		<hr>
+		<div class="box">
+			<a class="btn" href="{{ path('xp_edit', {'id': xp.id}) }}">
+				<i class="fas fa-edit"></i>
+			</a>
+			<form method="post" action="{{ path('xp_delete', {'id': xp.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+				<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ xp.id) }}">
+				<button class="btn">
+					<i class="far fa-trash-alt"></i>
+				</button>
+			</form>
+		</div>
+	</div>
+	<hr>
 
-	{% else %}
+{% else %}
 
-		<p>no records found</p>
+	<p>no records found</p>
 
-	{% endfor %}
+{% endfor %}
 
 
-	<h1><i class="fas fa-plus-circle"></i> Ajoute une nouvelle expérience</h1>
+<h1>
+	<i class="fas fa-plus-circle"></i>
+	Ajoute une nouvelle expérience</h1>
 
-    {{ include('xp/_form.html.twig') }}
+{{ include('xp/_form.html.twig') }}
 <br>
 <br>
-<br>
-
-
-
-	
-{% endblock %}
+<br>{% endblock %}

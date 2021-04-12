@@ -137,4 +137,8 @@ width:20%
     background: orange;
   }
 
+  select {
+    font-family: 'FontAwesome', 'Second Font name'
+  }
+
   

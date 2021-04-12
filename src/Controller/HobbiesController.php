@@ -16,23 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class HobbiesController extends AbstractController
 {
     /**
-     * @Route("/", name="hobbies_index", methods={"GET"})
+     * @Route("/", name="hobbies_index", methods={"GET","POST"})
      */
-    public function index(HobbiesRepository $hobbiesRepository): Response
-    {
-        if (!$this->getUser()) {
-            return $this->redirectToRoute('app_login');
-        }
-
-        return $this->render('hobbies/index.html.twig', [
-            'hobbies' => $hobbiesRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/new", name="hobbies_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
+    public function index(Request $request, HobbiesRepository $hobbiesRepository): Response
     {
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_login');
@@ -43,6 +29,8 @@ class HobbiesController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $hobby->setUserId($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($hobby);
             $entityManager->flush();
@@ -50,23 +38,11 @@ class HobbiesController extends AbstractController
             return $this->redirectToRoute('hobbies_index');
         }
 
-        return $this->render('hobbies/new.html.twig', [
-            'hobby' => $hobby,
-            'form' => $form->createView(),
-        ]);
-    }
 
-    /**
-     * @Route("/{id<\d+>}", name="hobbies_show", methods={"GET"})
-     */
-    public function show(Hobbies $hobby): Response
-    {
-        if (!$this->getUser() || $this->getUser()->getId() != $hobby->getUserId()->getId()) {
-            return $this->redirectToRoute('app_login');
-        }
-
-        return $this->render('hobbies/show.html.twig', [
+        return $this->render('hobbies/index.html.twig', [
+            'hobbies' => $hobbiesRepository->findAll(),
             'hobby' => $hobby,
+            'form' => $form->createView()
         ]);
     }
 

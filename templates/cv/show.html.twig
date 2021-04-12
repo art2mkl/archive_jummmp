@@ -8,9 +8,10 @@
 	<a class="btn" href="{{path('cv_index')}}">RETOUR TABLEAU DE BORD</a>
 
 	{% if cv.model == 1 %}
-		<h1>{{cv.title}}</h1>
 
-<div class="box">
+		{# items cv #}
+		<h1>{{cv.title}}</h1>
+		<div class="box">
 			<div class="boxLeft">
 				<h3>{{cv.jobCv}}</h3>
 				<img src="{{cv.photo}}" alt="photo de profil">
@@ -26,6 +27,7 @@
 			</div>
 		</div>
 
+		{# items hobbies #}
 		<div class="box">
 			<div class="boxLeft">
 				{% for hobby in app.user.hobbies %}
@@ -45,6 +47,27 @@
 			</div>
 		</div>
 
+		{# items skills #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for skill in app.user.skills %}
+					<br>
+					<p>
+						<i class="{{skill.icon}}"></i>
+						{{skill.skillName}}</p>
+					<br>
+					<hr>
+					<br>
+				{% endfor %}
+			</div>
+			<div class="boxRight">
+				<a class="btn" href="{{ path('skills_index') }}">
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
+
+		{# items xp #}
 		<div class="box">
 			<div class="boxLeft">
 				{% for xp in app.user.xps %}
@@ -73,11 +96,7 @@
 		</div>
 	{% endif %}
 
-
 	<a class="btn" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">export</a>
-
-	{# <p>{{app.session.get('id')}}</p> #}
-
 
 	<div class="box">
 		<a class="btn {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">model 1</a>

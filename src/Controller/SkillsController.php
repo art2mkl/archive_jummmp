@@ -16,34 +16,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class SkillsController extends AbstractController
 {
     /**
-     * @Route("/", name="skills_index", methods={"GET"})
+     * @Route("/", name="skills_index", methods={"GET","POST"})
      */
-    public function index(SkillsRepository $skillsRepository): Response
+    public function index(SkillsRepository $skillsRepository, Request $request): Response
     {
 
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_login');
         }
 
-        return $this->render('skills/index.html.twig', [
-            'skills' => $skillsRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/new", name="skills_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        if (!$this->getUser()) {
-            return $this->redirectToRoute('app_login');
-        }
-        
         $skill = new Skills();
         $form = $this->createForm(SkillsType::class, $skill);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $skill->setUserId($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($skill);
             $entityManager->flush();
@@ -51,26 +38,14 @@ class SkillsController extends AbstractController
             return $this->redirectToRoute('skills_index');
         }
 
-        return $this->render('skills/new.html.twig', [
+        return $this->render('skills/index.html.twig', [
+            'skills' => $skillsRepository->findAll(),
             'skill' => $skill,
             'form' => $form->createView(),
         ]);
     }
 
-    /**
-     * @Route("/{id<\d+>}", name="skills_show", methods={"GET"})
-     */
-    public function show(Skills $skill): Response
-    {
-        if (!$this->getUser() || $this->getUser()->getId() != $skill->getUserId()->getId()) {
-            return $this->redirectToRoute('app_login');
-        }
-
-        return $this->render('skills/show.html.twig', [
-            'skill' => $skill,
-        ]);
-    }
-
+    
     /**
      * @Route("/{id<\d+>}/edit", name="skills_edit", methods={"GET","POST"})
      */
