@@ -5,112 +5,62 @@
 
 {% block body %}
 
-	<a class="btn" href="{{path('cv_index')}}">RETOUR TABLEAU DE BORD</a>
+<a class="btn" href="{{path('cv_index')}}">RETOUR TABLEAU DE BORD</a>
 
-	{% if cv.model == 1 %}
-		<h1>Cv</h1>
-
-		<table class="table">
-			<tbody>
-				<tr>
-					<th>Id</th>
-					<td>{{ cv.id }}</td>
-				</tr>
-				<tr>
-					<th>Model</th>
-					<td>{{ cv.model }}</td>
-				</tr>
-				<tr>
-					<th>Title</th>
-					<td>{{ cv.title }}</td>
-				</tr>
-				<tr>
-					<th>JobCv</th>
-					<td>{{ cv.jobCv }}</td>
-				</tr>
-				<tr>
-					<th>About</th>
-					<td>{{ cv.about }}</td>
-				</tr>
-				<tr>
-					<th>CreatedAt</th>
-					<td>{{ cv.createdAt ? cv.createdAt|date('d-m-y') : '' }}</td>
-				</tr>
-				<tr>
-					<th>UpdatedAt</th>
-					<td>{{ cv.updatedAt ? cv.updatedAt|date('d-m-y') : '' }}</td>
-				</tr>
-				<tr>
-					<th>ShortUrl</th>
-					<td>{{ cv.shortUrl }}</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<a href="{{ path('cv_index') }}">back to list</a>
-
-		<a href="{{ path('cv_edit', {'id': cv.id}) }}">edit</a>
-
-
-		<div class="box">
-			<div class="boxLeft">
-				{% for hobby in app.user.hobbies %}
-					<br>
-					<p>
-						<i class="{{hobby.icon}}"></i>
-						{{hobby.hobbyName}}</p>
-					<br>
-					<hr>
-					<br>
-				{% endfor %}
-			</div>
-			<div class="boxRight">
-				<a class="btn" href="{{ path('hobbies_index') }}">
-					<i class="fas fa-edit"></i>
-				</a>
-			</div>
-		</div>
-
-		{# {{ include('cv/_delete_form.html.twig') }} #}
-		<div class="box">
-			<div class="boxLeft">
-				{% for xp in app.user.xps %}
-					<div>
-						<p>
-							<strong>{{xp.jobDateFrom | date('d M y')}}
-								à
-								{{xp.jobDateTo | date('d M y')}}
-							</strong>
-							{{xp.companyName}}
-							-
-							{{xp.jobName}}
-							-
-							{{xp.jobLocation}}</p>
-						<p>{{xp.jobDescription}}</p>
-						<hr>
-					</div>
-				{% endfor %}
-			</div>
-
-			<div class="boxRight">
-				<a class="btn" href="{{ path('xp_index') }}">
-					<i class="fas fa-edit"></i>
-				</a>
-			</div>
-		</div>
-	{% endif %}
-
-
-	<a class="btn" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">export</a>
-
-	{# <p>{{app.session.get('id')}}</p> #}
-
+{% if cv.model == 1 %}
+	<h1>{{cv.title}}</h1>
 
 	<div class="box">
-		<a class="btn {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">model 1</a>
-		<a class="btn {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">model 2</a>
-		<a class="btn {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">model 3</a>
+		<div class="boxLeft">
+			<h3>{{ cv.jobCv}}</h3>
+			<p>{{ cv.about}}</p>
+			<p>{{ cv.shortUrl}}</p>
+			<hr>
+
+		</div>
+		<div class="boxRight">
+			<a class="btn" href="{{ path('cv_edit', { 'id': cv.id } ) }}">
+				<i class="fas fa-edit"></i>
+			</a>
+		</div>
 	</div>
 
 
-{% endblock %}
+	{% for hobby in app.user.hobbies %}
+		<br>
+		<p>
+			<i class="{{hobby.icon}}"></i>
+			{{hobby.hobbyName}}</p>
+		<br>
+		<hr>
+		<br>
+	{% endfor %}
+</div>
+<div class="boxRight">
+	<a class="btn" href="{{ path('hobbies_index') }}">
+		<i class="fas fa-edit"></i>
+	</a>
+</div></div>{# {{ include('cv/_delete_form.html.twig') }} #}<div class="box">
+<div class="boxLeft">
+	{% for xp in app.user.xps %}
+		<div>
+			<p>
+				<strong>{{xp.jobDateFrom | date('d M y')}}
+					à
+					{{xp.jobDateTo | date('d M y')}}
+				</strong>
+				{{xp.companyName}}
+				-
+				{{xp.jobName}}
+				-
+				{{xp.jobLocation}}</p>
+			<p>{{xp.jobDescription}}</p>
+			<hr>
+		</div>
+	{% endfor %}
+</div>
+<div class="boxRight">
+	<a class="btn" href="{{ path('xp_index') }}">
+		<i class="fas fa-edit"></i>
+	</a>
+</div></div>{% endif %}<a class="btn" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">export</a>{# <p>{{app.session.get('id')}}</p> #}<div class="box"><a class="btn {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">model 1</a><a class="btn {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">model 2</a><a class="btn {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">model 3</a></div>{% endblock %}
