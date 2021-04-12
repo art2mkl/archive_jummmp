@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Xp{% endblock %}
+{% block title %}Edit Xp
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Xp</h1>
+	<h1>Edition de l'expérience
+		<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
+			<i class="fas fa-undo-alt"></i>
+		</a>
+	</h1>
+	{{ include('xp/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {{ include('xp/_form.html.twig', {'button_label': 'Update'}) }}
-    <a href="{{ path('xp_index') }}">back to list</a>
-    {# {{ include('xp/_delete_form.html.twig') }} #}
+	{# {{ include('xp/_delete_form.html.twig') }} #}
 {% endblock %}

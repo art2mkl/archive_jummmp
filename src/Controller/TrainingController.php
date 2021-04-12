@@ -16,23 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class TrainingController extends AbstractController
 {
     /**
-     * @Route("/", name="training_index", methods={"GET"})
+     * @Route("/", name="training_index", methods={"GET", "POST"})
      */
-    public function index(TrainingRepository $trainingRepository): Response
-    {
-        if (!$this->getUser()) {
-            return $this->redirectToRoute('app_login');
-        }
-
-        return $this->render('training/index.html.twig', [
-            'trainings' => $trainingRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/new", name="training_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
+    public function index(TrainingRepository $trainingRepository, Request $request): Response
     {
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_login');
@@ -43,6 +29,7 @@ class TrainingController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $training->setUserId($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($training);
             $entityManager->flush();
@@ -50,25 +37,13 @@ class TrainingController extends AbstractController
             return $this->redirectToRoute('training_index');
         }
 
-        return $this->render('training/new.html.twig', [
+        return $this->render('training/index.html.twig', [
+            'trainings' => $trainingRepository->findAll(),
             'training' => $training,
             'form' => $form->createView(),
         ]);
     }
 
-    /**
-     * @Route("/{id<\d+>}", name="training_show", methods={"GET"})
-     */
-    public function show(Training $training): Response
-    {
-        if (!$this->getUser() || $this->getUser()->getId() != $training->getUserId()->getId()) {
-            return $this->redirectToRoute('app_login');
-        }
-
-        return $this->render('training/show.html.twig', [
-            'training' => $training,
-        ]);
-    }
 
     /**
      * @Route("/{id<\d+>}/edit", name="training_edit", methods={"GET","POST"})
@@ -99,7 +74,7 @@ class TrainingController extends AbstractController
      */
     public function delete(Request $request, Training $training): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$training->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $training->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($training);
             $entityManager->flush();

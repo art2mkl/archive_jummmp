@@ -1,23 +1,115 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}User index
+{% endblock %}
 
 {% block body %}
-    <h1>dxport</h1>
-    <h2>{{user.firstName}}</h2>
 
-     <div>
-       
-<p>{{cv.title}} {{cv.model}} {{cv.jobCv}}</p>
+	{% if app.user and (app.user == user.email ) %}
+		<p>(Cette page correspond à ce qu'un recruteur verra)
+			<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
+				<i class="fas fa-undo-alt"></i>
+			</a>
+		</p>
+
+	{% endif %}
+
+	<h2>{{user.firstName}}</h2>
+	<h2>{{user.LastName}}</h2>
+	<h3>{{user.streetAdress}}</h3>
+	<h3>{{user.postCode}}</h3>
+	<h3>{{user.city}}</h3>
+	<h3>{{user.phone}}</h3>
+	<h3>{{user.website}}</h3>
+
+	<div>
+
+		<p>{{cv.title}}
+			{{cv.model}}
+			{{cv.jobCv}}</p>
 
 
-<div>
-<p>Mes hobbies</p>
-{% for hobby in hobbies %}
-<p><i class="{{hobby.icon}}"></i> {{hobby.hobbyName}}</p>
-{% endfor %}
-</div>
-<hr>  
-        </div>
+		<hr>
+	</div>
 
+
+	{% if cv.model == 1 %}
+
+		{# part profile #}
+
+		<h3>{{ cv.jobCv}}</h3>
+		<img src="{{cv.photo}}" alt="photo de profile">
+		<p>{{ cv.about}}</p>
+
+		{# part skills #}
+		<h2>Compétences</h2>
+		<br>
+		{% for skill in user.skills %}
+			<br>
+			<p>
+				<i class="{{skill.icon }}"></i>
+				{{skill.skillName}}</p>
+			<br>
+			<hr>
+			<br>
+		{% endfor %}
+
+		{# Experience #}
+		<br>
+		<h2>Expérience</h2>
+		<br>
+		{% for xp in user.xps %}
+			<div>
+				<p>
+					<strong>{{xp.jobDateFrom | date('d M y')}}
+						à
+						{{xp.jobDateTo | date('d M y')}}
+					</strong>
+					{{xp.companyName}}
+					-
+					{{xp.jobName}}
+					-
+					{{xp.jobLocation}}</p>
+				<p>{{xp.jobDescription}}</p>
+				<hr>
+			</div>
+		{% endfor %}
+
+		{# part training #}
+		<br>
+		<h2>Formation</h2>
+		<br>
+		{% for training in user.trainings %}
+
+			<p>
+				<strong>{{training.trainingDateFrom | date('d M y')}}
+					à
+					{{training.trainingDateTo | date('d M y')}}
+				</strong>
+				{{training.schoolName}}
+				-
+				{{training.diplomaName}}
+				-
+				{{training.schoolLocation}}</p>
+			<p>{{training.diplomaDescription}}</p>
+
+			<hr>
+		{% endfor %}
+
+		{# part hobbies #}
+
+		<h2>Loisirs</h2>
+
+		{% for hobby in user.hobbies %}
+			<br>
+			<p>
+				{{hobby.icon}}
+				{{hobby.hobbyName}}</p>
+			<br>
+			<hr>
+			<br>
+		{% endfor %}
+
+
+	{% endif %}
 {% endblock %}

@@ -16,6 +16,7 @@ class CvType extends AbstractType
             ->add('title')
             ->add('jobCv')
             ->add('about')
+            ->add('photo')
             // ->add('createdAt')
             // ->add('updatedAt')
             // ->add('shortUrl')

@@ -1,40 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hobbies index{% endblock %}
+{% block title %}Hobbies index
+{% endblock %}
 
 {% block body %}
-    <h1>Hobbies index</h1>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Icon</th>
-                <th>HobbyName</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
 
-        {% for hobby in hobbies %}
-{% if app.user  and (app.user is same as(hobby.userId) )%}
-            <tr>
-                <td>{{ hobby.id }}</td>
-                <td><i class="{{ hobby.icon }}"></i></td>
-                <td>{{ hobby.hobbyName }}</td>
-                <td>
-                    <a href="{{ path('hobbies_show', {'id': hobby.id}) }}">show</a>
-                    <a href="{{ path('hobbies_edit', {'id': hobby.id}) }}">edit</a>
-                </td>
-            </tr>
-     {% endif %}
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	<h1>Hobbies
+		<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
+			<i class="fas fa-undo-alt"></i>
+		</a>
+	</h1>
 
-    <a href="{{ path('hobbies_new') }}">Create new</a>
-    <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">retour</a>
+
+	{% for hobby in hobbies %}
+		{% if app.user  and (app.user is same as(hobby.userId) )%}
+
+			<div class="box">
+				<div class="boxLeft">
+					<p>{{ hobby.icon }}
+						{{hobby.hobbyName}}</p>
+				</div>
+				<div class="box">
+					<a class="btn" href="{{ path('hobbies_edit', {'id': hobby.id}) }}">
+						<i class="fas fa-edit"></i>
+					</a>
+					<form method="post" action="{{ path('hobbies_delete', {'id': hobby.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+						<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ hobby.id) }}">
+						<button class="btn">
+							<i class="far fa-trash-alt"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+
+
+		{% endif %}
+	{% else %}
+
+		<p>no records found</p>
+
+	{% endfor %}
+
+	<h1>
+		<i class="fas fa-plus-circle"></i>
+		Ajoute une nouvelle expérience</h1>
+
+	{{ include('hobbies/_form.html.twig') }}
+
+
 {% endblock %}

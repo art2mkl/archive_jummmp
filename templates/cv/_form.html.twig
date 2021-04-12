@@ -9,13 +9,19 @@
 	{{ form_label(form.title, 'Titre du CV', {'label_attr': {'class': 'form-label'}}) }}
 	<div>{{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}</div>
 </div>
+
+<div class="mb-3">
+	{{ form_label(form.photo, 'Ajoute l`URL de ta photo:', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.photo, {'attr': {'class': 'form-control','placeholder':"Ajoute l'url de ta photo"}}) }}</div>
+</div>
+
 <div class="mb-3">
 	{{ form_label(form.jobCv, 'Intitulé du poste', {'label_attr': {'class': 'form-label'}}) }}
 	<div>{{ form_widget(form.jobCv, {'attr': {'class': 'form-control'}}) }}</div>
 </div>
 <div class="mb-3">
 	{{ form_label(form.about, 'A propos de toi :', {'label_attr': {'class': 'form-label'}}) }}
-	<div>{{ form_widget(form.about, {'attr': {'class': 'form-control','placeholder':"nom du poste"}}) }}</div>
+	<div>{{ form_widget(form.about, {'attr': {'class': 'form-control','placeholder':"A propos de toi"}}) }}</div>
 </div>
 
 <button class="btn" title="Sauvegarder le CV">

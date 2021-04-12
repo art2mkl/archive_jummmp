@@ -1,4 +1,31 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<div class="mb-3">
+	{{ form_label(form.trainingDateFrom, 'De :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.trainingDateFrom, {'attr': {'class': 'form-control'}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.trainingDateTo, 'A :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.trainingDateTo, {'attr': {'class': 'form-control'}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.diplomaName, 'Formation :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.diplomaName, {'attr': {'class': 'form-control','placeholder':"nom de la formation"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.schoolName, 'Centre de formation :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.schoolName, {'attr': {'class': 'form-control','placeholder':"nom du centre de formation"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.schoolLocation, 'Lieu :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.schoolLocation, {'attr': {'class': 'form-control','placeholder':"lieu"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.diplomaDescription, 'Description :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.diplomaDescription, {'attr': {'class': 'form-control','placeholder':"Entre une brève description des apprentissages"}}) }}</div>
+</div>
+
+<button class="btn">
+	<i class="far fa-save"></i>
+</button>
 {{ form_end(form) }}
