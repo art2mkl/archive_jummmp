@@ -14,9 +14,7 @@
 		{% if app.user and (app.user is same as(hobby.userId) )%}
 			<div class="box">
 				<div class="boxLeft">
-					<i class="{{hobby.icon}}"></i>
-
-					<span>{{ hobby.hobbyName }}</span>
+					<p>{{hobby.icon}} {{ hobby.hobbyName }}</p>
 				</div>
 
 				<div class="box">

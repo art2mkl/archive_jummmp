@@ -28,9 +28,9 @@ class SkillsType extends AbstractType
                 'Logo html' => 'fab fa-hml5',
                 'Logo css' => 'fab fa-css3-alt',
                 'Logo sass' => 'fab fa-sass',
-                'Logo SQL' => 'fab fa-database',
+                'Logo SQL' => 'fab fas-database',
                 'Logo Github' => 'fab fa-github',
-                'Logo shell' => 'fab fa-terminal',
+                'Logo shell' => 'fas fa-terminal',
                 
             ],
         ]
