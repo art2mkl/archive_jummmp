@@ -1,6 +1,10 @@
 {{ form_start(form) }}
 
 <div class="mb-3">
+	{{ form_label(form.photo, 'Colle l\'url de ta photo :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.photo, {'attr': {'class': 'form-control','placeholder':"nom du poste"}}) }}</div>
+</div>
+<div class="mb-3">
 	{{ form_label(form.title, 'Titre du Cv :', {'label_attr': {'class': 'form-label'}}) }}
 	<div>{{ form_widget(form.title, {'attr': {'class': 'form-control','placeholder':"nom du poste"}}) }}</div>
 </div>

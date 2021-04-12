@@ -54,6 +54,8 @@ class CvController extends AbstractController
                 $cv->setJobCv('Inscris ton poste visé');
                 $cv->setAbout('Décris ton profil');
                 $cv->setShortUrl('');
+                
+                $cv->setPhoto($this->getUser()->getAvatar());
         
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($cv);
