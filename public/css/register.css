@@ -1,0 +1,172 @@
+/* Mise en page et style des labels, boutons et inputs dans: login.css */
+
+/* Page */
+.register
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formulaire */
+.form-register
+{
+    padding: 3rem 4rem;
+    width: 74%;
+    border-radius: .4rem;
+    box-shadow: -2px 4px 6px rgba(0, 0, 0, .2);
+    background: var(--color-light);
+}
+
+/* Containers */
+.fr-container
+{
+    display: flex;
+}
+
+.fr-left
+{
+    padding: 0 2rem 0 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.fr-right
+{
+    padding: 0 0 0 2rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fr-button
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fr-terms
+{
+    display: flex;
+    align-items: center;
+}
+
+/* Titre */
+.fr-title
+{
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.fr-title img
+{
+    margin-right: .6rem;
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.fr-title h4
+{
+    font-size: 3rem;
+    color: var(--color-dark);
+}
+
+.title-sm
+{
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+/* Checkbox */
+.fr-terms-label
+{
+    margin-left: .8rem;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+/* Responsive */
+/* 1200PX */
+@media screen and (max-width: 1200px)
+{
+    
+}
+
+/* 1000PX */
+@media screen and (max-width: 1000px)
+{
+    .form-register
+    {
+        width: 80%;
+    }
+}
+
+/* 800PX */
+@media screen and (max-width: 800px)
+{
+    .fr-container
+    {
+        flex-direction: column;
+    }
+
+    .fr-left
+    {
+        padding: 0;
+        width: 100%;
+    }
+
+    .fr-right
+    {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+/* 600PX */
+@media screen and (max-width: 600px)
+{
+    .form-register
+    {
+        width: 90%;
+    }
+
+    .fr-title img
+    {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .fr-title h4
+    {
+        font-size: 2.4rem;
+    }
+
+    .title-sm
+    {
+        font-size: 1rem;
+    }
+}
+
+/* 410PX */
+@media screen and (max-width: 410px)
+{
+    .fr-title img
+    {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .fr-title h4
+    {
+        font-size: 1.4rem;
+    }
+
+    .title-sm
+    {
+        font-size: .8rem;
+    }
+}
