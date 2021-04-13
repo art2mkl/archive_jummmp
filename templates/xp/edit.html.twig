@@ -4,16 +4,6 @@
 {% endblock %}
 
 {% block body %}
-<<<<<<< HEAD
-	<h1>Edition de l'expérience
-		<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
-			<i class="fas fa-undo-alt"></i>
-		</a>
-	</h1>
-	{{ include('xp/_form.html.twig', {'button_label': 'Update'}) }}
-
-	{# {{ include('xp/_delete_form.html.twig') }} #}
-=======
     <h1>Edition Expériences
 		<a class="btn" href="{{ path('xp_index')}}">
 			<i class="fas fa-undo-alt"></i>
@@ -22,5 +12,4 @@
 
     {{ include('xp/_form.html.twig', {'button_label': 'Update'}) }}
 
->>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 {% endblock %}

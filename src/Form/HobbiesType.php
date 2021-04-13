@@ -13,31 +13,6 @@ class HobbiesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-<<<<<<< HEAD
-            ->add(
-                'icon',
-                ChoiceType::class,
-                [
-                    'placeholder' => 'Choisis ton icone',
-                    'choices' => [
-                        '📖' => '📖
-                        ',
-                        '🎼' => '🎼',
-                        '🏃🏼‍♀️' => '🏃🏼‍♀️',
-                        '🚴‍♀️' => '🚴‍♀️',
-                        '🛹' => '🛹',
-                        'L⛳️' => '⛳️',
-                        '⚽️' => '⚽️',
-                        '🎮' => '🎮',
-                        '🎬' => '🎬',
-                        '🏝' => '🏝',
-                        '🧗‍♀️' => '🧗‍♀️',
-
-                    ],
-                ]
-            )
-            ->add('hobbyName')
-=======
             ->add('hobbyName')
             ->add('icon', ChoiceType::class, [
                 'placeholder' => 'Choisis une icone',
@@ -57,7 +32,6 @@ class HobbiesType extends AbstractType
             ]
             
             )
->>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
             // ->add('userId')
         ;
     }
