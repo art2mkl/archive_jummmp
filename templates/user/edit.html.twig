@@ -4,6 +4,7 @@
 {% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
 	<h1>Edition du profil
 		<a class="btn" href="{{ path('cv_index') }}">
 			<i class="fas fa-undo-alt"></i>
@@ -12,4 +13,18 @@
 	{{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
 
 
+=======
+    <h1>Edition du profil
+		<a class="btn" href="{{ path('cv_index')}}">
+			<i class="fas fa-undo-alt"></i>
+		</a>
+	</h1>
+
+    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+
+   
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 {% endblock %}
+
+
+

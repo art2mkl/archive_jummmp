@@ -4,6 +4,10 @@
 {% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 	<h1>Formations
 		<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
 			<i class="fas fa-undo-alt"></i>
@@ -18,7 +22,11 @@
 					<em>
 						{{ training.trainingDateFrom ? training.trainingDateFrom|date('M-y') : '' }}
 						à
+<<<<<<< HEAD
 						{{ training.trainingDateTo ? training.trainingDateTO|date('M-y') : '' }}
+=======
+						{{ training.trainingDateTo ? training.trainingDateTo|date('M-y') : '' }}
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 					</em>
 					-
 					<strong>{{ training.schoolName }}</strong>
@@ -27,7 +35,10 @@
 					-<em>{{ training.schoolLocation }}</em>
 				</p>
 				<p>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 					<em>
 						{{ training.diplomaDescription }}</p>
 				</p>
@@ -56,9 +67,24 @@
 
 <h1>
 	<i class="fas fa-plus-circle"></i>
+<<<<<<< HEAD
 	Ajoute une nouvelle formation</h1>
 
 {{ include('training/_form.html.twig') }}
 <br>
 <br>
 <br>{% endblock %}
+=======
+	Ajoute une nouvelle expérience</h1>
+
+{{ include('training/_form.html.twig') }}
+
+<br>
+<br>
+<br>
+
+{% endblock %}
+
+
+
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9

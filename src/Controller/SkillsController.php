@@ -16,7 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class SkillsController extends AbstractController
 {
     /**
+<<<<<<< HEAD
      * @Route("/", name="skills_index", methods={"GET", "POST"})
+=======
+     * @Route("/", name="skills_index", methods={"GET","POST"})
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
      */
     public function index(SkillsRepository $skillsRepository, Request $request): Response
     {
@@ -30,7 +34,10 @@ class SkillsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
             $skill->setUserId($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($skill);
@@ -46,6 +53,7 @@ class SkillsController extends AbstractController
         ]);
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -62,6 +70,9 @@ class SkillsController extends AbstractController
         ]);
     }
 
+=======
+    
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
     /**
      * @Route("/{id<\d+>}/edit", name="skills_edit", methods={"GET","POST"})
      */

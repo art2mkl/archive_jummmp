@@ -8,6 +8,7 @@
 	<a class="btn" href="{{path('cv_index')}}">RETOUR TABLEAU DE BORD</a>
 
 	{% if cv.model == 1 %}
+<<<<<<< HEAD
 		{# Model 1 CV #}
 		<h1>{{cv.title}}</h1>
 		<h3>{{app.user.firstName}}</h3>
@@ -26,13 +27,54 @@
 
 			<div class="boxRight">
 				<a class="btn" href="{{ path('user_edit', { 'id': app.user.id } ) }}">
+=======
+{# items Profil #}
+
+<h3>{{app.user.firstName}}</h3>
+
+<div class="box">
+<div class="boxLeft">
+		<h3>{{app.user.lastName}}</h3>
+		<h3>{{app.user.email}}</h3>
+		<h3>{{app.user.streetAdress}}</h3>
+		<h3>{{app.user.postCode}}</h3>
+		<h3>{{app.user.city}}</h3>
+		<h3>{{app.user.phone}}</h3>
+		<h3>{{app.user.website}}</h3>
+</div>
+
+<div class="boxRight">
+				<a class="btn" href="{{ path('user_edit', {'id': app.user.id}) }}">
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+</div>
+
+		{# items cv #}
+		<h1>{{cv.title}}</h1>
+		<div class="box">
+			<div class="boxLeft">
+				<h3>{{cv.jobCv}}</h3>
+				<img src="{{cv.photo}}" alt="photo de profil">
+				<p>{{cv.about}}</p>
+				<p>{{cv.shortUrl}}</p>
+				<hr>
+				<br>
+			</div>
+			<div class="boxRight">
+				<a class="btn" href="{{ path('cv_edit', {'id': cv.id}) }}">
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 					<i class="fas fa-edit"></i>
 				</a>
 			</div>
 		</div>
 
+<<<<<<< HEAD
 
 		{# part profile #}
+=======
+		{# items hobbies #}
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 		<div class="box">
 			<div class="boxLeft">
 				<h3>{{ cv.jobCv}}</h3>
@@ -58,9 +100,13 @@
 				<br>
 				{% for hobby in app.user.hobbies %}
 					<br>
+<<<<<<< HEAD
 					<p>
 						{{hobby.icon}}
 						{{hobby.hobbyName}}</p>
+=======
+					<p>{{hobby.icon}} {{hobby.hobbyName}}</p>
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 					<br>
 					<hr>
 					<br>
@@ -73,12 +119,38 @@
 				</a>
 			</div>
 		</div>
+<<<<<<< HEAD
 		{# {{ include('cv/_delete_form.html.twig') }} #}
 
 		<div
 			class="box">
 
 			{# part skills #}
+=======
+
+		{# items skills #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for skill in app.user.skills %}
+					<br>
+					<p>
+						<i class="{{skill.icon}}"></i>
+						{{skill.skillName}}</p>
+					<br>
+					<hr>
+					<br>
+				{% endfor %}
+			</div>
+			<div class="boxRight">
+				<a class="btn" href="{{ path('skills_index') }}">
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
+
+		{# items xp #}
+		<div class="box">
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 			<div class="boxLeft">
 				<br>
 				<h2>Skills</h2>
@@ -130,6 +202,7 @@
 			</div>
 		</div>
 
+<<<<<<< HEAD
 		{# part training #}
 		<div class="box">
 
@@ -155,16 +228,42 @@
 				{% endfor %}
 			</div>
 
+=======
+		{# items training #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for training in app.user.trainings %}
+					<div>
+						<p>
+							<strong>{{training.trainingDateFrom | date('d M y')}}
+								à
+								{{training.trainingDateTo | date('d M y')}}
+							</strong>
+							{{training.schoolName}}
+							-
+							{{training.diplomaName}}
+							-
+							{{training.schoolLocation}}</p>
+						<p>{{training.diplomaDescription}}</p>
+						<hr>
+					</div>
+				{% endfor %}
+			</div>
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 			<div class="boxRight">
 				<a class="btn" href="{{ path('training_index') }}">
 					<i class="fas fa-edit"></i>
 				</a>
 			</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 		</div>
 	{% endif %}
 
 	{% if cv.model == 2 %}
+<<<<<<< HEAD
 		{# Model 1 CV #}
 		<h1>{{cv.title}}</h1>
 
@@ -180,11 +279,27 @@
 			</div>
 			<div class="boxRight">
 				<a class="btn" href="{{ path('cv_edit', { 'id': cv.id } ) }}">
+=======
+		{# items cv #}
+		<h1>{{cv.title}}</h1>
+		<div class="box">
+			<div class="boxLeft">
+				<h3>{{cv.jobCv}}</h3>
+				<img src="{{cv.photo}}" alt="photo de profil">
+				<p>{{cv.about}}</p>
+				<p>{{cv.shortUrl}}</p>
+				<hr>
+				<br>
+			</div>
+			<div class="boxRight">
+				<a class="btn" href="{{ path('cv_edit', {'id': cv.id}) }}">
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 					<i class="fas fa-edit"></i>
 				</a>
 			</div>
 		</div>
 
+<<<<<<< HEAD
 
 		{# part hobbies #}
 		<div class="box">
@@ -197,12 +312,69 @@
 					<p>
 						{{hobby.icon}}
 						{{hobby.hobbyName}}</p>
+=======
+		{# items hobbies #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for hobby in app.user.hobbies %}
+					<br>
+					<p>{{hobby.icon}} {{hobby.hobbyName}}</p>
 					<br>
 					<hr>
 					<br>
 				{% endfor %}
 			</div>
+			<div class="boxRight">
+				<a class="btn" href="{{ path('hobbies_index') }}">
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
 
+		{# items skills #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for skill in app.user.skills %}
+					<br>
+					<p>
+						<i class="{{skill.icon}}"></i>
+						{{skill.skillName}}</p>
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
+					<br>
+					<hr>
+					<br>
+				{% endfor %}
+			</div>
+<<<<<<< HEAD
+=======
+			<div class="boxRight">
+				<a class="btn" href="{{ path('skills_index') }}">
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
+
+		{# items xp #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for xp in app.user.xps %}
+					<div>
+						<p>
+							<strong>{{xp.jobDateFrom | date('d M y')}}
+								à
+								{{xp.jobDateTo | date('d M y')}}
+							</strong>
+							{{xp.companyName}}
+							-
+							{{xp.jobName}}
+							-
+							{{xp.jobLocation}}</p>
+						<p>{{xp.jobDescription}}</p>
+						<hr>
+					</div>
+				{% endfor %}
+			</div>
 			<div class="boxRight">
 				<a class="btn" href="{{ path('hobbies_index') }}">
 					<i class="fas fa-edit"></i>
@@ -266,6 +438,7 @@
 			</div>
 		</div>
 
+<<<<<<< HEAD
 		{# part training #}
 		<div class="box">
 
@@ -291,12 +464,37 @@
 				{% endfor %}
 			</div>
 
+=======
+		{# items training #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for training in app.user.trainings %}
+					<div>
+						<p>
+							<strong>{{training.trainingDateFrom | date('d M y')}}
+								à
+								{{training.trainingDateTo | date('d M y')}}
+							</strong>
+							{{training.schoolName}}
+							-
+							{{training.diplomaName}}
+							-
+							{{training.schoolLocation}}</p>
+						<p>{{training.diplomaDescription}}</p>
+						<hr>
+					</div>
+				{% endfor %}
+			</div>
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 			<div class="boxRight">
 				<a class="btn" href="{{ path('training_index') }}">
 					<i class="fas fa-edit"></i>
 				</a>
 			</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 		</div>
 	{% endif %}
 	{% if cv.model == 3 %}
@@ -312,14 +510,50 @@
 				<p>{{ cv.shortUrl}}</p>
 				<hr>
 
+<<<<<<< HEAD
 			</div>
 			<div class="boxRight">
 				<a class="btn" href="{{ path('cv_edit', { 'id': cv.id } ) }}">
+=======
+	{% if cv.model == 3 %}
+		{# items cv #}
+		<h1>{{cv.title}}</h1>
+		<div class="box">
+			<div class="boxLeft">
+				<h3>{{cv.jobCv}}</h3>
+				<img src="{{cv.photo}}" alt="photo de profil">
+				<p>{{cv.about}}</p>
+				<p>{{cv.shortUrl}}</p>
+				<hr>
+				<br>
+			</div>
+			<div class="boxRight">
+				<a class="btn" href="{{ path('cv_edit', {'id': cv.id}) }}">
 					<i class="fas fa-edit"></i>
 				</a>
 			</div>
 		</div>
 
+		{# items hobbies #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for hobby in app.user.hobbies %}
+					<br>
+					<p>{{hobby.icon}} {{hobby.hobbyName}}</p>
+					<br>
+					<hr>
+					<br>
+				{% endfor %}
+			</div>
+			<div class="boxRight">
+				<a class="btn" href="{{ path('hobbies_index') }}">
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
+
+<<<<<<< HEAD
 
 		{# part hobbies #}
 		<div class="box">
@@ -390,6 +624,43 @@
 							-
 							{{xp.jobLocation}}</p>
 						<p>{{xp.jobDescription}}</p>
+=======
+		{# items skills #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for skill in app.user.skills %}
+					<br>
+					<p>
+						<i class="{{skill.icon}}"></i>
+						{{skill.skillName}}</p>
+					<br>
+					<hr>
+					<br>
+				{% endfor %}
+			</div>
+			<div class="boxRight">
+				<a class="btn" href="{{ path('skills_index') }}">
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
+
+		{# items xp #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for xp in app.user.xps %}
+					<div>
+						<p>
+							<strong>{{xp.jobDateFrom | date('d M y')}}
+								à
+								{{xp.jobDateTo | date('d M y')}}
+							</strong>
+							{{xp.companyName}}
+							-
+							{{xp.jobName}}
+							-
+							{{xp.jobLocation}}</p>
+						<p>{{xp.jobDescription}}</p>
 						<hr>
 					</div>
 				{% endfor %}
@@ -400,6 +671,42 @@
 				</a>
 			</div>
 		</div>
+
+		{# items training #}
+		<div class="box">
+			<div class="boxLeft">
+				{% for training in app.user.trainings %}
+					<div>
+						<p>
+							<strong>{{training.trainingDateFrom | date('d M y')}}
+								à
+								{{training.trainingDateTo | date('d M y')}}
+							</strong>
+							{{training.schoolName}}
+							-
+							{{training.diplomaName}}
+							-
+							{{training.schoolLocation}}</p>
+						<p>{{training.diplomaDescription}}</p>
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
+						<hr>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="boxRight">
+<<<<<<< HEAD
+				<a class="btn" href="{{ path('xp_index') }}">
+=======
+				<a class="btn" href="{{ path('training_index') }}">
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
+<<<<<<< HEAD
+=======
+	{% endif %}
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 
 		{# part training #}
 		<div class="box">
@@ -444,4 +751,10 @@
 		<a class="btn {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">model 2</a>
 		<a class="btn {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">model 3</a>
 	</div>
+<<<<<<< HEAD
+=======
+
+	<a class="btn" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">export</a>
+
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 {% endblock %}

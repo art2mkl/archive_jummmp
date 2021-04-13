@@ -1,15 +1,57 @@
-<nav>
-	<a class="" href="{{path('app_login')}}">
-		<h1>JUMP</h1>
-	</a>
+<nav class="nav-bar">
+
+	<div class="nav-bar-logo-box">
+            <img class="nav-bar-arrow" src="/assets/increase.png" alt="logo">
+            <a class="nav-bar-logo" href="{{path('app_login')}}">ummmp</a>
+        </div>
 
 	{% if app.user %}
-    <div class="nav-right">
+	
+    {# <div class="nav-right">
         <img src="{{app.user.avatar}}" alt="avatar" class="">
 		<a class="btn" href="{{ path('user_edit', {'id': app.user.id}) }}">Profil</a>
 		<a class="btn" href="#!">Premium</a>
 		<a class="btn" href="{{path('app_logout')}}">Log out</a>
-    </div>
+    </div> #}
+
+	{# <section class="menu"> #}
+	{# User #}
+	{# <ul class="nav-bar-user">		
+			<li><a class="user-name">Profil</a></li>
+			<li><a href="{{ path('user_edit', {'id': app.user.id}) }}"><img src="{{app.user.avatar}}" alt="avatar" class="user-avatar"></a></li>	
+	</ul> #}
+	{# Menu déroulant #}
+		{# <ul class="nav-bar-utilities">
+			<li class="utilities"><a class="user-utilities" href="#!">Passer Premium</a></li>
+			<li class="utilities"><a class="user-utilities" href="{{path('app_logout')}}">Se déconnecter</a></li>
+			<li class="utilities">
+					<a class="social-utilities"><i class="fab fa-facebook-square"></i></a>
+					<a class="social-utilities"><i class="fab fa-instagram"></i></a>
+			</li>
+		</ul>
+	
+	</section> #}
+
+	<section class="nav-bar-list">
+		{# User #}
+		<ul class="list-user">
+			<li><a class="user-name">Profil</a></li>
+			<li><a href="{{ path('user_edit', {'id': app.user.id}) }}"><img src="{{app.user.avatar}}" alt="avatar" class="user-avatar"></a></li>
+		</ul>
+		{# Menu déroulant #}
+		<ul class="list-utilities">
+			<li class="utilities"><a class="user-utilities" href="#!">Passer Premium <i class="fas fa-star"></i></a></li>
+			<li class="utilities"><a class="user-utilities" href="{{path('app_logout')}}">Se déconnecter</a></li>
+			<li class="utilities">
+					<a class="social-utilities"><i class="fab fa-facebook-square"></i></a>
+					<a class="social-utilities"><i class="fab fa-instagram"></i></a>
+			</li>
+		</ul>
+	</section>
+	
+
+
+
 	{% endif %}
 
 </nav>

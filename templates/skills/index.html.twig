@@ -5,12 +5,17 @@
 
 {% block body %}
 
+<<<<<<< HEAD
 	<h1>Hobbies
+=======
+<h1>Liste des hobbies
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 		<a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
 			<i class="fas fa-undo-alt"></i>
 		</a>
 	</h1>
 
+<<<<<<< HEAD
 
 	{% for skill in skills %}
 		{% if app.user  and (app.user is same as(skill.userId) )%}
@@ -19,6 +24,15 @@
 				<div class="boxLeft">
 					<i class="{{ skill.icon }}"></i>
 					<span>{{skill.skillName}}</span>
+=======
+	{% for skill in skills %}
+		{% if app.user and (app.user is same as(skill.userId) )%}
+			<div class="box">
+				<div class="boxLeft">
+					<i class="{{skill.icon}}"></i>
+
+					<span>{{ skill.skillName }}</span>
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 				</div>
 
 				<div class="box">
@@ -34,6 +48,7 @@
 				</div>
 			</div>
 
+<<<<<<< HEAD
 
 		{% endif %}
 	{% else %}
@@ -48,4 +63,21 @@
 
 	{{ include('skills/_form.html.twig') }}
 
+=======
+		{% endif %}
+	{% else %}
+		
+			<p colspan="4">no records found</p>
+		
+	{% endfor %}
+
+
+	<h2>
+		<i class="fas fa-plus-circle"></i>
+		Ajoute une nouvelle compétence</h2>
+
+	{{ include('skills/_form.html.twig') }}
+
+
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 {% endblock %}

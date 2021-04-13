@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {# {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
@@ -21,3 +22,22 @@
 	</button>
 </div>
 {{ form_end(form) }}
+=======
+{{ form_start(form) }}
+<div class="box">
+<div class="mb-3">
+	{{ form_label(form.icon, 'Inscris la classe de ton icon :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.icon, {'attr': {'class': 'form-control','placeholder':"Inscris la classe de ton icon"}}) }}</div>
+</div>
+<div class="mb-3">
+	{{ form_label(form.hobbyName, 'Nom du hobby :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.hobbyName, {'attr': {'class': 'form-control','placeholder':"Nom du hobby"}}) }}</div>
+</div>
+	<button title="Sauvegarder le Cv" class="btn">
+		<i class="far fa-save"></i>
+	</button>
+
+</div>
+
+	{{ form_end(form) }}
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9

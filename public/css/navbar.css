@@ -1,0 +1,184 @@
+.nav-bar
+{
+    position: fixed;
+    padding: 2rem 12rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border-bottom: 1px solid #ff0055; */
+
+}
+
+.nav-bar-logo-box
+{
+    display: flex;
+}
+
+/* Logo */
+.nav-bar-arrow
+{
+    width: 3rem;
+    height: 3rem;
+}
+
+.nav-bar-logo
+{
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    letter-spacing: -0.02rem;
+    color: var(--color-light);
+}
+
+.nav-bar-list
+{
+    position: relative;
+    width: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* User */
+.list-user
+{
+    line-height: 0;
+    display: flex;
+    align-items: center;
+}
+
+.user-name
+{
+    font-weight: 300;
+    font-size:1.2rem;
+    letter-spacing: var(--font-spacing-sm);
+    color: var(--color-light);
+}
+
+.user-avatar
+{
+    margin-left: .8rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 100rem;
+    border: 1px solid var(--color-light);
+    font-size: 1rem;
+    background: rgba(0, 0, 0, .2);
+}
+
+/* Menu déroulant */
+.list-utilities
+{
+    margin-top: 5rem;
+    position: absolute;
+    display: block;
+    text-align: right;
+}
+
+.utilities
+{
+    margin-bottom: .6rem;
+}
+
+.user-utilities
+{
+    font-weight: 300;
+    font-size:1.2rem;
+    letter-spacing: var(--font-spacing-sm);
+    color: var(--color-light);
+}
+
+.social-utilities
+{
+    font-size: 1.6rem;
+    color: var(--color-light);
+}
+
+/* Responsive */
+/* 1200PX */
+@media screen and (max-width: 1200px)
+{
+    .nav-bar
+    {
+        padding: 2rem 10rem;
+    }
+}
+
+/* 1000PX */
+@media screen and (max-width: 1000px)
+{
+    .nav-bar
+    {
+        padding: 2rem 8rem;
+    }
+
+    .nav-bar-logo
+    {
+        font-size: 1.6rem;
+    }
+
+    .user-name
+    {
+        font-size: 1rem;
+    }
+
+    .user-avatar-container
+    {
+        width: 3.6rem;
+        height: 3.6rem;
+    }
+
+    .nav-bar-socials li a
+    {
+        font-size: 1.8rem;
+    }
+}
+
+/* 800PX */
+@media screen and (max-width: 800px)
+{
+    .nav-bar
+    {
+        padding: 2rem 6rem;
+    }
+
+    .nav-bar-logo
+    {
+        font-size: 1.4rem;
+    }
+
+    .user-name
+    {
+        font-size: .8rem;
+    }
+
+    .user-avatar-container
+    {
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    .nav-bar-socials li a
+    {
+        font-size: 1.6rem;
+    }
+}
+
+/* 600PX */
+@media screen and (max-width: 600px)
+{
+    .nav-bar
+    {
+        padding: 2rem 4rem;
+    }
+
+    .nav-bar-logo
+    {
+        font-size: 1.2rem;
+    }
+
+    .nav-bar-socials
+    {
+        display: none;
+    }
+}

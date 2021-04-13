@@ -16,7 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class TrainingController extends AbstractController
 {
     /**
+<<<<<<< HEAD
      * @Route("/", name="training_index", methods={"GET", "POST"})
+=======
+     * @Route("/", name="training_index", methods={"GET","POST"})
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
      */
     public function index(TrainingRepository $trainingRepository, Request $request): Response
     {
@@ -29,6 +33,10 @@ class TrainingController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
             $training->setUserId($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($training);
@@ -44,7 +52,11 @@ class TrainingController extends AbstractController
         ]);
     }
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
     /**
      * @Route("/{id<\d+>}/edit", name="training_edit", methods={"GET","POST"})
      */

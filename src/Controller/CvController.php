@@ -48,6 +48,7 @@ class CvController extends AbstractController
         $user = $security->getUser();
         if (count($this->getUser()->getCvs()) < 3) {
 
+<<<<<<< HEAD
             $cv->setUserId($user);
             $cv->setModel(1);
             $cv->setTitle('Définis le titre de ton cv');
@@ -55,6 +56,21 @@ class CvController extends AbstractController
             $cv->setAbout('Décris ton profil');
             $cv->setPhoto($this->getUser()->getAvatar());
             $cv->setShortUrl('');
+=======
+                $cv->setUserId($user);
+                $cv->setModel(1);
+                $cv->setTitle('Définis le titre de ton cv');
+                $cv->setJobCv('Inscris ton poste visé');
+                $cv->setAbout('Décris ton profil');
+                $cv->setShortUrl('');
+                
+                $cv->setPhoto($this->getUser()->getAvatar());
+        
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($cv);
+                $entityManager->flush();
+            }
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($cv);
@@ -78,10 +94,17 @@ class CvController extends AbstractController
         if (!$this->getUser() || $this->getUser()->getId() != $cv->getUserId()->getId()) {
             return $this->redirectToRoute('app_login');
         }
+<<<<<<< HEAD
         $session = $request->getSession();
         $session->set('id', $id);
 
         $shortUrl = '/user/' . $this->getUser()->getId() . '/' . $id;
+=======
+       $session = $request->getSession();
+       $session->set('id',$id);
+
+        $shortUrl = '/user/'.$this->getUser()->getId().'/'.$id;
+>>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9
         $cv->setShortUrl($shortUrl);
 
         $entityManager = $this->getDoctrine()->getManager();
