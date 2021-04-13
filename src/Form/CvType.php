@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Cv;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CvType extends AbstractType
@@ -16,7 +17,15 @@ class CvType extends AbstractType
             ->add('title')
             ->add('jobCv')
             ->add('about')
-            ->add('photo')
+            ->add('photoFile', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'delete_label' => 'Remove the image',
+                'download_uri' => true,
+                'image_uri' => true,
+                'asset_helper' => true,
+            ])
+
             // ->add('createdAt')
             // ->add('updatedAt')
             // ->add('shortUrl')

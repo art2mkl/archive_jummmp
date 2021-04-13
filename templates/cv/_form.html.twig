@@ -1,8 +1,8 @@
 {{ form_start(form) }}
 
 <div class="mb-3">
-	{{ form_label(form.photo, 'Colle l\'url de ta photo :', {'label_attr': {'class': 'form-label'}}) }}
-	<div>{{ form_widget(form.photo, {'attr': {'class': 'form-control','placeholder':"url de ta photo ici"}}) }}</div>
+	{{ form_label(form.photoFile, 'Colle l\'url de ta photo :', {'label_attr': {'class': 'form-label'}}) }}
+	<div>{{ form_widget(form.photoFile, {'attr': {'class': 'form-control','placeholder':"url de ta photo ici"}}) }}</div>
 </div>
 <div class="mb-3">
 	{{ form_label(form.title, 'Titre du Cv :', {'label_attr': {'class': 'form-label'}}) }}
@@ -15,18 +15,9 @@
 <div class="mb-3">
 	{{ form_label(form.about, 'A propos de toi :', {'label_attr': {'class': 'form-label'}}) }}
 	<div>{{ form_widget(form.about, {'attr': {'class': 'form-control','placeholder':"A propos de toi"}}) }}</div>
-<<<<<<< HEAD
-</div>
-
-<button class="btn" title="Sauvegarder le CV">
-	<i class="far fa-save"></i>
-</button>
-{{ form_end(form) }}
-=======
 
 	<button title="Sauvegarder le Cv" class="btn">
 		<i class="far fa-save"></i>
 	</button>
 
 	{{ form_end(form) }}
->>>>>>> 8edb56c051ad7c52704704ebf4ea293beb1507e9

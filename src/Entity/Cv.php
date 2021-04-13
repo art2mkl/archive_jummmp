@@ -4,10 +4,14 @@ namespace App\Entity;
 
 use App\Repository\CvRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+
 
 /**
  * @ORM\Entity(repositoryClass=CvRepository::class)
  * @ORM\HasLifecycleCallbacks()
+ * @Vich\Uploadable
  */
 class Cv
 {
@@ -63,6 +67,13 @@ class Cv
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $photo;
+
+    /**
+     * @Vich\UploadableField(mapping="cv", fileNameProperty="photo")
+     * @var null|File
+     */
+    private $photoFile;
+
 
     public function getId(): ?int
     {
@@ -193,5 +204,24 @@ class Cv
         $this->photo = $photo;
 
         return $this;
+    }
+
+    public function getphotoFile()
+    {
+
+        return $this->photoFile;
+    }
+
+
+    /**
+     * @param FILE|UploadedFile|null $photoFile
+     */
+    public function setPhotoFile(?File $photoFile = null)
+    {
+        $this->photoFile = $photoFile;
+
+        if (null !== $photoFile) {
+            $this->updatedAt = new \DateTime();
+        }
     }
 }
