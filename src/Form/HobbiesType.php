@@ -6,15 +6,33 @@ use App\Entity\Hobbies;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class HobbiesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('icon')
             ->add('hobbyName')
-            ->add('userId')
+            ->add('icon', ChoiceType::class, [
+                'placeholder' => 'Choisis une icone',
+                'choices'  => [
+                    '📖' => '📖',
+                    '🎼' => '🎼',
+                    '🎬' => '🎬',
+                    '🎮' => '🎮',
+                    '🧳' => '🧳',
+                    '🏃‍♂️' => '🏃‍♂️',
+                    '🧗‍♀️' => '🧗‍♀️',
+                    '🛹' => '🛹',
+                    '🚵‍♀️' =>  '🚵‍♀️',
+                    '⚽️' =>  '⚽️',
+                    '🎾' =>  '🎾',
+                ],
+            ]
+            
+            )
+            // ->add('userId')
         ;
     }
 

@@ -1,23 +1,108 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}User index
+{% endblock %}
 
 {% block body %}
-    <h1>dxport</h1>
-    <h2>{{user.firstName}}</h2>
 
-     <div>
-       
-<p>{{cv.title}} {{cv.model}} {{cv.jobCv}}</p>
+	{% if app.user and (app.user == user.email) %}
+		<p>(Cette page correspond à ce que visualisera le recruteur)
+                
+                <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
+			<i class="fas fa-undo-alt"></i>
+		</a>
+                </p>
+                <br>
+	{% endif %}
 
 
-<div>
-<p>Mes hobbies</p>
-{% for hobby in hobbies %}
-<p><i class="{{hobby.icon}}"></i> {{hobby.hobbyName}}</p>
-{% endfor %}
-</div>
-<hr>  
-        </div>
+	{% if cv.model == 1 %}
+
+		<h3>{{user.firstName}}</h3>
+		<h3>{{user.lastName}}</h3>
+		<h3>{{user.email}}</h3>
+		<h3>{{user.streetAdress}}</h3>
+		<h3>{{user.postCode}}</h3>
+		<h3>{{user.city}}</h3>
+		<h3>{{user.phone}}</h3>
+		<h3>{{user.website}}</h3>
+
+		<h3>{{cv.jobCv}}</h3>
+		<img src="{{cv.photo}}" alt="photo de profil">
+		<p>{{cv.about}}</p>
+		<hr>
+
+		{# items hobbies #}
+		<br>
+		<h2>Hobbies</h2>
+		<br>
+		{% for hobby in user.hobbies %}
+			<br>
+			<p>{{hobby.icon}}
+				{{hobby.hobbyName}}</p>
+			<br>
+			<hr>
+			<br>
+		{% endfor %}
+
+
+		{# items skills #}
+		<br>
+		<h2>Compétences</h2>
+		<br>
+		{% for skill in user.skills %}
+			<br>
+			<p>
+				<i class="{{skill.icon}}"></i>
+				{{skill.skillName}}</p>
+			<br>
+			<hr>
+			<br>
+		{% endfor %}
+
+		{# items xp #}
+		<br>
+		<h2>Expériences</h2>
+		<br>
+		{% for xp in user.xps %}
+			<div>
+				<p>
+					<strong>{{xp.jobDateFrom | date('d M y')}}
+						à
+						{{xp.jobDateTo | date('d M y')}}
+					</strong>
+					{{xp.companyName}}
+					-
+					{{xp.jobName}}
+					-
+					{{xp.jobLocation}}</p>
+				<p>{{xp.jobDescription}}</p>
+				<hr>
+			</div>
+		{% endfor %}
+
+		{# items training #}
+		<br>
+		<h2>Formations</h2>
+		<br>
+		{% for training in user.trainings %}
+			<div>
+				<p>
+					<strong>{{training.trainingDateFrom | date('d M y')}}
+						à
+						{{training.trainingDateTo | date('d M y')}}
+					</strong>
+					{{training.schoolName}}
+					-
+					{{training.diplomaName}}
+					-
+					{{training.schoolLocation}}</p>
+				<p>{{training.diplomaDescription}}</p>
+				<hr>
+			</div>
+		{% endfor %}
+
+	{% endif %}
+
 
 {% endblock %}

@@ -3,11 +3,8 @@
 {% block title %}Edit Cv{% endblock %}
 
 {% block body %}
-    <h1>Edit Cv</h1>
+    <h1>Edition du Cv <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}"><i class="fas fa-undo-alt"></i></a> </h1>
 
     {{ include('cv/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('cv_index') }}">back to list</a>
-
-    {{ include('cv/_delete_form.html.twig') }}
 {% endblock %}

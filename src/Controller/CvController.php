@@ -54,6 +54,8 @@ class CvController extends AbstractController
                 $cv->setJobCv('Inscris ton poste visé');
                 $cv->setAbout('Décris ton profil');
                 $cv->setShortUrl('');
+                
+                $cv->setPhoto($this->getUser()->getAvatar());
         
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($cv);
@@ -78,7 +80,15 @@ class CvController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
        $session = $request->getSession();
-       $session->set('id',$id);   
+       $session->set('id',$id);
+
+        $shortUrl = '/user/'.$this->getUser()->getId().'/'.$id;
+        $cv->setShortUrl($shortUrl);
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($cv);
+        $entityManager->flush();
+
         return $this->render('cv/show.html.twig', [
             'cv' => $cv,       
         ]);
