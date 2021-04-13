@@ -109,7 +109,7 @@ class CvController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('cv_index');
+            return $this->redirectToRoute('cv_show', ['id'=> $cv->getId()]);
         }
 
         return $this->render('cv/edit.html.twig', [
