@@ -1,17 +1,16 @@
 {{ form_start(form) }}
 <div class="box">
-<div class="mb-3">
-	{{ form_label(form.icon, 'Choisis ton icon :', {'label_attr': {'class': 'form-label'}}) }}
-	<div>{{ form_widget(form.icon, {'attr': {'class': 'form-control','placeholder':"Choisis ton icon"}}) }}</div>
-</div>
-<div class="mb-3">
-	{{ form_label(form.skillName, 'Nom de la compétence :', {'label_attr': {'class': 'form-label'}}) }}
-	<div>{{ form_widget(form.skillName, {'attr': {'class': 'form-control','placeholder':"Nom de la compétence"}}) }}</div>
-</div>
+	<div class="mb-3">
+		{{ form_label(form.icon, 'Choisis ton icon :', {'label_attr': {'class': 'form-label'}}) }}
+		<div>{{ form_widget(form.icon, {'attr': {'class': 'form-control','placeholder':"Choisis ton icon"}}) }}</div>
+	</div>
+	<div class="mb-3">
+		{{ form_label(form.skillName, 'Nom de la compétence :', {'label_attr': {'class': 'form-label'}}) }}
+		<div>{{ form_widget(form.skillName, {'attr': {'class': 'form-control','placeholder':"Nom de la compétence"}}) }}</div>
+	</div>
 	<button title="Sauvegarder le Cv" class="btn">
 		<i class="far fa-save"></i>
 	</button>
-
 </div>
 
-	{{ form_end(form) }}
+{{ form_end(form) }}
