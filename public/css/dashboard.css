@@ -1,0 +1,219 @@
+.dashboard
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dashboard */
+.dashboard-container
+{
+    margin-bottom: 6rem;
+    width: 70%;
+}
+
+/* Dashboard Head */
+.db-title h1
+{
+    line-height: 0;
+    font-size: 3rem;
+    letter-spacing: var(--font-spacing-sm);
+    color: var(--color-secondary);
+}
+
+/* Cards Display */
+.db-display
+{   
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+/* Cards */
+.db-card
+{
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: .4rem;
+    overflow: hidden;
+    box-shadow: -2px 4px 6px rgba(0, 0, 0, .2);
+    background: var(--color-light);
+}
+
+.db-card-bottom
+{
+    padding: 2rem;
+    background: var(--color-primary);
+}
+
+/* Titre */
+.db-card-title
+{   
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    letter-spacing: var(--font-spacing-sm);
+    border-bottom: 1px solid rgba(50, 130, 184, .1);
+    color: var(--color-primary);
+}
+
+/* Date */
+.db-card-date
+{
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+/* Poste */
+.db-card-job
+{
+    padding: 8rem 0;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    letter-spacing: var(--font-spacing-sm);
+    color: var(--color-primary);
+}
+
+/* Clipboard */
+.db-card-clipboard
+{
+    margin-bottom: 1rem;
+    padding: .2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: .2rem;
+    color: var(--color-light);
+}
+
+.db-card-clipboard p
+{
+    font-weight: 300;
+    font-size: .9rem;
+}
+
+.db-card-clipboard a
+{
+    font-size: 1.6rem;
+}
+
+/* Boutons */
+.db-card-utilities
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.db-card-btn
+{
+    cursor: pointer;
+    padding: .8rem;
+    border: none;
+    color: var(--color-light);
+    background: var(--color-primary);
+}
+
+/* Empty card */
+.db-card-add
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.8rem;
+    color: var(--color-primary);
+    background: rgba(245, 245, 245, .2);
+}
+
+/* Premium */
+.db-premium
+{
+    z-index: 10;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.db-premium p
+{
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--color-light);
+}
+
+/* Responsive */
+/* 1200PX */
+@media screen and (max-width: 1200px)
+{
+    .dashboard-container
+    {
+        width: 80%;
+    }
+}
+
+/* 1000PX */
+@media screen and (max-width: 1000px)
+{
+    
+}
+
+/* 800PX */
+@media screen and (max-width: 800px)
+{
+    .dashboard
+    {
+        height: auto;
+    }
+
+    .dashboard-container
+    {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .db-display
+    {   
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .db-card
+    {
+        margin-bottom: 1rem;
+        width: 60%;
+    }
+}
+
+/* 600PX */
+@media screen and (max-width: 600px)
+{
+    
+}
+
+/* 500PX */
+@media screen and (max-width: 500px)
+{
+    .db-card
+    {
+        width: 70%;
+    }
+}
+
+/* 400PX */
+@media screen and (max-width: 400px)
+{
+    .db-card
+    {
+        width: 80%;
+    }
+}
+

@@ -42,8 +42,10 @@
 /* User */
 .list-user
 {
+    width: 20rem;
     line-height: 0;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -78,6 +80,12 @@
 .utilities
 {
     margin-bottom: .6rem;
+    transition: all .1s ease-in-out;
+}
+
+.utilities:hover
+{
+    opacity: 80%;
 }
 
 .user-utilities

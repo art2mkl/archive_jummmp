@@ -12,6 +12,7 @@
 /* Formulaire */
 .form-register
 {
+    z-index: 10;
     padding: 3rem 4rem;
     width: 74%;
     border-radius: .4rem;

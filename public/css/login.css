@@ -68,6 +68,7 @@ header h3
 /* Formulaire */
 .form-login
 {
+    z-index: 10;
     padding: 4rem;
     width: 34vw;
     display: flex;
@@ -109,7 +110,7 @@ header h3
 /* Labels */
 label
 {
-    margin-bottom: .8rem;
+    margin-bottom: .6rem;
     font-weight: 300;
     font-size: 1.2rem;
     letter-spacing: var(--font-spacing-sm);
@@ -121,13 +122,13 @@ input
 {
     padding: .6rem;
     margin-bottom: 1rem;
-    height: 4rem;
+    height: 3.6rem;
     border: 1px solid rgba(34, 34, 34, .2);
     border-radius: .2rem;
     font-size: 1.2rem;
     letter-spacing: var(--font-spacing-sm);
     color: var(--color-dark);
-    background: var(--color-light);
+    background: rgba(29, 36, 36, .01);
 }
 
 /* Boutons */

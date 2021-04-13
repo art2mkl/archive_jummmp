@@ -1,6 +1,5 @@
 footer
 {
-    z-index: -1;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -68,7 +67,7 @@ footer
 .footer-socials
 {
     display: flex;
-}    
+}
 
 .footer-socials li a
 {
