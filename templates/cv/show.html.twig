@@ -8,27 +8,27 @@
 	<a class="btn" href="{{path('cv_index')}}">RETOUR TABLEAU DE BORD</a>
 
 	{% if cv.model == 1 %}
-{# items Profil #}
+		{# items Profil #}
 
-<h3>{{app.user.firstName}}</h3>
+		<h3>{{app.user.firstName}}</h3>
 
-<div class="box">
-<div class="boxLeft">
-		<h3>{{app.user.lastName}}</h3>
-		<h3>{{app.user.email}}</h3>
-		<h3>{{app.user.streetAdress}}</h3>
-		<h3>{{app.user.postCode}}</h3>
-		<h3>{{app.user.city}}</h3>
-		<h3>{{app.user.phone}}</h3>
-		<h3>{{app.user.website}}</h3>
-</div>
+		<div class="box">
+			<div class="boxLeft">
+				<h3>{{app.user.lastName}}</h3>
+				<h3>{{app.user.email}}</h3>
+				<h3>{{app.user.streetAdress}}</h3>
+				<h3>{{app.user.postCode}}</h3>
+				<h3>{{app.user.city}}</h3>
+				<h3>{{app.user.phone}}</h3>
+				<h3>{{app.user.website}}</h3>
+			</div>
 
-<div class="boxRight">
+			<div class="boxRight">
 				<a class="btn" href="{{ path('user_edit', {'id': app.user.id}) }}">
 					<i class="fas fa-edit"></i>
 				</a>
 			</div>
-</div>
+		</div>
 
 		{# items cv #}
 		<h1>{{cv.title}}</h1>
@@ -53,7 +53,8 @@
 			<div class="boxLeft">
 				{% for hobby in app.user.hobbies %}
 					<br>
-					<p>{{hobby.icon}} {{hobby.hobbyName}}</p>
+					<p>{{hobby.icon}}
+						{{hobby.hobbyName}}</p>
 					<br>
 					<hr>
 					<br>
@@ -142,6 +143,29 @@
 	{% endif %}
 
 	{% if cv.model == 2 %}
+
+		{# items Profil #}
+
+		<h3>{{app.user.firstName}}</h3>
+
+		<div class="box">
+			<div class="boxLeft">
+				<h3>{{app.user.lastName}}</h3>
+				<h3>{{app.user.email}}</h3>
+				<h3>{{app.user.streetAdress}}</h3>
+				<h3>{{app.user.postCode}}</h3>
+				<h3>{{app.user.city}}</h3>
+				<h3>{{app.user.phone}}</h3>
+				<h3>{{app.user.website}}</h3>
+			</div>
+
+			<div class="boxRight">
+				<a class="btn" href="{{ path('user_edit', {'id': app.user.id}) }}">
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
+
 		{# items cv #}
 		<h1>{{cv.title}}</h1>
 		<div class="box">
@@ -165,7 +189,8 @@
 			<div class="boxLeft">
 				{% for hobby in app.user.hobbies %}
 					<br>
-					<p>{{hobby.icon}} {{hobby.hobbyName}}</p>
+					<p>{{hobby.icon}}
+						{{hobby.hobbyName}}</p>
 					<br>
 					<hr>
 					<br>
@@ -254,6 +279,29 @@
 	{% endif %}
 
 	{% if cv.model == 3 %}
+
+		{# items Profil #}
+
+		<h3>{{app.user.firstName}}</h3>
+
+		<div class="box">
+			<div class="boxLeft">
+				<h3>{{app.user.lastName}}</h3>
+				<h3>{{app.user.email}}</h3>
+				<h3>{{app.user.streetAdress}}</h3>
+				<h3>{{app.user.postCode}}</h3>
+				<h3>{{app.user.city}}</h3>
+				<h3>{{app.user.phone}}</h3>
+				<h3>{{app.user.website}}</h3>
+			</div>
+
+			<div class="boxRight">
+				<a class="btn" href="{{ path('user_edit', {'id': app.user.id}) }}">
+					<i class="fas fa-edit"></i>
+				</a>
+			</div>
+		</div>
+
 		{# items cv #}
 		<h1>{{cv.title}}</h1>
 		<div class="box">
@@ -277,7 +325,8 @@
 			<div class="boxLeft">
 				{% for hobby in app.user.hobbies %}
 					<br>
-					<p>{{hobby.icon}} {{hobby.hobbyName}}</p>
+					<p>{{hobby.icon}}
+						{{hobby.hobbyName}}</p>
 					<br>
 					<hr>
 					<br>
