@@ -7,23 +7,25 @@
 /* Display */
 .resume-display
 {
-    padding: 1rem;
+    padding: 2rem;
     margin: auto;
-    width: 60rem;
-    background: red;
+    width: 80rem;
+    background: var(--color-light);
 }
 
 /* Containers */
 .resume-info
 {
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: yellow;
+    background: var(--color-secondary);
 }
 
 .resume-top
 {
+    padding: 2rem 0;
     display: flex;
 }
 
@@ -32,64 +34,100 @@
     display: flex;
 }
 
+.resume-footer
+{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(29, 36, 36, .2);
+}
+
 /* Items */
 .items
 {
     position: relative;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
-}
-
-.user-adress
-{
-    width: 65%;
-    background: lightgreen;
 }
 
 .user-profile
 {
-    width: 35%;
+    width: 30%;
     display: flex;
     justify-content: center;
     text-align: center;
-    background: lightcoral;
 }
 
+.user-adress
+{
+    width: 70%;
+    background: #DDD;
+}
+
+/* Skills */
 .user-skills
 {
-    margin: auto;
     flex-direction: column;
-    background: lightskyblue;
+    border-top: 1px solid rgba(29, 36, 36, .2);
 }
 
-.user-skills ul
+.skill-container
 {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skill-box
+{
+    margin: .6rem;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-dark);
+    border-radius: .4rem;
+}
+
+.item-skill-icon
+{
+    font-size: 2rem;
+}
+
+.item-skill
+{
+    font-size: .8rem;
 }
 
 .user-xp
 {
-    background: lightsalmon;
+    flex-direction: column;
+    border-top: 1px solid rgba(29, 36, 36, .2);
 }
 
 .user-training
 {
-    width: 50%;
-    background: lightyellow;
+    flex-direction: column;
+    width: 65%;
+    border-top: 1px solid rgba(29, 36, 36, .2);
 }
 
 .user-hobbies
 {
-    width: 50%;
-    background: lightgray;
+    flex-direction: column;
+    width: 35%;
+    border-top: 1px solid rgba(29, 36, 36, .2);
 }
 
 .change-template
 {
     margin: auto;
-    width: 60rem;
+    width: 80rem;
     display: flex;
-    background: green;
+    justify-content: center;
+    background: var(--color-light);
 }
 
 /* Textes */
@@ -108,6 +146,7 @@
 
 .item-user-firstname
 {
+    text-transform: capitalize;
     font-weight: 400;
     font-size: 3rem;
     line-height: 2rem;
@@ -116,6 +155,7 @@
 
 .item-user-lastname
 {
+    text-transform: capitalize;
     font-weight: 700;
     font-size: 3rem;
     letter-spacing: var(--font-spacing-sm);
@@ -123,8 +163,9 @@
 
 .item-title
 {
+    margin-bottom: 2rem;
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 2rem;
     letter-spacing: var(--font-spacing-sm);
 }
 
@@ -137,8 +178,8 @@
 
 .item-avatar
 {
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,6 +187,31 @@
     overflow: hidden;
     border-radius: 100%;
     background: gray;
+}
+
+.item-job
+{
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: var(--font-spacing-sm);
+}
+
+.item-description
+{
+    margin-bottom: .6rem;
+}
+
+.item-hobbies
+{
+    text-transform: capitalize;
+}
+
+.item-text-footer
+{
+    font-size: .8rem;
+    color: var(--color-dark);
+    opacity: 75%;
 }
 
 /* Boutons */
@@ -164,4 +230,25 @@
     font-size: 1.4rem;
     color: var(--color-light);
     background: var(--color-primary);
+}
+
+.btn-dasboard
+{
+    margin: 0;
+}
+
+/* Responsive */
+/* 800PX */
+@media screen and (max-width: 800px)
+{
+    .resume-display
+    {
+        width: 56rem;
+    }
+}
+
+/* 600PX */
+@media screen and (max-width: 600px)
+{
+    
 }

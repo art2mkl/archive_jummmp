@@ -14,24 +14,7 @@ class HobbiesType extends AbstractType
     {
         $builder
             ->add('hobbyName')
-            ->add('icon', ChoiceType::class, [
-                'placeholder' => 'Choisis une icone',
-                'choices'  => [
-                    '📖' => '📖',
-                    '🎼' => '🎼',
-                    '🎬' => '🎬',
-                    '🎮' => '🎮',
-                    '🧳' => '🧳',
-                    '🏃‍♂️' => '🏃‍♂️',
-                    '🧗‍♀️' => '🧗‍♀️',
-                    '🛹' => '🛹',
-                    '🚵‍♀️' =>  '🚵‍♀️',
-                    '⚽️' =>  '⚽️',
-                    '🎾' =>  '🎾',
-                ],
-            ]
-            
-            )
+            ->add('icon')
             // ->add('userId')
         ;
     }
