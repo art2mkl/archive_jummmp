@@ -8,66 +8,58 @@
 		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
 	{% endfor %}
 
-	<main class="register">
+	<h1>Inscris-toi</h1>
 
-		<form action="" class="form-register">
+	{{ form_start(registrationForm) }}
+	<div class="mb-3">
+		{{ form_label(registrationForm.firstName, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control'}}) }}
+	</div>
+	<div class="mb-3">
+		{{ form_label(registrationForm.lastName, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.lastName, {'attr': {'class': 'form-control'}}) }}
+	</div>
+	<div class="mb-3">
+		{{ form_label(registrationForm.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
+	</div>
+	<div class="mb-3">
+		{{ form_label(registrationForm.plainPassword, 'Mot de passe', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
+	</div>
+	<div class="mb-3">
+		{{ form_label(registrationForm.avatar, 'Avatar', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.avatar, {'attr': {'class': 'form-control pokemon'}}) }}
+	</div>
+	<div class="mb-3">
+		{{ form_label(registrationForm.website, 'Site Web', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.website, {'attr': {'class': 'form-control'}}) }}
+	</div>
+	<div class="mb-3">
+		{{ form_label(registrationForm.streetAdress, 'Rue', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.streetAdress, {'attr': {'class': 'form-control'}}) }}
+	</div>
 
-			<div class="fr-title">
-                <img src="/assets/mouse.png">
-                <h4>Inscris toi !<span class="title-sm"> Et complète ton profil.</span> </h4>
-            </div>
+	<div class="mb-3">
+		{{ form_label(registrationForm.postCode, 'Code Postal', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.postCode, {'attr': {'class': 'form-control'}}) }}
+	</div>
+	<div class="mb-3">
+		{{ form_label(registrationForm.city, 'Ville', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.city, {'attr': {'class': 'form-control'}}) }}
+	</div>
 
-			{{ form_start(registrationForm) }}
-			<div class="fr-container">
-				<section class="fr-left">
-						{{ form_label(registrationForm.firstName, 'Prénom :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control'}}) }}
-					
-						{{ form_label(registrationForm.lastName, 'Nom :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.lastName, {'attr': {'class': 'form-control'}}) }}
-					
-						{{ form_label(registrationForm.email, 'Email :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
-					
-						{{ form_label(registrationForm.plainPassword, 'Mot de passe :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
-					
-						{{ form_label(registrationForm.avatar, 'Avatar (jpeg, jpg, png) :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.avatar, {'attr': {'class': 'form-control pokemon'}}) }}
-					
-						{{ form_label(registrationForm.website, 'Site Web :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.website, {'attr': {'class': 'form-control'}}) }}
-				</section>
+	<div class="mb-3">
+		{{ form_label(registrationForm.phone, 'Téléphone', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(registrationForm.phone, {'attr': {'class': 'form-control'}}) }}
+	</div>
 
-				<section class="fr-right">
-						{{ form_label(registrationForm.streetAdress, 'Adresse :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.streetAdress, {'attr': {'class': 'form-control'}}) }}
+	<div class="mb-3">
+		{{ form_widget(registrationForm.agreeTerms) }}
+		{{ form_label(registrationForm.agreeTerms, "En cochant cette case, je confirme que j'ai lu et que j'accepte la politique de confidentialité de jummmp", {'label_attr': {'class': ''}}) }}
+	</div>
 
-					
-						{{ form_label(registrationForm.postCode, 'Code Postal :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.postCode, {'attr': {'class': 'form-control'}}) }}
-					
-						{{ form_label(registrationForm.city, 'Ville :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.city, {'attr': {'class': 'form-control'}}) }}
-
-					
-						{{ form_label(registrationForm.phone, 'Téléphone :', {'label_attr': {'class': 'form-label'}}) }}
-						{{ form_widget(registrationForm.phone, {'attr': {'class': 'form-control'}}) }}
-
-						<div class="fr-terms">
-							{{ form_widget(registrationForm.agreeTerms) }}
-							{{ form_label(registrationForm.agreeTerms, "En cochant cette case, je confirme que j’ai lu et que j’accepte la politique de confidentialité de 
-                                jummp.", {'label_attr': {'class': 'fr-terms-label'}}) }}
-						</div>
-
-					<div class="fr-button">
-						<button type="submit" class="btn">C'est parti !</button>
-					</div>			
-				</section>
-			</div>
-		</form>
-		{{ form_end(registrationForm) }}
-
-	</main>
-
+	<button type="submit" class="btn">C'est parti !
+	</button>
+	{{ form_end(registrationForm) }}
 {% endblock %}

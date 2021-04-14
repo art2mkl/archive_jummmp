@@ -1,16 +1,16 @@
 {{ form_start(form) }}
 <div class="edit-form-add">
 
-	<p class="efa-title">Ajoute une compétence</p>
+	<p class="efa-title"><i class="fas fa-plus"></i>&nbsp;Ajoute une compétence</p>
 
 	<div class="edit-add-utilities">
 		<div>
 			{{ form_label(form.icon, 'Icône :', {'label_attr': {'class': 'form-label'}}) }}
-			{{ form_widget(form.icon, {'attr': {'class': 'add-input icon-input','placeholder':"Choisis ton icône"}}) }}
+			{{ form_widget(form.icon, {'attr': {'class': 'skills add-input icon-input','placeholder':"Choisis ton icône"}}) }}
 		</div>
 		<div>
 			{{ form_label(form.skillName, 'Intitulé :', {'label_attr': {'class': 'form-label'}}) }}
-			{{ form_widget(form.skillName, {'attr': {'class': 'add-input','placeholder':""}}) }}
+			{{ form_widget(form.skillName, {'attr': {'class': 'add-input skill-input','placeholder':""}}) }}
 		</div>
 	</div>
 

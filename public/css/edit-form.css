@@ -1,14 +1,15 @@
 .edit-form
 {
-    padding: 1rem 2rem;
+    padding: 3rem 2rem;
     margin: auto;
     width: 70rem;
-    background: gray;
+    border-radius: .4rem;
+    background: var(--color-light);
 }
 
 .edit-form-head
 {
-    padding: 2rem 0;
+    padding-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,19 +18,19 @@
 .edit-form-head h1
 {
     letter-spacing: var(--font-spacing-sm);
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .edit-form-row
 {
-    padding: .4rem 1rem;
+    padding: .4rem .4rem .4rem 1rem;
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgba(245, 245, 245, .2);
+    border: 1px solid rgba(36, 36, 36, .2);
     border-radius: .4rem;
-    color: var(--color-light);
+    color: var(--color-dark);
 }
 
 .edit-form-row ul
@@ -52,13 +53,13 @@
 
 .edit-form-add
 {
-    background: peru;
+    padding-top: 1rem;
 }
 
 .efa-title
 {
     letter-spacing: var(--font-spacing-sm);
-    color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .edit-add-utilities
@@ -66,7 +67,6 @@
     margin-top: 1rem;
     display: flex;
     align-items: center;
-    background: green;
 }
 
 .edit-add-utilities div
@@ -78,7 +78,7 @@
 .form-label
 {
     letter-spacing: var(--font-spacing-sm);
-    color: var(--color-light);
+    color: var(--color-dark);
 }
 
 .edit-add-button
@@ -87,9 +87,20 @@
     justify-content: flex-end;
 }
 
+.add-input
+{
+    border: 1px solid rgba(36, 36, 36, .2);
+    color: var(--color-dark);
+}
+
 .icon-input
 {
     margin-right: 1rem;
+}
+
+.skill-input
+{
+    width: 30rem;
 }
 
 /* Boutons */
@@ -113,5 +124,39 @@
     border-radius: .4rem;
     color: var(--color-light);
     background: var(--color-primary);
+}
+
+/* Responsive */
+/* 800PX */
+@media screen and (max-width: 800px)
+{
+    .edit-form
+    {
+        width: 100%;
+    }
+}
+
+/* 500PX */
+@media screen and (max-width: 500px)
+{
+    .edit-add-utilities
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 400PX */
+@media screen and (max-width: 400px)
+{
+    .edit-form-head h1
+    {
+        font-size: 2rem;
+    }
+
+    .skill-input
+    {
+        width: 100%;
+    }
 }
 
