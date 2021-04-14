@@ -35,7 +35,7 @@
 
 								{% if cv.shortUrl != "" %}
 									<div class="db-card-clipboard">
-										<p>ADRESS SERVER&nbsp;{{cv.shortUrl}}</p>
+										<p>https://dry-lowlands-89814.herokuapp.com{{cv.shortUrl}}</p>
 										<a href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }}"><i class="fas fa-copy"></i></a>
 									</div>
 								{% endif %}
