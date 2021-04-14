@@ -8,9 +8,15 @@
 	{% if app.user and (app.user == user.email) %}
 		<p>(Cette page correspond à ce que visualisera le recruteur)
                 
-                <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}">
-			<i class="fas fa-undo-alt"></i>
-		</a>
+                <a class="btn" href="
+					{% if app.user is defined and app.session.get('id') == 0  %}
+					{{ path('cv_index')}}
+					{% else %}
+					{{ path('cv_show', {'id': app.session.get('id')}) }}
+					{% endif %}
+					">
+						<i class="fas fa-undo-alt"></i>
+					</a>
                 </p>
                 <br>
 	{% endif %}
