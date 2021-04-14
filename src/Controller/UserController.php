@@ -80,7 +80,15 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('cv_index');
+            $session = $request->getSession();
+            
+            if(!$session->get('id') || $session->get('id') == 0) {
+                return $this->redirectToRoute('cv_index');  
+            }
+            else {
+                return $this->redirectToRoute('cv_show', ['id'=> $session->get('id')]);
+            }
+
         }
 
         return $this->render('user/edit.html.twig', [
