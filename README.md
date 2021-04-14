@@ -1,12 +1,18 @@
-# Préparation du projet
+# **`Jummmp - Postuler Made Great Again`**
+![Page - Log In](public/assets/CDC/Page-Login.png)  
 
+## **`Objectifs :`**
+Développer une application web qui permet de générer des CVs numériques. Après avoir créé son compte, l'utilisateur pourra éditer son CV grâce à des templates pré-définis, au renseignement automatique de ses informations personnelles, à la possibilité d'éditer certaines sections.
 
-## Objectif :
-Créer un site qui permet de générer des CVs. Une des fonctionnalités de ce site serait que l'utilisateur puisse pré-remplir son CV et envoyer le document créer à l'utilisateur. 'après une annonce d'emploi fournie via une url et de les comparer avec des CVs pour ce projet. Des templates de CV sont enregistrés dans la base de données. Ceux-ci sont pré-remplis à certains champs en ré-utilisant les mots-clés scrappés.
+Les données de l'utilisateur persisteront sur une base données, ce qui lui permettra de sauvegarder et de modifier son profil au besoin.
 
+L'utilisateur pourra ensuite générer un short URL de son CV, afin de le partager de manière dématérialisée. Il pourra également le télécharger au format PDF. 
 
+Développement complémentaire: 
+- fonctionnalité permettant de comparer le CV généré avec les mots clés des offres d'emploi du moment.
+- fonctionnalité d'envoie de mail automatique
 
-## Attentes :
+## **`Attentes :`**
 Le respect des normes W3C ;
 - Le projet devra faire appel à des notions de BackEnd et de FrontEnd (servant de support à la BackEnd) ;
 - Une base de données sera utilisée ;
@@ -21,7 +27,7 @@ AJAX ;
 - L’inclusif Design (accessibilité de votre projet à des utilisateurs porteurs de handicap
 
 
-## Grille d'évaluation du Projet
+## **`Grille d'évaluation du projet :`**
 
 **Back (10)**
 >Arborescence des fichiers
@@ -64,4 +70,4 @@ Questions/réponses avec le jury
 ## Utilisation de l'hébergeur :
 
 <https://blog.rherault.fr/ci-cd-symfony-5-heroku/>
-[déploiement sur de symfony sur Heroku](https://devcenter.heroku.com/articles/deploying-symfony4)
+[Heroku](https://devcenter.heroku.com/articles/deploying-symfony4)

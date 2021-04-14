@@ -17,13 +17,12 @@ L'agence web SMT, spécialisée dans le développement de sites et applications 
 
 WebForce3 est spécialisée dans la formation de développeurs web. Les élèves issus de cette formation ne disposent pas tous de CVs numériques pour démontrer leurs compétences et postuler aux offres d'emploi de manière simple et pertinante. L'objectif est de mettre à leur disposition une application où ils disposeront de templates de CVs personnalisables, hébergés et dématerialisés pour postuler efficacement aux offres d'emploi.
 
-Après s'être connecté sur l'application Jummmp, l'utilisateur aura la possibilité de saisir ses informations personnelles (identité, compétences, formations, expériences, hobbies...). Ces informations persisteront sur une base de données sécurisée. Elles permettront de générer 3 propositions de CVs qui seront accessibles via un short-url d, email, lastName, firstName, avatar, streetAdress, postCode, city, phone, website, password.ou un QR-Code.
-
-Au moyen d'une API de site de recherche d'emplois, Jummmp pourra, rechercher des offres sur le marché du travail, en adéquation avec le CV qui a été généré.
+Après s'être connecté sur l'application Jummmp, l'utilisateur aura la possibilité de saisir ses informations personnelles (identité, compétences, formations, expériences, hobbies...). Ces informations persisteront sur une base de données sécurisée. Elles permettront de générer 3 propositions de CVs qui seront accessibles via un short-url ou un QR-Code.
 
 > Options :
 
 - vérifier la corrélation via webScrapping.
+- faire matcher les Cvs avec les offres d'emploi sur le marché du travail
 - service d'envoi par mail aux employeurs avec un template de lettre de motivation.
 - possibilité de récupérer le CV en pdf, de l'imprimer, de l'envoyer par email.
 
@@ -37,7 +36,7 @@ Au moyen d'une API de site de recherche d'emplois, Jummmp pourra, rechercher des
 
 [creeruncv](https://www.creeruncv.com/) : création de CV , gratuit, variété de templates attractifs, pas d'hébergement.
 
-Notre différenciation : rrix, designs, données hebergées, candidature dématerialisée.
+Notre différenciation : prix, designs, données hebergées, candidature dématerialisée.
 
 > Idées de nom de site : weResumeyouWork, MyBestCV, ResumeMe, HelloCV, HiCV, HiResume, Jummmp.
 
@@ -75,7 +74,7 @@ Comment faire connaître une application web pour qu'il puisse permettre aux dem
 
 ## **Positionnement**
 
-Des mots importants : attractif, accessible, simple, cloud.
+Key words : attractif, accessible, simple, cloud.
 
 ## **Objectifs**
 
@@ -98,6 +97,7 @@ Toute personne en recherche d'emploi, désireuse d'utiliser des solutions démat
 **Coeur de cible :**
 
 Les développeurs web en sortie de formation ou en recherche d'emploi, désireux de postuler rapidement aux offres d'emploi.
+![Persona](public/assets/CDC/Persona.png)
 
 **Cible secondaire :**
 Les recruteurs qui peuvent facilement consulter des viviers de CVs en ligne.
@@ -124,6 +124,7 @@ Les recruteurs qui peuvent facilement consulter des viviers de CVs en ligne.
 | **Base de données**                | Table CV                    | id, model, title, function, about, createdAt, updatedAt, shortUrl, foreign key userId                                                                              |
 | **Base de données**                | Table Training              | id, trainingDateFrom, trainingDateTo, diplomaName, schoolName, schoolLocation, diplomaDescritpion, foreign key userId                                              |
 | **Base de données**                | Table Hobbies               | id, icons, hobbiesName, foreign key userId                                                                                                                         |
+| **Base de données**                | Table Skills                | id, icons, skillName, foreign key userId                                                                                                                           |
 | **Hébergement**                    | Sécurisé                    | Serveur (Apache) Heroku, Symfony Cloud, platform SH, Php, MySql / MariaDB                                                                                          |
 | **Référencement et accessibilité** | Google friendly, SEO - RGAA | Lightouse et respect des règles Opquast.                                                                                                                           |
 
@@ -139,18 +140,29 @@ Les recruteurs qui peuvent facilement consulter des viviers de CVs en ligne.
 
 ## **Identité visuelle**
 
-- Design.
-- Logo.
-- Charte graphique : Jost pour les titres en bold 800 italic, Poppins pour les textes.
+- Logo.  
+  ![Logo](public/assets/CDC/Logo.png)
+- Charte graphique : Ubuntu pour les titres, Poppins pour les textes.  
+  ![Couleurs](public/assets/CDC/Couleurs.png)
 
 ## **Wireframe**
 
--
+### Page - Log In
+
+![Page - Log In](public/assets/CDC/Page-Login.png)
+
+### Page - Dashboard
+
+![Page - Dashboard](public/assets/CDC/Page-Dashboard.png)
+
+### Page - Éditeur
+
+## ![Page - Éditeur](public/assets/CDC/Page-Editeur.png)
 
 # **`Let's connect 🔗`**
 
-| L'agence SMT            |                                                                                                                                                                      |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Swann **Martin**        | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/thomasbarnab%C3%A9/) |
-| Michael **Krysztofiak** | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/thomasbarnab%C3%A9/) |
-| Thomas **Barnabé**      | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/thomasbarnab%C3%A9/) |
+| L'agence SMT            |                                                                                                                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Swann **Martin**        | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/swann-martin/)                 |
+| Michael **Krysztofiak** | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/michael-krysztofiak-53588061/) |
+| Thomas **Barnabé**      | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/thomasbarnab%C3%A9/)           |
