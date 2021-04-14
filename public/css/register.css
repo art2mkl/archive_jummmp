@@ -3,7 +3,6 @@
 /* Page */
 .register
 {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,11 +11,10 @@
 /* Formulaire */
 .form-register
 {
-    z-index: 10;
-    padding: 3rem 4rem;
+    padding: 4rem;
     width: 74%;
     border-radius: .4rem;
-    box-shadow: -2px 4px 6px rgba(0, 0, 0, .2);
+    box-shadow: -2px 4px 6px rgba(24, 23, 23, 0.2);
     background: var(--color-light);
 }
 

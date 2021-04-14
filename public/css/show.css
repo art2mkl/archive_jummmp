@@ -1,0 +1,167 @@
+/* Page */
+.show
+{
+    height: 200vh;
+}
+
+/* Display */
+.resume-display
+{
+    padding: 1rem;
+    margin: auto;
+    width: 60rem;
+    background: red;
+}
+
+/* Containers */
+.resume-info
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: yellow;
+}
+
+.resume-top
+{
+    display: flex;
+}
+
+.resume-bottom
+{
+    display: flex;
+}
+
+/* Items */
+.items
+{
+    position: relative;
+    padding: 1rem;
+    display: flex;
+}
+
+.user-adress
+{
+    width: 65%;
+    background: lightgreen;
+}
+
+.user-profile
+{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: lightcoral;
+}
+
+.user-skills
+{
+    margin: auto;
+    flex-direction: column;
+    background: lightskyblue;
+}
+
+.user-skills ul
+{
+    display: flex;
+}
+
+.user-xp
+{
+    background: lightsalmon;
+}
+
+.user-training
+{
+    width: 50%;
+    background: lightyellow;
+}
+
+.user-hobbies
+{
+    width: 50%;
+    background: lightgray;
+}
+
+.change-template
+{
+    margin: auto;
+    width: 60rem;
+    display: flex;
+    background: green;
+}
+
+/* Textes */
+.resume-info p
+{
+    text-transform: capitalize;
+}
+
+.resume-title
+{
+    line-height: 0;
+    font-size: 2rem;
+    letter-spacing: var(--font-spacing-sm);
+    color: var(--color-primary);
+}
+
+.item-user-firstname
+{
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 2rem;
+    letter-spacing: var(--font-spacing-sm);
+}
+
+.item-user-lastname
+{
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: var(--font-spacing-sm);
+}
+
+.item-title
+{
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: var(--font-spacing-sm);
+}
+
+.item-text
+{
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: var(--font-spacing-sm);
+}
+
+.item-avatar
+{
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 100%;
+    background: gray;
+}
+
+/* Boutons */
+.edit
+{
+    margin: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .4rem;
+    font-size: 1.4rem;
+    color: var(--color-light);
+    background: var(--color-primary);
+}

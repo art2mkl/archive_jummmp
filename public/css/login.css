@@ -1,16 +1,16 @@
 .login
 {
     display: flex;
-    height: 100vh;
+    align-items: center;
 }
 
 .login-left
 {
     padding: 0 6rem 0 12rem;
     width: 50%;
-    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .login-right
@@ -68,8 +68,7 @@ header h3
 /* Formulaire */
 .form-login
 {
-    z-index: 10;
-    padding: 4rem;
+    padding: 2em;
     width: 34vw;
     display: flex;
     flex-direction: column;
@@ -134,7 +133,7 @@ input
 /* Boutons */
 .btn
 {
-    margin: 2rem 0 1rem 0;
+    margin: 2rem 0 1rem .8rem;
     cursor: pointer;
     padding: 1.4rem 1.8rem;
     font-size: 1.2rem;
@@ -150,6 +149,12 @@ input
 .btn:hover
 {
     opacity: 90%;
+}
+
+/* Bouton Edit Profile */
+.fa-save
+{
+    font-size: 1.6rem;
 }
 
 /* Checkbox */

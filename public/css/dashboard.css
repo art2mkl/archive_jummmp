@@ -1,6 +1,5 @@
 .dashboard
 {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,11 +8,20 @@
 /* Dashboard */
 .dashboard-container
 {
-    margin-bottom: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 70%;
 }
 
 /* Dashboard Head */
+.db-title
+{
+    padding: 2rem 0;
+    width: 100%;
+    display: flex;
+}
+
 .db-title h1
 {
     line-height: 0;
@@ -25,7 +33,7 @@
 /* Cards Display */
 .db-display
 {   
-    margin-top: 4rem;
+    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -34,7 +42,8 @@
 /* Cards */
 .db-card
 {
-    width: 28%;
+    margin: 1rem;
+    width: 28rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -42,6 +51,13 @@
     overflow: hidden;
     box-shadow: -2px 4px 6px rgba(0, 0, 0, .2);
     background: var(--color-light);
+    transition: all .2s ease-in-out;
+}
+
+.db-card:hover
+{
+    transform: scale(1.04);
+    box-shadow: -2px 6px 6px rgba(0, 0, 0, .3);
 }
 
 .db-card-bottom
@@ -176,44 +192,43 @@
 
     .dashboard-container
     {
+        padding: 0 2rem;
         margin-bottom: 0;
         width: 100%;
     }
 
-    .db-display
-    {   
-        flex-direction: column;
-        align-items: center;
+    .db-title
+    {
+        padding: 0 2rem;
     }
 
     .db-card
     {
         margin-bottom: 1rem;
-        width: 60%;
     }
 }
 
 /* 600PX */
 @media screen and (max-width: 600px)
 {
-    
+    .db-title h1
+    {
+        font-size: 2.4rem;
+    }
 }
 
 /* 500PX */
 @media screen and (max-width: 500px)
 {
-    .db-card
-    {
-        width: 70%;
-    }
+    
 }
 
 /* 400PX */
 @media screen and (max-width: 400px)
 {
-    .db-card
+    .db-title h1
     {
-        width: 80%;
+        font-size: 2rem;
     }
 }
 

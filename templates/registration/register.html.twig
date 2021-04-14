@@ -13,45 +13,45 @@
 		<form action="" class="form-register">
 
 			<div class="fr-title">
-                <img src="assets/mouse.png">
+                <img src="/assets/mouse.png">
                 <h4>Inscris toi !<span class="title-sm"> Et complète ton profil.</span> </h4>
             </div>
 
 			{{ form_start(registrationForm) }}
 			<div class="fr-container">
 				<section class="fr-left">
-						{{ form_label(registrationForm.firstName, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.firstName, 'Prénom :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.firstName, {'attr': {'class': 'form-control'}}) }}
 					
-						{{ form_label(registrationForm.lastName, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.lastName, 'Nom :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.lastName, {'attr': {'class': 'form-control'}}) }}
 					
-						{{ form_label(registrationForm.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.email, 'Email :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.email, {'attr': {'class': 'form-control'}}) }}
 					
-						{{ form_label(registrationForm.plainPassword, 'Mot de passe', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.plainPassword, 'Mot de passe :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
 					
-						{{ form_label(registrationForm.avatar, 'Avatar', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.avatar, 'Avatar (jpeg, jpg, png) :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.avatar, {'attr': {'class': 'form-control'}}) }}
 					
-						{{ form_label(registrationForm.website, 'Site Web', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.website, 'Site Web :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.website, {'attr': {'class': 'form-control'}}) }}
 				</section>
 
 				<section class="fr-right">
-						{{ form_label(registrationForm.streetAdress, 'Rue', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.streetAdress, 'Adresse :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.streetAdress, {'attr': {'class': 'form-control'}}) }}
 
 					
-						{{ form_label(registrationForm.postCode, 'Code Postal', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.postCode, 'Code Postal :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.postCode, {'attr': {'class': 'form-control'}}) }}
 					
-						{{ form_label(registrationForm.city, 'Ville', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.city, 'Ville :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.city, {'attr': {'class': 'form-control'}}) }}
 
 					
-						{{ form_label(registrationForm.phone, 'Téléphone', {'label_attr': {'class': 'form-label'}}) }}
+						{{ form_label(registrationForm.phone, 'Téléphone :', {'label_attr': {'class': 'form-label'}}) }}
 						{{ form_widget(registrationForm.phone, {'attr': {'class': 'form-control'}}) }}
 
 						<div class="fr-terms">

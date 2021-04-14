@@ -1,12 +1,11 @@
 .nav-bar
 {
-    position: fixed;
+    /* position: fixed; */
     padding: 2rem 12rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* border-bottom: 1px solid #ff0055; */
 
 }
 
@@ -79,8 +78,10 @@
 
 .utilities
 {
-    margin-bottom: .6rem;
+    width: 16rem;
+    padding: .4rem;
     transition: all .1s ease-in-out;
+    background: var(--color-light);
 }
 
 .utilities:hover
@@ -93,13 +94,13 @@
     font-weight: 300;
     font-size:1.2rem;
     letter-spacing: var(--font-spacing-sm);
-    color: var(--color-light);
+    color: var(--color-primary);
 }
 
 .social-utilities
 {
     font-size: 1.6rem;
-    color: var(--color-light);
+    color: var(--color-primary);
 }
 
 /* Responsive */
