@@ -1,4 +1,3 @@
-/* Page */
 .show
 {
     height: 200vh;
@@ -79,7 +78,7 @@
 .skill-container
 {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-wrap: wrap;
 }
@@ -151,6 +150,7 @@
 .item-user-firstname
 {
     text-transform: capitalize;
+    font-family: var(--font-template-1);
     font-weight: 400;
     font-size: 3rem;
     line-height: 2rem;
@@ -160,6 +160,7 @@
 .item-user-lastname
 {
     text-transform: capitalize;
+    font-family: var(--font-template-1);
     font-weight: 700;
     font-size: 3rem;
     letter-spacing: var(--font-spacing-sm);
@@ -168,6 +169,7 @@
 .item-title
 {
     margin-bottom: 2rem;
+    font-family: var(--font-template-1);
     font-weight: 700;
     font-size: 2rem;
     letter-spacing: var(--font-spacing-sm);
@@ -203,6 +205,7 @@
 .item-job
 {
     text-transform: capitalize;
+    font-family: var(--font-template-1);
     font-weight: 700;
     font-size: 2rem;
     letter-spacing: var(--font-spacing-sm);
@@ -245,9 +248,14 @@
     background: var(--color-primary);
 }
 
-.btn-dasboard
+.btn-dashboard
 {
-    margin: 0;
+    padding: 1.2rem 1.6rem;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: .4rem;
+    color: var(--color-light);
+    background: var(--color-primary);
 }
 
 /* Template 2 */
@@ -265,22 +273,30 @@
 
 .item-user-firstname-2
 {
+    font-family: var(--font-title);
     color: var(--color-light);
 }
 
 .item-user-lastname-2
 {
+    font-family: var(--font-title);
     color: var(--color-light);  
 }
 
 .item-job-2
 {
+    font-family: var(--font-title);
     color: var(--color-light);  
 }
 
 .item-text-2
 {
     color: var(--color-light);  
+}
+
+.item-title-2
+{
+    font-family: var(--font-title);
 }
 
 .user-about-2 
@@ -336,6 +352,18 @@
     border-radius: 1rem;
 }
 
+.item-user-firstname-3
+{
+    font-family: var(--font-template-3);
+    color: var(--color-light);
+}
+
+.item-user-lastname-3
+{
+    font-family: var(--font-template-3);
+    color: var(--color-light);  
+}
+
 .user-adress-3
 {
     padding-right: 4rem;
@@ -347,9 +375,21 @@
     background: transparent;
 }
 
+.item-title-3
+{
+    font-family: var(--font-template-3);
+    color: #FF5722;
+}
+
+.item-job-3
+{
+    font-family: var(--font-template-3);
+    color: var(--color-light);  
+}
+
 /* Responsive */
-/* 800PX */
-@media screen and (max-width: 800px)
+/* 840PX */
+@media screen and (max-width: 840px)
 {
     .resume-display
     {
@@ -357,8 +397,92 @@
     }
 }
 
-/* 600PX */
-@media screen and (max-width: 600px)
+/* 700PX */
+@media screen and (max-width: 700px)
 {
-    
+    .user-profile
+    {
+        width: 50%;
+    }
+
+    .user-adress
+    {
+        width: 50%;
+    }
+
+    .user-training
+    {
+        width: 50%;
+    }
+
+    .user-hobbies
+    {
+        width: 50%;
+    }
+
+    .resume-title
+    {
+        display: none;
+    }
+
+    .user-hobbies-2
+    {
+        border: none;
+    }
+
+    .btn-dashboard
+    {
+        margin: .2rem;
+    }
+
+    .resume-utilities
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* 400PX */
+@media screen and (max-width: 400px)
+{
+    .resume-display
+    {
+        padding: 1rem;
+    }
+
+    .resume-bottom
+    {
+        flex-direction: column;
+    }
+
+    .item-avatar
+    {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .item-job
+    {
+        font-size: 1.6rem;
+    }
+
+    .item-user-firstname
+    {
+        font-size: 2rem;
+    }
+
+    .item-user-lastname
+    {
+        font-size: 2rem;
+    }
+
+    .user-training
+    {
+        width: 100%;
+    }
+
+    .user-hobbies
+    {
+        width: 100%;
+    }
 }

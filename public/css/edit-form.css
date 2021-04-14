@@ -1,0 +1,78 @@
+.edit-form
+{
+    padding: 1rem 2rem;
+    margin: auto;
+    width: 70rem;
+    background: gray;
+}
+
+.edit-form-head
+{
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit-form-head h1
+{
+    color: var(--color-secondary);
+}
+
+.edit-form-row
+{
+    padding: .4rem 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(245, 245, 245, .2);
+    border-radius: .4rem;
+    color: var(--color-light);
+}
+
+.edit-form-row ul
+{
+    display: flex;
+    align-items: center;
+}
+
+.efi-icon
+{
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.efi-name
+{
+    font-size: 1.4rem;
+}
+
+.edit-form-add
+{
+    background: peru;
+}
+
+/* Boutons */
+.link-edit-form
+{
+    margin-right: .4rem;
+    cursor: pointer;
+    padding: .82rem 1.24rem;
+    border: none;
+    border-radius: .4rem;
+    color: var(--color-light);
+    background: var(--color-primary);
+}
+
+.btn-edit-form
+{
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: .4rem;
+    color: var(--color-light);
+    background: var(--color-primary);
+}
+

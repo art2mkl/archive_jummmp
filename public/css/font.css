@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;400;700&display=swap");
 
 :root
 {
     --font-title: 'Ubuntu', sans-serif;
     --font-text: 'Poppins', sans-serif;
+    --font-template-1: 'Merriweather', serif;
+    --font-template-3: 'IBM Plex Mono', monospace;
     --font-spacing-sm: .04rem;
     --font-spacing-md: .08rem;
     --font-spacing-lg: .12rem;
