@@ -44,11 +44,15 @@
 				{{ form_label(form.phone, 'Télépone :', {'label_attr': {'class': 'form-label'}}) }}
 				{{ form_widget(form.phone, {'attr': {'class': 'form-control','placeholder':"Télépone"}}) }}
 
-				
-
 				{# Bouton #}
 				<div class="fr-button">
-					<a class="btn" href="{{ path('cv_index')}}">
+					<a class="btn" href="
+					{% if app.user is defined and app.session.get('id') == 0  %}
+					{{ path('cv_index')}}
+					{% else %}
+					{{ path('cv_show', {'id': app.session.get('id')}) }}
+					{% endif %}
+					">
 						<i class="fas fa-undo-alt"></i>
 					</a>
 					<button class="btn"><i class="far fa-save"></i></button>

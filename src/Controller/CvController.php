@@ -20,12 +20,15 @@ class CvController extends AbstractController
     /**
      * @Route("/", name="cv_index", methods={"GET"})
      */
-    public function index(CvRepository $cvRepository): Response
+    public function index(Request $request, CvRepository $cvRepository): Response
     {
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_login');
         }
         
+        $session = $request->getSession();
+        $session->set('id',0);
+
         return $this->render('cv/index.html.twig', [
             'cvs' => $cvRepository->findAll(),
         ]);
