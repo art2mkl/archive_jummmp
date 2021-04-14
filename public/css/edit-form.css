@@ -16,6 +16,7 @@
 
 .edit-form-head h1
 {
+    letter-spacing: var(--font-spacing-sm);
     color: var(--color-secondary);
 }
 
@@ -45,12 +46,50 @@
 
 .efi-name
 {
+    letter-spacing: var(--font-spacing-sm);
     font-size: 1.4rem;
 }
 
 .edit-form-add
 {
     background: peru;
+}
+
+.efa-title
+{
+    letter-spacing: var(--font-spacing-sm);
+    color: var(--color-secondary);
+}
+
+.edit-add-utilities
+{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    background: green;
+}
+
+.edit-add-utilities div
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label
+{
+    letter-spacing: var(--font-spacing-sm);
+    color: var(--color-light);
+}
+
+.edit-add-button
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-input
+{
+    margin-right: 1rem;
 }
 
 /* Boutons */

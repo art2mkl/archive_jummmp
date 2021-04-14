@@ -1,19 +1,24 @@
 {{ form_start(form) }}
 <div class="edit-form-add">
 
-	<p>Ajoute une compétence</p>
+	<p class="efa-title">Ajoute une compétence</p>
 
-	<div class="mb-3">
-		{{ form_label(form.icon, 'Choisis ton icon :', {'label_attr': {'class': 'form-label'}}) }}
-		<div>{{ form_widget(form.icon, {'attr': {'class': 'form-control skills','placeholder':"Choisis ton icon"}}) }}</div>
+	<div class="edit-add-utilities">
+		<div>
+			{{ form_label(form.icon, 'Icône :', {'label_attr': {'class': 'form-label'}}) }}
+			{{ form_widget(form.icon, {'attr': {'class': 'add-input icon-input','placeholder':"Choisis ton icône"}}) }}
+		</div>
+		<div>
+			{{ form_label(form.skillName, 'Intitulé :', {'label_attr': {'class': 'form-label'}}) }}
+			{{ form_widget(form.skillName, {'attr': {'class': 'add-input','placeholder':""}}) }}
+		</div>
 	</div>
-	<div class="mb-3">
-		{{ form_label(form.skillName, 'Nom de la compétence :', {'label_attr': {'class': 'form-label'}}) }}
-		<div>{{ form_widget(form.skillName, {'attr': {'class': 'form-control','placeholder':"Nom de la compétence"}}) }}</div>
+
+	<div class="edit-add-button">
+		<button title="Sauvegarder le Cv" class="btn-edit-form"><i class="far fa-save"></i></button>
 	</div>
-	<button title="Sauvegarder le Cv" class="btn">
-		<i class="far fa-save"></i>
-	</button>
+
+
 </div>
 
 {{ form_end(form) }}
