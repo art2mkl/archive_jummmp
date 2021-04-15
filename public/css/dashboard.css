@@ -64,7 +64,7 @@
 .db-card-bottom
 {
     padding: 2rem;
-    background: var(--color-bg);
+    background: var(--color-primary);
 }
 
 /* Titre */
@@ -79,6 +79,7 @@
     letter-spacing: var(--font-spacing-sm);
     border-bottom: 1px solid rgba(50, 130, 184, .1);
     color: var(--color-primary);
+    background: var(--color-tertiary);
 }
 
 /* Date */
