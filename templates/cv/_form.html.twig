@@ -1,29 +1,28 @@
 {{ form_start(form) }}
 
-<div class="mb-3">
-	{{ form_label(form.photoFile, 'Colle l\'url de ta photo :', {'label_attr': {'class': 'form-label'}}) }}
-	<div>{{ form_widget(form.photoFile, {'attr': {'class': 'form-control','placeholder':"url de ta photo ici"}}) }}
+<div class="edit-form-add">
+
+	<div class="eau-content">
+		{{ form_label(form.photoFile, 'Upload ta photo :', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(form.photoFile, {'attr': {'class': 'add-input','placeholder':""}}) }}
 	</div>
+	<div class="eau-content">
+		{{ form_label(form.title, 'Titre du CV :', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(form.title, {'attr': {'class': 'add-input','placeholder':""}}) }}
+	</div>
+	<div class="eau-content">
+		{{ form_label(form.jobCv, 'Intitulé du poste :', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(form.jobCv, {'attr': {'class': 'add-input','placeholder':""}}) }}
+	</div>
+	<div class="eau-content">
+		{{ form_label(form.about, 'À propos de toi :', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_widget(form.about, {'attr': {'class': 'add-input text-area-input','placeholder':""}}) }}
+		<br>
+	</div>
+	<div class="edit-add-button">
+		<button title="Sauvegarder le Cv" class="btn-edit-form"><i class="far fa-save"></i></button>
+	</div>
+
 </div>
 
-<div class="mb-3">
-	{{ form_label(form.title, 'Titre du Cv :', {'label_attr': {'class': 'form-label'}}) }}
-	<div>{{ form_widget(form.title, {'attr': {'class': 'form-control','placeholder':"nom du poste"}}) }}</div>
-</div>
-
-<div class="mb-3">
-	{{ form_label(form.jobCv, 'Intitulé du poste :', {'label_attr': {'class': 'form-label'}}) }}
-	<div>{{ form_widget(form.jobCv, {'attr': {'class': 'form-control','placeholder':"Intitulé du poste"}}) }}</div>
-</div>
-
-<div class="mb-3">
-	{{ form_label(form.about, 'A propos de toi :', {'label_attr': {'class': 'form-label'}}) }}
-	<div>{{ form_widget(form.about, {'attr': {'class': 'form-control','placeholder':"A propos de toi"}}) }}</div>
-</div>
-
-	<button title="Sauvegarder le Cv" class="btn">
-		<i class="far fa-save"></i>
-	</button>
-
-
-	{{ form_end(form) }}
+{{ form_end(form) }}

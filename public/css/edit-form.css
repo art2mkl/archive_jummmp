@@ -1,6 +1,7 @@
 .edit-form
 {
-    padding: 3rem 2rem;
+    position: relative;
+    padding: 4rem;
     margin: auto;
     width: 70rem;
     border-radius: .4rem;
@@ -9,7 +10,7 @@
 
 .edit-form-head
 {
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgba(36, 36, 36, .2);
+    border: 1px solid rgba(36, 36, 36, .1);
     border-radius: .4rem;
     color: var(--color-dark);
 }
@@ -48,7 +49,7 @@
 .efi-name
 {
     letter-spacing: var(--font-spacing-sm);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .edit-form-add
@@ -58,6 +59,7 @@
 
 .efa-title
 {
+    margin-bottom: 2rem;
     letter-spacing: var(--font-spacing-sm);
     color: var(--color-primary);
 }
@@ -66,13 +68,32 @@
 {
     margin-top: 1rem;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
 }
 
-.edit-add-utilities div
+.eau-container
+{
+    display: flex;
+}
+
+.eau-container-xp
 {
     display: flex;
     flex-direction: column;
+}
+
+.eau-content
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.eau-content img
+{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border: 1px solid rgba(34, 34, 34, .2);
 }
 
 .form-label
@@ -89,8 +110,21 @@
 
 .add-input
 {
+    height: 4rem;
     border: 1px solid rgba(36, 36, 36, .2);
     color: var(--color-dark);
+}
+
+.text-area-input
+{
+    resize: none;
+    padding: .6rem;
+    height: 12rem;
+    font-family: var(--font-text);
+    font-size: 1.2rem;
+    letter-spacing: var(--font-spacing-sm);
+    color: var(--color-dark);
+    background: rgba(29, 36, 36, .01);
 }
 
 .icon-input
@@ -126,6 +160,11 @@
     background: var(--color-primary);
 }
 
+.btn-edit-delete
+{
+    background:#F44336;
+}
+
 /* Responsive */
 /* 800PX */
 @media screen and (max-width: 800px)
@@ -136,13 +175,18 @@
     }
 }
 
-/* 500PX */
-@media screen and (max-width: 500px)
+/* 600PX */
+@media screen and (max-width: 600px)
 {
     .edit-add-utilities
     {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .eau-container
+    {
+        flex-direction: column;
     }
 }
 

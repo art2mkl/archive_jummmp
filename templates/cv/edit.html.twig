@@ -3,8 +3,16 @@
 {% block title %}Edit Cv{% endblock %}
 
 {% block body %}
-    <h1>Edition du Cv <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}"><i class="fas fa-undo-alt"></i></a> </h1>
+
+    <main class="edit-form">
+
+        <div class="edit-form-head">
+            <h1><i class="fas fa-pencil-alt"></i>&nbsp;En-tête</h1>
+            <a class="btn" href="{{ path('cv_show', {'id': app.session.get('id')}) }}"><i class="fas fa-undo-alt"></i></a>
+        </div>
 
     {{ include('cv/_form.html.twig', {'button_label': 'Update'}) }}
+
+    </main>
 
 {% endblock %}
