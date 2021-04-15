@@ -177,6 +177,18 @@ width:20%
     background: rgba(218, 165, 32, 0.282);
     transform: scale(1.2);
 }
+.annex {
+  color: var(--color-light);
+  font-size:1.2rem;
+  margin:1rem 0;
+}
+.space{
+  margin-bottom: 2rem;
+}
+
+.secondary{
+  color: var(--color-secondary)
+}
 
 
 /* Responsive */
