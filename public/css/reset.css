@@ -15,6 +15,10 @@ body
     font-family: var(--font-text);
     font-size: 1.6rem;
     background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
 }
 
 img{
