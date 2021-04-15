@@ -69,6 +69,7 @@ header h3
 /* Formulaire */
 .form-login
 {
+    z-index: 4;
     padding: 2em;
     width: 34vw;
     display: flex;

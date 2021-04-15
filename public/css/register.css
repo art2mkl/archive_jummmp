@@ -11,6 +11,7 @@
 /* Formulaire */
 .form-register
 {
+    margin-top: 4rem;
     padding: 4rem;
     width: 74%;
     border-radius: .4rem;
