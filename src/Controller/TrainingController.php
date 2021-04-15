@@ -39,7 +39,7 @@ class TrainingController extends AbstractController
         }
 
         return $this->render('training/index.html.twig', [
-            'trainings' => $trainingRepository->findAll(),
+            'trainings' => $trainingRepository->findBy(['userId'=>$this->getUser()->getId()]),
             'training' => $training,
             'form' => $form->createView(),
         ]);

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Xp index
+{% block title %}jummmp - Liste des expériences
 {% endblock %}
 
 {% block body %}
@@ -13,7 +13,7 @@
 	</div>
 
 	{% if xps|length == 0 %}
-		<p>Pas d'enregistrements actuellement</p>
+		<p>Pas d'expérience pour l'instant</p>
 	{% else %}
 
 	{% for xp in xps %}
