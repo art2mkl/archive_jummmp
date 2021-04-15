@@ -38,6 +38,11 @@
 										<p>https://dry-lowlands-89814.herokuapp.com{{cv.shortUrl}}</p>
 										<a href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }}"><i class="far fa-eye"></i></a>
 									</div>
+								{% else %}
+								<div class="db-card-clipboard">
+										<p> </p>
+										<span href="#!"><i class="far fa-eye"></i></span>
+									</div>
 								{% endif %}
 
 								<div class="db-card-utilities">

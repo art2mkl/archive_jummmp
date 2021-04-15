@@ -19,11 +19,11 @@ class CvType extends AbstractType
             ->add('about')
             ->add('photoFile', VichImageType::class, [
                 'required' => false,
-                'allow_delete' => true,
+                'allow_delete' => false,
                 'delete_label' => 'Remove the image',
-                'download_uri' => true,
-                'image_uri' => true,
-                'asset_helper' => true,
+                'download_uri' => false,
+                'image_uri' => false,
+                'asset_helper' => false,
             ])
             // ->add('createdAt')
             // ->add('updatedAt')
