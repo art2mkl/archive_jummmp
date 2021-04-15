@@ -40,7 +40,7 @@ class HobbiesController extends AbstractController
 
 
         return $this->render('hobbies/index.html.twig', [
-            'hobbies' => $hobbiesRepository->findAll(),
+            'hobbies' => $hobbiesRepository->findBy(['userId'=> $this->getUser()->getId()]),
             'hobby' => $hobby,
             'form' => $form->createView()
         ]);

@@ -10,54 +10,56 @@
 		</a>
 	</h1>
 
+	{% if xps|length == 0 %}
+		<p>Pas d'enregistrements actuellement</p>
+	{% else %}
+
 	{% for xp in xps %}
-		<div class="box">
-			<div class="boxLeft">
-				<p>
-					De
-					<em>
-						{{ xp.jobDateFrom ? xp.jobDateFrom|date('M-y') : '' }}
-						à
-						{{ xp.jobDateTo ? xp.jobDateTo|date('M-y') : '' }}
-					</em>
-					-
-					<strong>{{ xp.companyName }}</strong>
-					-
-					{{ xp.jobName }}
-					-<em>{{ xp.jobLocation }}</em>
-				</p>
-				<p>
-					<em>
-						{{ xp.jobDescription }}</p>
-				</p>
-			</em>
-		</div>
-		<div class="box">
-			<a class="btn" href="{{ path('xp_edit', {'id': xp.id}) }}">
-				<i class="fas fa-edit"></i>
-			</a>
-			<form method="post" action="{{ path('xp_delete', {'id': xp.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-				<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ xp.id) }}">
-				<button class="btn">
-					<i class="far fa-trash-alt"></i>
-				</button>
-			</form>
-		</div>
-	</div>
-	<hr>
+		{% if app.user and (app.user is same as(xp.userId) )%}
+			<div class="box">
+				<div class="boxLeft">
+					<p>
+						De
+						<em>
+							{{ xp.jobDateFrom ? xp.jobDateFrom|date('M-y') : '' }}
+							à
+							{{ xp.jobDateTo ? xp.jobDateTo|date('M-y') : '' }}
+						</em>
+						-
+						<strong>{{ xp.companyName }}</strong>
+						-
+						{{ xp.jobName }}
+						-<em>{{ xp.jobLocation }}</em>
+					</p>
+					<p>
+						<em>
+							{{ xp.jobDescription }}
+						</em>
+					</p>
+				</div>
+				<div class="box">
+					<a class="btn" href="{{ path('xp_edit', {'id': xp.id}) }}">
+						<i class="fas fa-edit"></i>
+					</a>
+					<form method="post" action="{{ path('xp_delete', {'id': xp.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+						<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ xp.id) }}">
+						<button class="btn">
+							<i class="far fa-trash-alt"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+			<hr>
+		{% endif %}
+	{% endfor %}
+	{% endif %}
 
-{% else %}
+	<h1>
+		<i class="fas fa-plus-circle"></i>
+		Ajoute une nouvelle expérience</h1>
 
-	<p>no records found</p>
-
-{% endfor %}
-
-
-<h1>
-	<i class="fas fa-plus-circle"></i>
-	Ajoute une nouvelle expérience</h1>
-
-{{ include('xp/_form.html.twig') }}
-<br>
-<br>
-<br>{% endblock %}
+	{{ include('xp/_form.html.twig') }}
+	<br>
+	<br>
+	<br>
+{% endblock %}
