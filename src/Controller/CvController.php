@@ -25,9 +25,9 @@ class CvController extends AbstractController
         if (!$this->getUser()) {
             return $this->redirectToRoute('app_login');
         }
-        
+
         $session = $request->getSession();
-        $session->set('id',0);
+        $session->set('id', 0);
 
         return $this->render('cv/index.html.twig', [
             'cvs' => $cvRepository->findAll(),
@@ -82,10 +82,10 @@ class CvController extends AbstractController
         if (!$this->getUser() || $this->getUser()->getId() != $cv->getUserId()->getId()) {
             return $this->redirectToRoute('app_login');
         }
-       $session = $request->getSession();
-       $session->set('id',$id);
+        $session = $request->getSession();
+        $session->set('id', $id);
 
-        $shortUrl = '/user/'.$this->getUser()->getId().'/'.$id;
+        $shortUrl = '/user/' . $this->getUser()->getId() . '/' . $id;
         $cv->setShortUrl($shortUrl);
 
         $entityManager = $this->getDoctrine()->getManager();
@@ -93,7 +93,7 @@ class CvController extends AbstractController
         $entityManager->flush();
 
         return $this->render('cv/show.html.twig', [
-            'cv' => $cv,       
+            'cv' => $cv,
         ]);
     }
 
@@ -112,7 +112,7 @@ class CvController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('cv_show', ['id'=> $cv->getId()]);
+            return $this->redirectToRoute('cv_show', ['id' => $cv->getId()]);
         }
 
         return $this->render('cv/edit.html.twig', [
@@ -126,7 +126,7 @@ class CvController extends AbstractController
      */
     public function delete(Request $request, Cv $cv): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$cv->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $cv->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($cv);
             $entityManager->flush();
@@ -148,6 +148,6 @@ class CvController extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->flush();
 
-        return $this->redirectToRoute('cv_show', ['id'=> $id]);
+        return $this->redirectToRoute('cv_show', ['id' => $id]);
     }
 }
