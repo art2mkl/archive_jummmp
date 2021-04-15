@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--color-secondary);
+    background: var(--color-light);
 }
 
 .resume-top
@@ -247,6 +247,12 @@
     font-size: 1.4rem;
     color: var(--color-light);
     background: var(--color-primary);
+    transition: all .1s ease-in-out;
+}
+
+.edit:hover
+{
+    background: var(--color-tertiary);
 }
 
 .btn-dashboard
@@ -257,6 +263,12 @@
     border-radius: .4rem;
     color: var(--color-light);
     background: var(--color-primary);
+    transition: all .1s ease-in-out;
+}
+
+.btn-dashboard:hover
+{
+    background: var(--color-tertiary);
 }
 
 /* Template 2 */

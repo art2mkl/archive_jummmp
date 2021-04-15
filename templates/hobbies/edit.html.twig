@@ -1,15 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}jummmp - Edition des hobbies{% endblock %}
+{% block title %}jummmp - Èdition des hobbies{% endblock %}
 
 {% block body %}
-   <h1>Edition des hobbies
-		<a class="btn" href="{{ path('hobbies_index') }}">
-			<i class="fas fa-undo-alt"></i>
-		</a>
-	</h1>
+
+<main class="edit-form">
+
+   <div class="edit-form-head">
+		<h1><i class="fas fa-running"></i>&nbsp;Hobbies</h1>
+		<a class="btn-dashboard" href="{{ path('hobbies_index') }}"><i class="fas fa-undo-alt"></i></a>
+	</div>
 
     {{ include('hobbies/_form.html.twig', {'button_label': 'Update'}) }}
 
-   
+</main>   
+
 {% endblock %}
