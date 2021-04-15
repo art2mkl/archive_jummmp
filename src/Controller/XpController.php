@@ -50,20 +50,6 @@ class XpController extends AbstractController
 
     
     /**
-     * @Route("/{id<\d+>}", name="xp_show", methods={"GET"})
-     */
-    public function show(Xp $xp): Response
-    {
-        if (!$this->getUser() || $this->getUser()->getId() != $xp->getUserId()->getId()) {
-            return $this->redirectToRoute('app_login');
-        }
-        
-        return $this->render('xp/show.html.twig', [
-            'xp' => $xp,
-        ]);
-    }
-
-    /**
      * @Route("/{id<\d+>}/edit", name="xp_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Xp $xp): Response
