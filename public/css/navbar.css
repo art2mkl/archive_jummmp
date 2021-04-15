@@ -74,6 +74,7 @@
     position: absolute;
     display: block;
     text-align: right;
+    box-shadow: -2px 4px 6px rgba(0, 0, 0, .2);
 }
 
 .utilities
@@ -101,6 +102,11 @@
 {
     font-size: 1.6rem;
     color: var(--color-primary);
+}
+
+.hide
+{
+    display: none;
 }
 
 /* Responsive */
