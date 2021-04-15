@@ -1,20 +1,22 @@
 {{ form_start(form) }}
 <div class="edit-form-add">
 
-	<p class="efa-title"><i class="fas fa-plus"></i>&nbsp;Éditer une compétence</p>
+	<p class="efa-title"><i class="fas fa-plus"></i>&nbsp;Ajouter une compétence</p>
 
 	<div class="edit-add-utilities">
 		<div class="eau-container">
 			<div class="eau-content">
-				{# {{ form_label(form.icon, 'Icône :', {'label_attr': {'class': 'form-label'}}) }} #}
-				{{ form_widget(form.icon, {'attr': {'class': 'skills add-input icon-input','placeholder':"Icône"}}) }}
+				{{ form_label(form.icon, 'Icône :', {'label_attr': {'class': 'form-label'}}) }}
+				{{ form_widget(form.icon, {'attr': {'class': 'skills add-input icon-input','placeholder':"Ajoute une icône"}}) }}
 			</div>
 			<div class="eau-content">
-				{# {{ form_label(form.skillName, 'Intitulé :', {'label_attr': {'class': 'form-label'}}) }} #}
-				{{ form_widget(form.skillName, {'attr': {'class': 'add-input skill-input','placeholder':"Intitulé"}}) }}
+				{{ form_label(form.skillName, 'Intitulé :', {'label_attr': {'class': 'form-label'}}) }}
+				{{ form_widget(form.skillName, {'attr': {'class': 'add-input skill-input','placeholder':""}}) }}
 			</div>
 		</div>
+
 		<button title="Sauvegarder le Cv" class="btn-edit-form"><i class="far fa-save"></i></button>
+		
 	</div>
 
 </div>

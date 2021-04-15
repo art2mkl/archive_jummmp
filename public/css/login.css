@@ -150,7 +150,7 @@ input
 
 .btn:hover
 {
-    opacity: 90%;
+    background: var(--color-tertiary);
 }
 
 /* Bouton Edit Profile */

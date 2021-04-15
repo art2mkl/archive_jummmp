@@ -3,13 +3,16 @@
 {% block title %}Edition des formations{% endblock %}
 
 {% block body %}
-    <h1>Edition Formations
-		<a class="btn" href="{{ path('training_index') }}">
-			<i class="fas fa-undo-alt"></i>
-		</a>
-	</h1>
 
-    {{ include('training/_form.html.twig', {'button_label': 'Update'}) }}
+	<main class="edit-form">
 
+		<div class="edit-form-head">
+				<h1><i class="fas fa-user-graduate"></i>&nbsp;Formations</h1>
+				<a class="btn-dashboard" href="{{ path('training_index') }}"><i class="fas fa-undo-alt"></i></a>
+			</div>
+
+		{{ include('training/_form.html.twig', {'button_label': 'Update'}) }}
+
+	</main>
 
 {% endblock %}

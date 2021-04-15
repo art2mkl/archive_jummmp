@@ -1,16 +1,24 @@
 {{ form_start(form) }}
-<div class="box">
-	<div class="mb-3">
-		{{ form_label(form.icon, 'Inscris la classe de ton icon :', {'label_attr': {'class': 'form-label'}}) }}
-		<div>{{ form_widget(form.icon, {'attr': {'class': 'form-control hobbies','placeholder':"Inscris la classe de ton icon"}}) }}</div>
+
+<div class="edit-form-add">
+
+	<p class="efa-title"><i class="fas fa-plus"></i>&nbsp;Ajouter un hobby</p>
+
+	<div>
+		<div class="eau-content">
+			{{ form_label(form.icon, 'Choisis un emoji :', {'label_attr': {'class': 'form-label'}}) }}
+			{{ form_widget(form.icon, {'attr': {'class': 'add-input hobbies','placeholder':"Ajoute un emoji"}}) }}
+		</div>
+		<div class="eau-content">
+			{{ form_label(form.hobbyName, 'Intitulé :', {'label_attr': {'class': 'form-label'}}) }}
+			{{ form_widget(form.hobbyName, {'attr': {'class': 'add-input','placeholder':""}}) }}
+		</div>
+
+		<div class="edit-add-button">
+			<button title="Sauvegarder le Cv" class="btn-edit-form"><i class="far fa-save"></i></button>
+		</div>
+
 	</div>
-	<div class="mb-3">
-		{{ form_label(form.hobbyName, 'Nom du hobby :', {'label_attr': {'class': 'form-label'}}) }}
-		<div>{{ form_widget(form.hobbyName, {'attr': {'class': 'form-control','placeholder':"Nom du hobby"}}) }}</div>
-	</div>
-	<button title="Sauvegarder le Cv" class="btn">
-		<i class="far fa-save"></i>
-	</button>
 
 </div>
 

@@ -2,40 +2,45 @@
 
 <div class="edit-form-add">
 
-	<p class="efa-title"><i class="fas fa-plus"></i>&nbsp;Éditer une expérience</p>
+	<p class="efa-title"><i class="fas fa-plus"></i>&nbsp;Ajouter une expérience</p>
 
 	<div class="edit-add-utilities">
 	
 		<div class="eau-container-xp">
 		
-			<div class="eau-content">
-				{{ form_label(form.jobDateFrom, 'De :', {'label_attr': {'class': 'form-label'}}) }}
-				<div>{{ form_widget(form.jobDateFrom, {'attr': {'class': 'add-input'}}) }}</div>
+			<div class="eau-content-xp">
+				<div class="eau-content">
+					{{ form_label(form.jobDateFrom, 'De: ', {'label_attr': {'class': 'form-label'}}) }}
+					{{ form_widget(form.jobDateFrom, {'attr': {'class': 'add-input date-input'}}) }}
+				</div>
+				<div class="eau-content">
+					{{ form_label(form.jobDateTo, 'à :', {'label_attr': {'class': 'form-label'}}) }}
+					{{ form_widget(form.jobDateTo, {'attr': {'class': 'add-input'}}) }}
+				</div>
 			</div>
-			<div class="eau-content">
-				{{ form_label(form.jobDateTo, 'A :', {'label_attr': {'class': 'form-label'}}) }}
-				<div>{{ form_widget(form.jobDateTo, {'attr': {'class': 'add-input'}}) }}</div>
-			</div>
+
 			<div class="eau-content">
 				{{ form_label(form.jobName, 'Poste :', {'label_attr': {'class': 'form-label'}}) }}
-				<div>{{ form_widget(form.jobName, {'attr': {'class': 'add-input','placeholder':""}}) }}</div>
+				{{ form_widget(form.jobName, {'attr': {'class': 'add-input','placeholder':""}}) }}
 			</div>
 			<div class="eau-content">
 				{{ form_label(form.companyName, 'Entreprise :', {'label_attr': {'class': 'form-label'}}) }}
-				<div>{{ form_widget(form.companyName, {'attr': {'class': 'add-input','placeholder':""}}) }}</div>
+				{{ form_widget(form.companyName, {'attr': {'class': 'add-input','placeholder':""}}) }}
 			</div>
 			<div class="eau-content">
 				{{ form_label(form.jobLocation, 'Lieu :', {'label_attr': {'class': 'form-label'}}) }}
-				<div>{{ form_widget(form.jobLocation, {'attr': {'class': 'add-input','placeholder':""}}) }}</div>
+				{{ form_widget(form.jobLocation, {'attr': {'class': 'add-input','placeholder':""}}) }}
 			</div>
 			<div class="eau-content">
 				{{ form_label(form.jobDescription, 'Description du poste:', {'label_attr': {'class': 'form-label'}}) }}
-				<div>{{ form_widget(form.jobDescription, {'attr': {'class': 'add-input','placeholder':""}}) }}</div>
+				{{ form_widget(form.jobDescription, {'attr': {'class': 'add-input text-area-input','placeholder':""}}) }}</div>
 			</div>
 		
 		</div>
 	
-	<button class="btn-edit-form"><i class="far fa-save"></i></button>
+		<div class="edit-add-button">
+			<button class="btn-edit-form"><i class="far fa-save"></i></button>
+		</div>
 
 	</div>
 
