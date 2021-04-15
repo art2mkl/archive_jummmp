@@ -3,12 +3,16 @@
 {% block title %}Edit Xp{% endblock %}
 
 {% block body %}
-    <h1>Edition Expériences
-		<a class="btn" href="{{ path('xp_index')}}">
-			<i class="fas fa-undo-alt"></i>
-		</a>
-	</h1>
 
-    {{ include('xp/_form.html.twig', {'button_label': 'Update'}) }}
+	<main class="edit-form">
+	
+		<div class="edit-form-head">
+			<h1><i class="fas fa-user-tie"></i>&nbsp;Expériences</h1>
+			<a class="btn-dashboard" href="{{ path('xp_index')}}"><i class="fas fa-undo-alt"></i></a>
+		</div>
+
+    	{{ include('xp/_form.html.twig', {'button_label': 'Update'}) }}
+
+	</main>
 
 {% endblock %}

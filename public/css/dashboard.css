@@ -51,7 +51,7 @@
     overflow: hidden;
     box-shadow: -2px 4px 6px rgba(0, 0, 0, .2);
     background: var(--color-light);
-    transition: all .2s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .db-card:hover
@@ -63,7 +63,7 @@
 .db-card-bottom
 {
     padding: 2rem;
-    background: var(--color-primary);
+    background: var(--color-bg);
 }
 
 /* Titre */
@@ -136,12 +136,13 @@
     padding: .8rem;
     border: none;
     color: var(--color-light);
-    background: var(--color-primary);
+    background: transparent;
 }
 
 /* Empty card */
 .db-card-add
 {
+    min-height: 36rem;
     display: flex;
     justify-content: center;
     align-items: center;

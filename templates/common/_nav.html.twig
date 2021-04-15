@@ -14,7 +14,7 @@
 			<li><a href="#!"><img src="{{app.user.avatar}}" alt="avatar" class="user-avatar"></a></li>
 		</ul>
 		{# Menu déroulant #}
-		<ul class="list-utilities">
+		<ul class="list-utilities hide">
 			<li class="utilities"><a class="user-utilities" href="{{ path('user_edit', {'id': app.user.id}) }}">Mon profil</a></li>
 			<li class="utilities"><a class="user-utilities" href="#!">Passer Premium&nbsp;<i class="fas fa-star"></i></a></li>
 			<li class="utilities"><a class="user-utilities" href="{{path('app_logout')}}">Se déconnecter</a></li>

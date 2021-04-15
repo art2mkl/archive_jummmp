@@ -39,12 +39,11 @@ class SkillsController extends AbstractController
         }
 
         return $this->render('skills/index.html.twig', [
-            'skills' => $skillsRepository->findAll(),
+            'skills' => $skillsRepository->findBy(['userId'=>$this->getUser()->getId()]),
             'skill' => $skill,
             'form' => $form->createView(),
         ]);
     }
-
     
     /**
      * @Route("/{id<\d+>}/edit", name="skills_edit", methods={"GET","POST"})

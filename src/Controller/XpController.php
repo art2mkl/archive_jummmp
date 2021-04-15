@@ -37,9 +37,12 @@ class XpController extends AbstractController
 
             return $this->redirectToRoute('xp_index');
         }
+
+       
         
         return $this->render('xp/index.html.twig', [
-            'xps' => $xpRepository->findAll(),
+            // 'xps' => $xpRepository->findAll(),
+            'xps' => $xpRepository->findBy(['userId'=> $this->getUser()->getId()]),
             'xp' => $xp,
             'form' => $form->createView(),
         ]);

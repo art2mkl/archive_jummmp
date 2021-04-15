@@ -104,3 +104,11 @@ $('.hobbies').on('click', () => {
                 block = false;
             }   
 })
+
+// Menu nav-bar
+
+$('.user-avatar').on('click', function(e){
+
+    $('.list-utilities').toggleClass('hide');
+
+})
