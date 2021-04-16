@@ -4,7 +4,7 @@
 
 Ce projet intervient dans le cadre de la formation Développeur Web & Mobile **`WebForce3`** et constitue l'application web délivrée lors de la soutenance pour la certification CNCP Techniques d'Intégrations Web & Techniques de Développement Web.
 
-Il a été réalisé du 06 au 18 avril 2021 par Swann **Martin**, Michael **Krysztofiak** & Thomas **Barnabé**.
+Il a été réalisé du 02 au 18 avril 2021 par Swann **Martin**, Michael **Krysztofiak** & Thomas **Barnabé**.
 
 ## **`🚀 Objectif :`**
 
