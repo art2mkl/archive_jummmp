@@ -1,9 +1,4 @@
-.show
-{
-    /* height: 200vh; */
-}
-
-/* Display */
+/* CV - Display */
 .resume-display
 {
     padding: 2rem;
@@ -12,7 +7,7 @@
     background: var(--color-light);
 }
 
-/* Containers */
+/* CV - Display Containers*/
 .resume-info
 {
     margin-bottom: 1rem;
@@ -41,7 +36,7 @@
     border-top: 1px solid rgba(29, 36, 36, .2);
 }
 
-/* Items */
+/* CV - Display Items*/
 .items
 {
     position: relative;
@@ -68,7 +63,7 @@
     font-size: 1rem;
 }
 
-/* Skills */
+/* CV - Item Skills */
 .user-skills
 {
     flex-direction: column;
@@ -78,7 +73,6 @@
 .skill-container
 {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-wrap: wrap;
 }
@@ -107,12 +101,14 @@
     font-size: .8rem;
 }
 
+/* CV - Item XP */
 .user-xp
 {
     flex-direction: column;
     border-top: 1px solid rgba(29, 36, 36, .2);
 }
 
+/* CV - Item Training*/
 .user-training
 {
     flex-direction: column;
@@ -120,6 +116,7 @@
     border-top: 1px solid rgba(29, 36, 36, .2);
 }
 
+/* CV - Item Hobbies */
 .user-hobbies
 {
     flex-direction: column;
@@ -127,7 +124,7 @@
     border-top: 1px solid rgba(29, 36, 36, .2);
 }
 
-/* Textes */
+/* CV - Item Text */
 .resume-info p
 {
     text-transform: capitalize;
@@ -183,26 +180,6 @@
     letter-spacing: var(--font-spacing-sm);
 }
 
-.item-avatar
-{
-    margin-bottom: 1rem;
-    width: 13rem;
-    height: 13rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 100%;
-    background: gray;
-}
-
-.item-avatar img
-{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .item-job
 {
     text-transform: capitalize;
@@ -231,7 +208,28 @@
     opacity: 75%;
 }
 
-/* Boutons */
+/* CV - Item Avatar */
+.item-avatar
+{
+    margin-bottom: 1rem;
+    width: 13rem;
+    height: 13rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 100%;
+    background: gray;
+}
+
+.item-avatar img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CV - Item Buttons */
 .edit
 {
     margin: 1rem;
@@ -271,7 +269,7 @@
     background: var(--color-tertiary);
 }
 
-/* Template 2 */
+/* CV - Template 2*/
 .resume-top-2
 {
     border-radius: 1rem 0 0 0;
@@ -351,7 +349,7 @@
     border: none;
 }
 
-/* Template 3 */
+/* CV - Template 3*/
 .resume-top-3
 {
     background: url('/assets/cv-wallpaper3.jpeg');
@@ -406,7 +404,7 @@
 {
     .resume-display
     {
-        width: 100%;
+        width: 96%;
     }
 }
 

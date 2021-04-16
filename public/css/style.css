@@ -1,125 +1,11 @@
-  /* main {
-    padding: 2rem;
-  }
- 
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-  }
-  
-  .nav-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  nav img {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 100%;
-    box-shadow:0 0 1rem rgba(0,0,0,0.2);
-    cursor: pointer;
-    margin-right: 2rem;
-    object-fit: cover;
-  }
-  
-  h1 {
-    text-align: center;
-    font-family: var(--font-title);
-  }
-  
-  .cv {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .card {
-    margin: 2rem;
-    width: 15rem;
-    height: 250px;
-    background-color: var(--color-bg);
-    color: var(--color-dark);
-    border: solid 2px var(--color-light);
-    box-shadow: 2.5px 2.5px 5px var(--color-dark);
-    border-radius: 10px;
-    padding: 2rem;
-  }
-  
-  .cv-card-links {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 3rem;
-  }
-  
-  .card-add {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .card-add p {
-    color: var(--color-bg);
-    font-size: 60px;
-    font-weight: bolder;
-  }
-  
-  .registration-form {
-    padding: 2rem;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  footer {
-    width: 100%;
-    position: fixed;
-    bottom: 40px;
-    text-align: center;
-  }
-  
-  button,
-  .btn {
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: orangered;
-    text-decoration: none;
-    color: var(--color-bg);
-    font-weight: bold;
-  }
-  
-  button:hover,
-  .btn:hover {
-    background-color: var(--color-secondary);
-  }
-  
-  .btn-edit {
-    background-color: var(--color-tertiary);
-  }
+.active 
+{
+  background: var(--color-tertiary);
+}
 
-
-.box{
-  display:flex;
-  justify-content: space-around;
-}  
-  .boxLeft {
-width:60%;
-  }
-  .boxRight {
-width:20%    
-  }
-  */
-
-  .active 
-  {
-    background: var(--color-tertiary);
-  }
-
-  .pop 
-  {
+/* POP-UP */
+.pop 
+{
   z-index: 2;
   position: absolute;
   top:50%;
@@ -134,19 +20,6 @@ width:20%
   transform:translate(-50%,-50%);
   background: rgba(245, 245, 245, .75);
 }
-
-/* .pop img 
-{
-  border:1px solid transparent;
-  width:20%;
-  transition:all 0.4s ease-in-out;
-}
-
-.pop img:hover 
-{
-  background: rgba(218, 165, 32, 0.282);
-  transform: scale(1.2);
-} */
 
 .pop i 
 {
@@ -177,10 +50,12 @@ width:20%
     background: rgba(218, 165, 32, 0.282);
     transform: scale(1.2);
 }
+
+/* TERMS */
 .annex {
   color: var(--color-light);
-  font-size:1.2rem;
-  margin:1rem 0;
+  font-size: 1.2rem;
+  margin: 1rem 0;
 }
 .space{
   margin-bottom: 2rem;
@@ -190,13 +65,12 @@ width:20%
   color: var(--color-secondary)
 }
 
-
 /* Responsive */
 /* 800PX */
 @media screen and (max-width: 800px)
 {
   .pop 
   {
-    width: 100%;
+    width: 96%;
   }
 }

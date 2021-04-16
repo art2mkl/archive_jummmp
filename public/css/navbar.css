@@ -1,6 +1,6 @@
+/* NAVBAR */
 .nav-bar
 {
-    /* position: fixed; */
     padding: 2rem 12rem;
     width: 100%;
     display: flex;
@@ -14,21 +14,26 @@
     display: flex;
 }
 
-/* Logo */
+/* NAVBAR- Logo */
 .nav-bar-arrow
 {
+    position: relative;
+    top: .2rem;
     width: 3rem;
     height: 3rem;
 }
 
 .nav-bar-logo
 {
+    position: relative;
+    top: .6rem;
     font-family: var(--font-title);
     font-size: 1.8rem;
     letter-spacing: -0.02rem;
     color: var(--color-light);
 }
 
+/* NAVBAR- Menu */
 .nav-bar-list
 {
     position: relative;
@@ -38,7 +43,7 @@
     align-items: flex-end;
 }
 
-/* User */
+/* NAVBAR- Menu User */
 .list-user
 {
     width: 20rem;
@@ -46,6 +51,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
 }
 
 .user-name
@@ -56,18 +62,24 @@
     color: var(--color-light);
 }
 
+.user-name-brand
+{
+    font-weight: 400;
+    color: var(--color-tertiary);
+}
+
 .user-avatar
 {
     margin-left: .8rem;
     width: 4rem;
     height: 4rem;
     border-radius: 100rem;
-    border: 1px solid var(--color-light);
+    border: 2px solid var(--color-light);
     font-size: 1rem;
-    background: rgba(0, 0, 0, .2);
+    background: rgba(0, 0, 0, .1);
 }
 
-/* Menu déroulant */
+/* NAVBAR- Menu H/Show*/
 .list-utilities
 {
     z-index: 100;
@@ -188,13 +200,26 @@
         padding: 2rem 4rem;
     }
 
+    .nav-bar-arrow
+    {
+        position: relative;
+        top: .2rem;
+    }
+
     .nav-bar-logo
     {
-        font-size: 1.2rem;
+        position: relative;
+        top: .6rem;
+        font-size: 1.4rem;
     }
 
     .nav-bar-socials
     {
         display: none;
+    }
+
+    .user-name
+    {
+        font-size: 1.2rem;
     }
 }

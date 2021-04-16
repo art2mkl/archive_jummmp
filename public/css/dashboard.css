@@ -1,3 +1,4 @@
+/* DASHBOARD - Page */
 .dashboard
 {
     position: relative;
@@ -6,16 +7,15 @@
     align-items: center;
 }
 
-/* Dashboard */
 .dashboard-container
 {
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 70%;
 }
 
-/* Dashboard Head */
+/* DASHBOARD -  Head */
 .db-title
 {
     padding: 2rem 0;
@@ -31,7 +31,7 @@
     color: var(--color-secondary);
 }
 
-/* Cards Display */
+/* DASHBOARD -  Display */
 .db-display
 {   
     margin-top: 2rem;
@@ -40,7 +40,7 @@
     justify-content: space-evenly;
 }
 
-/* Cards */
+/* DASHBOARD - Cards */
 .db-card
 {
     margin: 1rem;
@@ -67,29 +67,39 @@
     background: var(--color-primary);
 }
 
-/* Titre */
+/* DASHBOARD - Cards Empty */
+.db-card-add
+{
+    min-height: 36rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.8rem;
+    color: var(--color-primary);
+    background: rgba(245, 245, 245, .2);
+}
+
+/* DASHBOARD - Cards Title */
 .db-card-title
 {   
     padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgba(50, 130, 184, .1);
     text-transform: capitalize;
     font-size: 1.2rem;
     letter-spacing: var(--font-spacing-sm);
-    border-bottom: 1px solid rgba(50, 130, 184, .1);
     color: var(--color-primary);
     background: var(--color-tertiary);
 }
 
-/* Date */
 .db-card-date
 {
     font-weight: 300;
     font-size: 1rem;
 }
 
-/* Poste */
 .db-card-job
 {
     padding: 8rem 0;
@@ -100,7 +110,7 @@
     color: var(--color-primary);
 }
 
-/* Clipboard */
+/* DASHBOARD - Cards Clipboard */
 .db-card-clipboard
 {
     margin-bottom: 1rem;
@@ -124,7 +134,7 @@
     font-size: 1.6rem;
 }
 
-/* Boutons */
+/* DASHBOARD -  Cards Boutons */
 .db-card-utilities
 {
     display: flex;
@@ -141,19 +151,7 @@
     background: transparent;
 }
 
-/* Empty card */
-.db-card-add
-{
-    min-height: 36rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3.8rem;
-    color: var(--color-primary);
-    background: rgba(245, 245, 245, .2);
-}
-
-/* Premium */
+/* DASHBOARD - Premium Alert */
 .db-premium
 {
     z-index: 10;
@@ -177,12 +175,6 @@
     {
         width: 80%;
     }
-}
-
-/* 1000PX */
-@media screen and (max-width: 1000px)
-{
-    
 }
 
 /* 800PX */
@@ -214,16 +206,16 @@
 /* 600PX */
 @media screen and (max-width: 600px)
 {
+    .db-card:hover
+    {
+        transform: none;
+        box-shadow: -2px 4px 6px rgba(0, 0, 0, .2);
+    }
+
     .db-title h1
     {
         font-size: 2.4rem;
     }
-}
-
-/* 500PX */
-@media screen and (max-width: 500px)
-{
-    
 }
 
 /* 400PX */

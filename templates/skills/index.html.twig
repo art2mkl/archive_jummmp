@@ -19,6 +19,7 @@
 			{% for skill in skills %}
 				{% if app.user and (app.user is same as(skill.userId) )%}
 					<div class="edit-form-row">
+					
 						<ul class="edit-form-info">
 							<li class="efi-icon">
 								<i class="{{skill.icon}}"></i>
@@ -41,6 +42,7 @@
 								</form>
 							</li>
 						</ul>
+
 					</div>
 				{% endif %}
 			{% endfor %}
@@ -49,6 +51,5 @@
 		{{ include('skills/_form.html.twig') }}
 
 	</main>
-
 
 {% endblock %}

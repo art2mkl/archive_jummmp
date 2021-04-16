@@ -13,7 +13,7 @@
 	</div>
 
 	{% if xps|length == 0 %}
-		<p>Pas d'expérience pour le moment..?</p>
+		<p>Pas d'expériences pour le moment..?</p>
 	{% else %}
 
 	{% for xp in xps %}
@@ -34,11 +34,6 @@
 						{{ xp.companyName }}
 						-<em>{{ xp.jobLocation }}</em>
 					</li>
-					{# <li class="efi-name">
-						<em>
-							{{ xp.jobDescription }}
-						</em>
-					</li> #}
 				</ul>
 
 				<ul class="edit-form-utilities">

@@ -5,17 +5,21 @@
 	<p class="efa-title"><i class="fas fa-plus"></i>&nbsp;Ajouter un hobby</p>
 
 	<div>
-		<div class="eau-content">
-			{{ form_label(form.icon, 'Choisis un emoji :', {'label_attr': {'class': 'form-label'}}) }}
-			{{ form_widget(form.icon, {'attr': {'class': 'add-input hobbies','placeholder':"Ajoute un emoji"}}) }}
-		</div>
-		<div class="eau-content">
-			{{ form_label(form.hobbyName, 'Intitulé :', {'label_attr': {'class': 'form-label'}}) }}
-			{{ form_widget(form.hobbyName, {'attr': {'class': 'add-input','placeholder':""}}) }}
+		<div class="eau-flex">
+		
+			<div class="eau-content">
+				{{ form_label(form.icon, 'Choisis un emoji :', {'label_attr': {'class': 'form-label'}}) }}
+				{{ form_widget(form.icon, {'attr': {'class': 'add-input hobbies icon-input','placeholder':"Ajoute un emoji"}}) }}
+			</div>
+			<div class="eau-content">
+				{{ form_label(form.hobbyName, 'Intitulé :', {'label_attr': {'class': 'form-label'}}) }}
+				{{ form_widget(form.hobbyName, {'attr': {'class': 'add-input skill-input','placeholder':""}}) }}
+			</div>
+
 		</div>
 
 		<div class="edit-add-button">
-			<button title="Sauvegarder le Cv" class="btn-edit-form"><i class="far fa-save"></i></button>
+			<button title="Sauvegarder le CV" class="btn-edit-form btn-save"><i class="far fa-save"></i></button>
 		</div>
 
 	</div>

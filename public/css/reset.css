@@ -12,20 +12,22 @@ html
 
 body
 {
-    font-family: var(--font-text);
-    font-size: 1.6rem;
-    background: var(--color-bg);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    font-family: var(--font-text);
+    font-size: 1.6rem;
+    background: var(--color-bg);
 }
 
-img{
+img
+{
     max-width: 100%;
 }
 
-a{
+a
+{
     text-decoration: none;
     color: inherit;
 }

@@ -31,15 +31,16 @@
 				{{ form_label(form.jobLocation, 'Lieu :', {'label_attr': {'class': 'form-label'}}) }}
 				{{ form_widget(form.jobLocation, {'attr': {'class': 'add-input','placeholder':""}}) }}
 			</div>
+			
 			<div class="eau-content">
 				{{ form_label(form.jobDescription, 'Description du poste:', {'label_attr': {'class': 'form-label'}}) }}
-				{{ form_widget(form.jobDescription, {'attr': {'class': 'add-input text-area-input','placeholder':""}}) }}</div>
+				{{ form_widget(form.jobDescription, {'attr': {'class': 'add-input text-area-input','placeholder':""}}) }}
 			</div>
-		
-		</div>
-	
-		<div class="edit-add-button">
-			<button class="btn-edit-form"><i class="far fa-save"></i></button>
+
+			<div class="edit-add-button">
+				<button class="btn-edit-form btn-save"><i class="far fa-save"></i></button>
+			</div>
+				
 		</div>
 
 	</div>

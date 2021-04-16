@@ -1,6 +1,7 @@
 <nav class="nav-bar">
+
 	<div class="nav-bar-logo-box">
-		<img class="nav-bar-arrow" src="/assets/increase.png" alt="logo">
+		<img class="nav-bar-arrow" src="/assets/logo-jummmp.png" alt="logo">
 		<a class="nav-bar-logo" href="{{path('app_login')}}">ummmp</a>
 	</div>
 
@@ -9,7 +10,7 @@
 	<section class="nav-bar-list">
 		{# User #}
 		<ul class="list-user">
-			<li><p class="user-name">Bonjour&nbsp;{{ app.user.firstName}}&nbsp;!</p></li>
+			<li><p class="user-name">Bonjour&nbsp;<span class="user-name-brand">{{ app.user.firstName}}</span>&nbsp;!</p></li>
 			<li><a href="#!"><img src="{{app.user.avatar}}" alt="avatar" class="user-avatar"></a></li>
 		</ul>
 		{# Menu déroulant #}
@@ -18,8 +19,8 @@
 			<li class="utilities"><a class="user-utilities" href="#!">Passer Premium&nbsp;<i class="fas fa-star"></i></a></li>
 			<li class="utilities"><a class="user-utilities" href="{{path('app_logout')}}">Se déconnecter</a></li>
 			<li class="utilities">
-					<a href="#!" class="social-utilities"><i class="fab fa-facebook-square"></i></a>
-					<a href="#!" class="social-utilities"><i class="fab fa-instagram"></i></a>
+				<a href="#!" class="social-utilities"><i class="fab fa-facebook-square"></i></a>
+				<a href="#!" class="social-utilities"><i class="fab fa-instagram"></i></a>
 			</li>
 		</ul>
 	</section>
