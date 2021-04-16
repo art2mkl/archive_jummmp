@@ -58,7 +58,7 @@ class CvController extends AbstractController
                 $cv->setAbout('Décris ton profil');
                 $cv->setShortUrl('');
                 
-                $cv->setPhoto('homer-6076baf12eb34096447399.jpeg');
+                $cv->setPhoto('');
         
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($cv);

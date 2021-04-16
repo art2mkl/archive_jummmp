@@ -25,7 +25,16 @@
 					{# Profil#}
 					<div class="items user-profile">
 						<ul class="item-user">
-							<li class="item-avatar"><img src="{{asset('assets/images/cv/' ~ cv.photo)}}" alt="Avatar"></li>
+							<li class="item-avatar">
+							<img src="							
+							{% if cv.photo == '' %}
+							{{asset('assets/images/default/homer.jpeg')}}
+							{% else %}
+							{{asset('assets/images/cv/' ~ cv.photo)}}
+							{% endif %}												
+							" alt="Avatar">
+							</li>						
+							
 							<li class="item-job">{{cv.jobCv}}</li>
 							{# <li>{{cv.shortUrl}}</li> #}
 						</ul>
@@ -164,7 +173,15 @@
 					{# Profil#}
 					<div class="items user-profile">
 						<ul class="item-user">
-							<li class="item-avatar"><img src="{{asset('assets/images/cv/' ~ cv.photo)}}" alt="Avatar"></li>
+							<li class="item-avatar">
+							<img src="							
+							{% if cv.photo == '' %}
+							{{asset('assets/images/default/homer.jpeg')}}
+							{% else %}
+							{{asset('assets/images/cv/' ~ cv.photo)}}
+							{% endif %}												
+							" alt="Avatar">
+							</li>
 							<li class="item-job item-job-2">{{cv.jobCv}}</li>
 							{# <li>{{cv.shortUrl}}</li> #}
 						</ul>
@@ -276,7 +293,15 @@
 					{# Profil#}
 					<div class="items user-profile">
 						<ul class="item-user">
-							<li class="item-avatar item-avatar-3"><img src="{{asset('assets/images/cv/' ~ cv.photo)}}" alt="Avatar"></li>
+							<li class="item-avatar item-avatar-3">
+							<img src="							
+							{% if cv.photo == '' %}
+							{{asset('assets/images/default/homer.jpeg')}}
+							{% else %}
+							{{asset('assets/images/cv/' ~ cv.photo)}}
+							{% endif %}												
+							" alt="Avatar">
+							</li>
 							<li class="item-job item-job-3"><i class="fas fa-code-branch"></i>&nbsp;{{cv.jobCv}}</li>
 							{# <li>{{cv.shortUrl}}</li> #}
 						</ul>
