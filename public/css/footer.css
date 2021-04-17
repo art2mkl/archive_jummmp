@@ -1,12 +1,10 @@
+/* FOOTER */
 footer
 {
-    /* position: fixed; */
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
 
-/* Image */
+/* FOOTER - Image */
 .footer-bg
 {
     vertical-align: bottom;
@@ -14,14 +12,14 @@ footer
     opacity: 75%;
 }
 
-/* Footer */
+/* FOOTER - Container */
 .footer-container
 {
     padding: 1rem 12rem 2rem 12rem;
     background: rgba(255,255,255,.175);
 }
 
-/* Menu */
+/* FOOTER - Menu */
 .footer-container-collapse
 {
     display: flex;
@@ -59,7 +57,7 @@ footer
     margin-left: 6rem;
 }
 
-/* Socials */
+/* FOOTER - Socials */
 .footer-socials-collapse
     {
         display: none;

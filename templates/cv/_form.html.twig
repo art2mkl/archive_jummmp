@@ -3,24 +3,27 @@
 <div class="edit-form-add">
 
 	<div class="eau-content">
-		{{ form_label(form.photoFile, 'Upload ta photo :', {'label_attr': {'class': 'form-label'}}) }}
+		{{ form_label(form.photoFile, 'Télécharge ta photo :', {'label_attr': {'class': 'form-label'}}) }}
 		{{ form_widget(form.photoFile, {'attr': {'class': 'add-input','placeholder':""}}) }}
 	</div>
+
 	<div class="eau-content">
 		{{ form_label(form.title, 'Titre du CV :', {'label_attr': {'class': 'form-label'}}) }}
 		{{ form_widget(form.title, {'attr': {'class': 'add-input','placeholder':""}}) }}
 	</div>
+
 	<div class="eau-content">
 		{{ form_label(form.jobCv, 'Intitulé du poste :', {'label_attr': {'class': 'form-label'}}) }}
 		{{ form_widget(form.jobCv, {'attr': {'class': 'add-input','placeholder':""}}) }}
 	</div>
+
 	<div class="eau-content">
 		{{ form_label(form.about, 'À propos de toi :', {'label_attr': {'class': 'form-label'}}) }}
 		{{ form_widget(form.about, {'attr': {'class': 'add-input text-area-input','placeholder':""}}) }}
-		<br>
 	</div>
+
 	<div class="edit-add-button">
-		<button title="Sauvegarder le Cv" class="btn-edit-form"><i class="far fa-save"></i></button>
+		<button title="Sauvegarder le CV" class="btn-edit-form btn-save"><i class="far fa-save"></i></button>
 	</div>
 
 </div>

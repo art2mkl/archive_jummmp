@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html></html>
 <html lang="fr">
+
 	<head>
+
 		<meta charset="UTF-8">
-		<title>
-			{% block title %}Bienvenue!
-			{% endblock %}
-		</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Swann Martin, Michael Krysztofiak, Thomas Barnabé">
+		<meta name="description" content="Avec jummmp, créé ton CV numérique, modifie ton profil, choisis un thème et emporte ta candidature
+		partout avec toi. Essai gratuit !">
+		<title>{% block title %}Bienvenue!{% endblock %}</title>
+
 		<link rel="icon" href="{{ asset('favicon.ico') }}" />
 
 		{# Run `composer require symfony/webpack-encore-bundle`
-						           and uncomment the following Encore helpers to start using Symfony UX #}
+			and uncomment the following Encore helpers to start using Symfony UX #}
 		<link rel="stylesheet" href="{{ asset('css/reset.css') }}" type="text/css"/>
 		<link rel="stylesheet" href="{{ asset('css/color.css') }}" type="text/css"/>
 		<link rel="stylesheet" href="{{ asset('css/font.css') }}" type="text/css"/>
@@ -33,6 +36,7 @@
 			{#{{ encore_entry_script_tags('app') }}#}
 		{% endblock %}
 	</head>
+
 	<body>
 	
 		{{include('common/_nav.html.twig')}}
@@ -42,5 +46,7 @@
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="{{ asset('js/app.js') }}"></script>
+
 	</body>
+
 </html>

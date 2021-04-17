@@ -12,16 +12,22 @@ html
 
 body
 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     font-family: var(--font-text);
     font-size: 1.6rem;
     background: var(--color-bg);
 }
 
-img{
+img
+{
     max-width: 100%;
 }
 
-a{
+a
+{
     text-decoration: none;
     color: inherit;
 }

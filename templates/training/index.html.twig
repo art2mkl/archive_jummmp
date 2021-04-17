@@ -16,7 +16,7 @@
 		</div>
 
 	{% if trainings|length == 0 %}
-		<p>Pas de formation pour le moment..?</p>
+		<p>Pas de formations pour le moment..?</p>
 	{% else %}
 		{% for training in trainings %}
 			{% if app.user and (app.user is same as(training.userId) )%}
@@ -35,9 +35,6 @@
 							{{ training.schoolName }}
 							-<em>{{ training.schoolLocation }}</em>
 						</li>
-						{# <li class="efi-name">
-							<em>{{ training.diplomaDescription }}</em>
-						</li> #}
 					</ul>
 
 					<ul class="edit-form-utilities">

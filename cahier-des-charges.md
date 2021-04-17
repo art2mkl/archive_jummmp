@@ -13,22 +13,22 @@
 
 ## **Concept**
 
-L'agence web SMT, spécialisée dans le développement de sites et applications web a été mandatée par le client Webforce3 pour développer un générateur de CVs en ligne.
+L'agence web SMT, spécialisée dans le développement de sites et applications web a été mandatée par le client Web Force 3 pour développer un générateur de CVs en ligne.
 
-WebForce3 est spécialisée dans la formation de développeurs web. Les élèves issus de cette formation ne disposent pas tous de CVs numériques pour démontrer leurs compétences et postuler aux offres d'emploi de manière simple et pertinante. L'objectif est de mettre à leur disposition une application où ils disposeront de templates de CVs personnalisables, hébergés et dématerialisés pour postuler efficacement aux offres d'emploi.
+Web Force 3 est un organisme spécialisé dans la formation de développeurs web. Les élèves issus de cette formation ne disposent pas tous de CVs numériques pour démontrer leurs compétences et postuler aux offres d'emploi de manière simple et pertinante. L'objectif est de mettre à leur disposition une application où ils disposeront de templates de CVs personnalisables, hébergés et dématerialisés pour postuler efficacement aux offres d'emploi.
 
 Après s'être connecté sur l'application Jummmp, l'utilisateur aura la possibilité de saisir ses informations personnelles (identité, compétences, formations, expériences, hobbies...). Ces informations persisteront sur une base de données sécurisée. Elles permettront de générer 3 propositions de CVs qui seront accessibles via un short-url ou un QR-Code.
 
-> Options :
+> Développement complémentaires :
 
-- vérifier la corrélation via webScrapping.
-- faire matcher les Cvs avec les offres d'emploi sur le marché du travail
-- service d'envoi par mail aux employeurs avec un template de lettre de motivation.
-- possibilité de récupérer le CV en pdf, de l'imprimer, de l'envoyer par email.
+- Vérifier la corrélation via webScrapping.
+- Comparer les mots clés du CV avec les offres d'emploi actuelles.
+- Fonctionnalité d'envoi de mail sponsorisé et mis en page.
+- Cv exportable en PDF et imprimable.
 
 ## **Présentation de la concurrence**
 
-[Canva](https://www.canva.com/fr_fr/cv/modeles/) : création et design de CV, touche un public plutôt jeune CSP+. Propositions intéressantes pour la personnalisation du design. Plusieurs éléments gratuits, mais devient rapidement payant lorsqu'on souhaite plus de choix.
+[Canva](https://www.canva.com/fr_fr/cv/modeles/) : création et design de CV, touche un public plutôt jeune (CSP +). Propositions intéressantes pour la personnalisation du design. Plusieurs éléments gratuits, mais devient rapidement payant lorsqu'on souhaite plus de choix.
 
 [cvTemplate](https://www.cv-template.com/fr) : création de CV en ligne : design limités, prix premium pour hébergement.
 
@@ -140,10 +140,7 @@ Les recruteurs qui peuvent facilement consulter des viviers de CVs en ligne.
 
 ## **Identité visuelle**
 
-- Logo.  
-  ![Logo](public/assets/CDC/Logo.png)
-- Charte graphique : Ubuntu pour les titres, Poppins pour les textes.  
-  ![Couleurs](public/assets/CDC/Couleurs.png)
+![Charte Graphique](public/assets/CDC/Charte-Graphique.png)
 
 ## **Wireframe**
 
@@ -161,8 +158,8 @@ Les recruteurs qui peuvent facilement consulter des viviers de CVs en ligne.
 
 # **`Let's connect 🔗`**
 
-| L'agence SMT            |                                                                                                                                                                                |
+| L'agence SMT   |                                                                                                                                                                                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Swann **Martin**        | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/swann-martin/)                 |
+| Swann **Martin** | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/swann-martin/) |
 | Michael **Krysztofiak** | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/michael-krysztofiak-53588061/) |
-| Thomas **Barnabé**      | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/thomasbarnab%C3%A9/)           |
+| Thomas **Barnabé** | [![](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white0e76a8)](https://www.linkedin.com/in/thomasbarnab%C3%A9/) |
