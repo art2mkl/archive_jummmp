@@ -5,58 +5,72 @@
 
 {% block body %}
 	<main class="dashboard">
-		
+
 		<section class="dashboard-container">
-		
+
 			<div class="db-title">
-				<h1><i class="far fa-clipboard"></i>&nbsp;Tableau de bord</h1>
+				<h1>
+					<i class="far fa-clipboard"></i>&nbsp;Tableau de bord</h1>
 			</div>
 
-			<section class="db-display">
+			<section
+				class="db-display">
 				{# Affiche une card pour chaque CV de l'user #}
 				{% for cv in cvs %}
 					{% if app.user  and (app.user is same as(cv.userId) )%}
-					{# Card #}
-					<div class="db-card">
+						{# Card #}
+						<div class="db-card">
 
-						<div class="db-card-title">
-							<p><a href="{{ path('cv_show', {'id': cv.id}) }}">{{cv.title}}</a></p>
-							<p class="db-card-date"><em>{{cv.updatedAt | date('d M y')}}</em></p>
-						</div>
-
-						<div class="db-card-job">
-							<h2>{{cv.jobCv}}</h2>
-						</div>
-
-						<div class="db-card-bottom">
-
-							{% if cv.shortUrl != "" %}
-							<div class="db-card-clipboard">
-								<p>https://dry-lowlands-89814.herokuapp.com{{cv.shortUrl}}</p>
-								<a href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }}"><i class="far fa-eye"></i></a>
+							<div class="db-card-title">
+								<p>
+									<a href="{{ path('cv_show', {'id': cv.id}) }}">{{cv.title}}</a>
+								</p>
+								<p class="db-card-date">
+									<em>{{cv.updatedAt | date('d M y')}}</em>
+								</p>
 							</div>
 
-							{% else %}
-							<div class="db-card-clipboard">
-								<p> </p>
-								<span href="#!"><i class="far fa-eye"></i></span>
+							<div class="db-card-job">
+								<h2>{{cv.jobCv}}</h2>
 							</div>
 
-							{% endif %}
-							<div class="db-card-utilities">
-								<div class='cv-card-links'>
-									<a href="{{ path('cv_show', {'id': cv.id}) }}" class="db-card-btn"><i class="fas fa-pencil-alt"></i></a>
+							<div class="db-card-bottom">
+
+								{% if cv.shortUrl != "" %}
+									<div class="db-card-clipboard">
+										<p>https://dry-lowlands-89814.herokuapp.com{{cv.shortUrl}}</p>
+										<a href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }}">
+											<i class="far fa-eye" title="visualiser un cv"></i>
+										</a>
+									</div>
+
+								{% else %}
+									<div class="db-card-clipboard">
+										<p></p>
+										<span href="#!">
+											<i class="far fa-eye" title="visualiser un cv"></i>
+										</span>
+									</div>
+
+								{% endif %}
+								<div class="db-card-utilities">
+									<div class='cv-card-links'>
+										<a href="{{ path('cv_show', {'id': cv.id}) }}" class="db-card-btn">
+											<i class="fas fa-pencil-alt" title="edition"></i>
+										</a>
+									</div>
+
+									<form method="post" action="{{ path('cv_delete', {'id': cv.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+										<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ cv.id) }}">
+										<button class="db-card-btn">
+											<i class="far fa-trash-alt" title="supprimer"></i>
+										</button>
+									</form>
 								</div>
 
-								<form method="post" action="{{ path('cv_delete', {'id': cv.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-									<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ cv.id) }}">
-									<button class="db-card-btn"><i class="far fa-trash-alt"></i></button>
-								</form>
 							</div>
 
 						</div>
-
-					</div>
 
 					{% endif %}
 
@@ -65,18 +79,21 @@
 				{% endfor %}
 
 				{% if app.user.cvs|length < 3 %}
-				<div class="db-card db-card-add">
-					<a href="{{path('cv_new')}}" class=""><i class="far fa-plus-square"></i></a>
-				</div>
+					<div class="db-card db-card-add">
+						<a href="{{path('cv_new')}}" class="">
+							<i class="far fa-plus-square" title="créer un nouveau cv"></i>
+						</a>
+					</div>
 				{% endif %}
 
 			</section>
 			{% if app.user.cvs|length == 3 %}
 				<div class="db-premium">
-					<p>Vous avez atteint le nombre maximum de CVs disponibles.<a href="#!" class="brand-text">&nbsp;Passer Premium !</a></p>
+					<p>Vous avez atteint le nombre maximum de CVs disponibles.<a href="#!" class="brand-text">&nbsp;Passer Premium !</a>
+					</p>
 				</div>
 			</section>
-			
+
 		{% endif %}
 	</main>
 {% endblock %}

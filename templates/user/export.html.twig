@@ -5,365 +5,382 @@
 
 {% block body %}
 
-	{% if app.user and (app.user == user.email) %}
-        <div class="export-utilities">
-			<a class="btn" href="
-				{% if app.user is defined and app.session.get('id') == 0  %}
-				{{ path('cv_index')}}
-				{% else %}
-				{{ path('cv_show', {'id': app.session.get('id')}) }}
-				{% endif %}
-				">
-				<i class="fas fa-undo-alt"></i>
-			</a>
+{% if app.user and (app.user == user.email) %}
+	<div class="export-utilities">
+		<a class="btn" href="
+								{% if app.user is defined and app.session.get('id') == 0  %}
+								{{ path('cv_index')}}
+								{% else %}
+								{{ path('cv_show', {'id': app.session.get('id')}) }}
+								{% endif %}
+								">
+			<i class="fas fa-undo-alt"></i>
+		</a>
+	</div>
+{% endif %}
+
+{# CV 1 #}
+{% if cv.model == 1 %}
+	<div class="resume-display">
+		<div
+			class="resume-top">
+
+			{# Profil#}
+			<div class="items user-profile">
+				<ul class="item-user">
+					<li class="item-avatar">
+						<img src="
+														{% if cv.photo == '' %}
+														{{asset('assets/images/default/homer.jpeg')}}
+														{% else %}
+														{{asset('assets/images/cv/' ~ cv.photo)}}
+														{% endif %}
+														" alt="Avatar">
+					</li>
+					<li class="item-job">{{cv.jobCv}}</li>
+					{# <li>{{cv.shortUrl}}</li> #}
+				</ul>
+			</div>
+
+			{# Adresse #}
+			<div class="items user-adress">
+				<ul>
+					<li class="item-user-firstname">{{user.firstName}}</li>
+					<li class="item-user-lastname">{{user.lastName}}</li>
+					<li class="item-text">{{user.streetAdress}}</li>
+					<li class="item-text">{{user.postCode}}
+						{{user.city}}</li>
+					<li class="item-text">{{user.phone}}</li>
+					<li class="item-text">{{user.email}}</li>
+					<li class="item-text">{{user.website}}</li>
+				</ul>
+			</div>
+
 		</div>
-	{% endif %}
 
-	{# CV 1 #}
-	{% if cv.model == 1 %}
-			<div class="resume-display">
-				<div class="resume-top">
+		{# About #}
+		<div class="items user-about">
+			<p class="item-text">"{{cv.about}}"</p>
+		</div>
 
-					{# Profil#}
-					<div class="items user-profile">
-						<ul class="item-user">
-							<li class="item-avatar">
-							<img src="							
-							{% if cv.photo == '' %}
-							{{asset('assets/images/default/homer.jpeg')}}
-							{% else %}
-							{{asset('assets/images/cv/' ~ cv.photo)}}
-							{% endif %}												
-							" alt="Avatar">
-							</li>
-							<li class="item-job">{{cv.jobCv}}</li>
-							{# <li>{{cv.shortUrl}}</li> #}
-						</ul>
+		{# Skills #}
+		<div class="items user-skills">
+			<p class="item-title">|&nbsp;Compétences</p>
+			<div class="skill-container">
+				{% for skill in user.skills %}
+					<div class="skill-box">
+						<p class="item-skill-icon">
+							<i class="{{skill.icon}}"></i>
+						</p>
+						<p class="item-skill">&nbsp;{{skill.skillName}}</p>
 					</div>
-
-					{# Adresse #}
-					<div class="items user-adress">
-						<ul>
-							<li class="item-user-firstname">{{user.firstName}}</li>
-							<li class="item-user-lastname">{{user.lastName}}</li>
-							<li class="item-text">{{user.streetAdress}}</li>
-							<li class="item-text">{{user.postCode}} {{user.city}}</li>
-							<li class="item-text">{{user.phone}}</li>
-							<li class="item-text">{{user.email}}</li>
-							<li class="item-text">{{user.website}}</li>
-						</ul>
-					</div>
-
-				</div>
-
-				{# About #}
-				<div class="items user-about">
-					<p class="item-text">"{{cv.about}}"</p>
-				</div>
-
-				{# Skills #}
-				<div class="items user-skills">
-					<p class="item-title">|&nbsp;Compétences</p>
-					<div class="skill-container">
-						{% for skill in app.user.skills %}
-						<div class="skill-box">
-							<p class="item-skill-icon"><i class="{{skill.icon}}"></i></p>
-							<p class="item-skill">&nbsp;{{skill.skillName}}</p>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-
-				{# Xp #}
-				<div class="items user-xp">
-					<p class="item-title">|&nbsp;Carrière</p>
-					{% for xp in user.xps %}
-						<ul>
-							<li class="item-text"><strong>{{xp.jobDateFrom | date('d M y')}}
-							</strong>à<strong>
-							{{xp.jobDateTo | date('d M y')}}
-							</strong>
-							<em>{{xp.jobName}}
-							|
-							{{xp.companyName}}
-							-
-							{{xp.jobLocation}}</em></li>
-							<li class="item-text item-description">{{xp.jobDescription}}</li>
-						</ul>
-					{% endfor %}		
-				</div>
-
-				<div class="resume-bottom">
-					{# Training #}
-					<div class="items user-training">
-						<p class="item-title">|&nbsp;Formations</p>
-						<ul>
-						{% for training in user.trainings %}
-							<div>
-								<li class="item-text">
-								<strong>{{training.trainingDateFrom | date('d M y')}}
-								à
-								{{training.trainingDateTo | date('d M y')}}
-								</strong>
-								<em>
-								{{training.diplomaName}}
-								|
-								{{training.schoolName}}
-								-
-								{{training.schoolLocation}}</li>
-								</em>
-								<li class="item-text item-description">{{training.diplomaDescription}}</li>
-							</div>
-							{% endfor %}
-						</ul>
-					</div>
-
-					{# Hobbies #}
-					<div class="items user-hobbies">
-						<p class="item-title">|&nbsp;Hobbies</p>
-						<ul>
-							{% for hobby in user.hobbies %}
-							<li class="item-text item-hobbies">{{hobby.icon}} {{hobby.hobbyName}}</li>
-							{% endfor %}
-						</ul>
-					</div>
-				</div>
-				{# Footer #}
-				<div class="items resume-footer">
-					<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
-				</div>
+				{% endfor %}
 			</div>
-		{% endif %}
+		</div>
 
-		{# CV 2 #}
-		{% if cv.model == 2 %}
-			<div class="resume-display">
-				<div class="resume-top resume-top-2">
-				{# Adresse #}
-					<div class="items user-adress user-adress-2">
-						<ul>
-							<li class="item-user-firstname item-user-firstname-2">{{user.firstName}}</li>
-							<li class="item-user-lastname item-user-lastname-2">{{user.lastName}}</li>
-							<li class="item-text item-text-2">{{user.streetAdress}}</li>
-							<li class="item-text item-text-2">{{user.postCode}} {{user.city}}</li>
-							<li class="item-text item-text-2">{{user.phone}}</li>
-							<li class="item-text item-text-2">{{user.email}}</li>
-							<li class="item-text item-text-2">{{user.website}}</li>
-						</ul>
-					</div>
-
-					{# Profil#}
-					<div class="items user-profile">
-						<ul class="item-user">
-							<li class="item-avatar">
-							<img src="							
-							{% if cv.photo == '' %}
-							{{asset('assets/images/default/homer.jpeg')}}
-							{% else %}
-							{{asset('assets/images/cv/' ~ cv.photo)}}
-							{% endif %}												
-							" alt="Avatar">
-							</li>
-							<li class="item-job item-job-2">{{cv.jobCv}}</li>
-						</ul>
-					</div>
-
-				</div>
-
-				{# About #}
-				<div class="items user-about user-about-2">
-					<p class="item-text item-text-2">"{{cv.about}}"</p>
-				</div>
-
-				{# Xp #}
-				<div class="items user-xp user-xp-2">
-					<p class="item-title item-title-2"><i class="fas fa-user-tie"></i>&nbsp;Carrière</p>
-					{% for xp in user.xps %}
-						<ul>
-							<li class="item-text"><strong>{{xp.jobDateFrom | date('d M y')}}
-							</strong>à<strong>
-							{{xp.jobDateTo | date('d M y')}}
-							</strong>
-							<em>{{xp.jobName}}
-							|
-							{{xp.companyName}}
-							-
-							{{xp.jobLocation}}</em></li>
-							<li class="item-text item-description">{{xp.jobDescription}}</li>
-						</ul>
-					{% endfor %}
-				</div>
-
-				{# Skills #}
-				<div class="items user-skills user-skills-2">
-					<p class="item-title item-title-2"><i class="fas fa-wrench"></i>&nbsp;Compétences</p>
-					<div class="skill-container">
-						{% for skill in user.skills %}
-						<div class="skill-box skill-box-2">
-							<p class="item-skill-icon"><i class="{{skill.icon}}"></i></p>
-							<p class="item-skill">&nbsp;{{skill.skillName}}</p>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-
-				<div class="resume-bottom">
-					{# Training #}
-					<div class="items user-training user-training-2">
-						<p class="item-title item-title-2"><i class="fas fa-user-graduate"></i>&nbsp;Formations</p>
-						<ul>
-						{% for training in user.trainings %}
-							<div>
-								<li class="item-text">
-								<strong>{{training.trainingDateFrom | date('d M y')}}
-								à
-								{{training.trainingDateTo | date('d M y')}}
-								</strong>
-								<em>
-								{{training.diplomaName}}
-								|
-								{{training.schoolName}}
-								-
-								{{training.schoolLocation}}</li>
-								</em>
-								<li class="item-text item-description">{{training.diplomaDescription}}</li>
-							</div>
-							{% endfor %}
-						</ul>
-					</div>
-
-					{# Hobbies #}
-					<div class="items user-hobbies user-hobbies-2">
-						<p class="item-title item-title-2"><i class="fas fa-running"></i>&nbsp;Hobbies</p>
-						<ul>
-							{% for hobby in user.hobbies %}
-							<li class="item-text item-hobbies">{{hobby.icon}} {{hobby.hobbyName}}</li>
-							{% endfor %}
-						</ul>
-					</div>
-				</div>
-				{# Footer #}
-				<div class="items resume-footer resume-footer-2">
-					<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
-				</div>
-			</div>
-		{% endif %}
-
-		{# CV 3 #}
-		{% if cv.model == 3 %}
-			<div class="resume-display">
-				<div class="resume-top resume-top-3">
-
-					{# Profil#}
-					<div class="items user-profile">
-						<ul class="item-user">
-							<li class="item-avatar item-avatar-3">
-							<img src="							
-							{% if cv.photo == '' %}
-							{{asset('assets/images/default/homer.jpeg')}}
-							{% else %}
-							{{asset('assets/images/cv/' ~ cv.photo)}}
-							{% endif %}												
-							" alt="Avatar">
-							</li>
-							<li class="item-job item-job-3"><i class="fas fa-code-branch"></i>&nbsp;{{cv.jobCv}}</li>
-							{# <li>{{cv.shortUrl}}</li> #}
-						</ul>
-					</div>
-
-					{# Adresse #}
-					<div class="items user-adress user-adress-3">
-						<ul>
-							<li class="item-user-firstname item-user-firstname-3">{{user.firstName}}</li>
-							<li class="item-user-lastname item-user-lastname-3">{{user.lastName}}</li>
-							<li class="item-text item-text-2">{{user.streetAdress}}</li>
-							<li class="item-text item-text-2">{{user.postCode}} {{user.city}}</li>
-							<li class="item-text item-text-2">{{user.phone}}</li>
-							<li class="item-text item-text-2">{{user.email}}</li>
-							<li class="item-text item-text-2">{{user.website}}</li>
-						</ul>
-					</div>
-
-				</div>
-
-				{# About #}
-				<div class="items user-about">
-					<p class="item-text">"{{cv.about}}"</p>
-				</div>
-
-				{# Skills #}
-				<div class="items user-skills">
-					<p class="item-title item-title-3"><i class="fas fa-code-branch"></i>&nbsp;Compétences</p>
-					<div class="skill-container">
-						{% for skill in user.skills %}
-						<div class="skill-box skill-box-2">
-							<p class="item-skill-icon"><i class="{{skill.icon}}"></i></p>
-							<p class="item-skill">&nbsp;{{skill.skillName}}</p>
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-
-				{# Xp #}
-				<div class="items user-xp">
-					<p class="item-title item-title-3"><i class="fas fa-code-branch"></i>&nbsp;Carrière</p>
-					{% for xp in user.xps %}
-					<ul>
-						<li class="item-text"><strong>{{xp.jobDateFrom | date('d M y')}}
+		{# Xp #}
+		<div class="items user-xp">
+			<p class="item-title">|&nbsp;Carrière</p>
+			{% for xp in user.xps %}
+				<ul>
+					<li class="item-text">
+						<strong>{{xp.jobDateFrom | date('d M y')}}
 						</strong>à<strong>
-						{{xp.jobDateTo | date('d M y')}}
+							{{xp.jobDateTo | date('d M y')}}
 						</strong>
 						<em>{{xp.jobName}}
+							|
+							{{xp.companyName}}
+							-
+							{{xp.jobLocation}}</em>
+					</li>
+					<li class="item-text item-description">{{xp.jobDescription}}</li>
+				</ul>
+			{% endfor %}
+		</div>
+
+		<div
+			class="resume-bottom">
+			{# Training #}
+			<div class="items user-training">
+				<p class="item-title">|&nbsp;Formations</p>
+				<ul>
+					{% for training in user.trainings %}
+						<div>
+							<li class="item-text">
+								<strong>{{training.trainingDateFrom | date('d M y')}}
+									à
+									{{training.trainingDateTo | date('d M y')}}
+								</strong>
+								<em>
+									{{training.diplomaName}}
+									|
+									{{training.schoolName}}
+									-
+									{{training.schoolLocation}}</li>
+							</li>
+						</em>
+						<li class="item-text item-description">{{training.diplomaDescription}}</li>
+					</div>
+				{% endfor %}
+			</ul>
+		</div>
+
+		{# Hobbies #}
+		<div class="items user-hobbies">
+			<p class="item-title">|&nbsp;Hobbies</p>
+			<ul>
+				{% for hobby in user.hobbies %}
+					<li class="item-text item-hobbies">{{hobby.icon}}
+						{{hobby.hobbyName}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	{# Footer #}
+	<div class="items resume-footer">
+		<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
+	</div>
+</div>{% endif %}{# CV 2 #}{% if cv.model == 2 %}
+<div class="resume-display">
+	<div
+		class="resume-top resume-top-2">
+		{# Adresse #}
+		<div class="items user-adress user-adress-2">
+			<ul>
+				<li class="item-user-firstname item-user-firstname-2">{{user.firstName}}</li>
+				<li class="item-user-lastname item-user-lastname-2">{{user.lastName}}</li>
+				<li class="item-text item-text-2">{{user.streetAdress}}</li>
+				<li class="item-text item-text-2">{{user.postCode}}
+					{{user.city}}</li>
+				<li class="item-text item-text-2">{{user.phone}}</li>
+				<li class="item-text item-text-2">{{user.email}}</li>
+				<li class="item-text item-text-2">{{user.website}}</li>
+			</ul>
+		</div>
+
+		{# Profil#}
+		<div class="items user-profile">
+			<ul class="item-user">
+				<li class="item-avatar">
+					<img src="
+													{% if cv.photo == '' %}
+													{{asset('assets/images/default/homer.jpeg')}}
+													{% else %}
+													{{asset('assets/images/cv/' ~ cv.photo)}}
+													{% endif %}
+													" alt="Avatar">
+				</li>
+				<li class="item-job item-job-2">{{cv.jobCv}}</li>
+			</ul>
+		</div>
+
+	</div>
+
+	{# About #}
+	<div class="items user-about user-about-2">
+		<p class="item-text item-text-2">"{{cv.about}}"</p>
+	</div>
+
+	{# Xp #}
+	<div class="items user-xp user-xp-2">
+		<p class="item-title item-title-2">
+			<i class="fas fa-user-tie"></i>&nbsp;Carrière</p>
+		{% for xp in user.xps %}
+			<ul>
+				<li class="item-text">
+					<strong>{{xp.jobDateFrom | date('d M y')}}
+					</strong>à<strong>
+						{{xp.jobDateTo | date('d M y')}}
+					</strong>
+					<em>{{xp.jobName}}
 						|
 						{{xp.companyName}}
 						-
-						{{xp.jobLocation}}</em></li>
-						<li class="item-text item-description">{{xp.jobDescription}}</li>
-					</ul>
-					{% endfor %}
-				</div>
+						{{xp.jobLocation}}</em>
+				</li>
+				<li class="item-text item-description">{{xp.jobDescription}}</li>
+			</ul>
+		{% endfor %}
+	</div>
 
-				<div class="resume-bottom">
-					{# Training #}
-					<div class="items user-training">
-						<p class="item-title item-title-3"><i class="fas fa-code-branch"></i>&nbsp;Formations</p>
-						<ul>
-						{% for training in user.trainings %}
-							<div>
-								<li class="item-text">
-								<strong>{{training.trainingDateFrom | date('d M y')}}
+	{# Skills #}
+	<div class="items user-skills user-skills-2">
+		<p class="item-title item-title-2">
+			<i class="fas fa-wrench"></i>&nbsp;Compétences</p>
+		<div class="skill-container">
+			{% for skill in user.skills %}
+				<div class="skill-box skill-box-2">
+					<p class="item-skill-icon">
+						<i class="{{skill.icon}}"></i>
+					</p>
+					<p class="item-skill">&nbsp;{{skill.skillName}}</p>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div
+		class="resume-bottom">
+		{# Training #}
+		<div class="items user-training user-training-2">
+			<p class="item-title item-title-2">
+				<i class="fas fa-user-graduate"></i>&nbsp;Formations</p>
+			<ul>
+				{% for training in user.trainings %}
+					<div>
+						<li class="item-text">
+							<strong>{{training.trainingDateFrom | date('d M y')}}
 								à
 								{{training.trainingDateTo | date('d M y')}}
-								</strong>
-								<em>
+							</strong>
+							<em>
 								{{training.diplomaName}}
 								|
 								{{training.schoolName}}
 								-
 								{{training.schoolLocation}}</li>
-								</em>
-								<li class="item-text item-description">{{training.diplomaDescription}}</li>
-							</div>
-							{% endfor %}
-						</ul>
-					</div>
+						</li>
+					</em>
+					<li class="item-text item-description">{{training.diplomaDescription}}</li>
+				</div>
+			{% endfor %}
+		</ul>
+	</div>
 
-					{# Hobbies #}
-					<div class="items user-hobbies">
-						<p class="item-title item-title-3"><i class="fas fa-code-branch"></i>&nbsp;Hobbies</p>
-						<ul>
-							{% for hobby in user.hobbies %}
-							<li class="item-text item-hobbies">{{hobby.icon}} {{hobby.hobbyName}}</li>
-							{% endfor %}
-						</ul>
-					</div>
-				</div>
-				{# Footer #}
-				<div class="items resume-footer">
-					<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
-				</div>
+	{# Hobbies #}
+	<div class="items user-hobbies user-hobbies-2">
+		<p class="item-title item-title-2">
+			<i class="fas fa-running"></i>&nbsp;Hobbies</p>
+		<ul>
+			{% for hobby in user.hobbies %}
+				<li class="item-text item-hobbies">{{hobby.icon}}
+					{{hobby.hobbyName}}</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+{# Footer #}
+<div class="items resume-footer resume-footer-2">
+	<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
+</div></div>{% endif %}{# CV 3 #}{% if cv.model == 3 %}<div class="resume-display">
+<div
+	class="resume-top resume-top-3">
+
+	{# Profil#}
+	<div class="items user-profile">
+		<ul class="item-user">
+			<li class="item-avatar item-avatar-3">
+				<img src="
+												{% if cv.photo == '' %}
+												{{asset('assets/images/default/homer.jpeg')}}
+												{% else %}
+												{{asset('assets/images/cv/' ~ cv.photo)}}
+												{% endif %}
+												" alt="Avatar">
+			</li>
+			<li class="item-job item-job-3">
+				<i class="fas fa-code-branch"></i>&nbsp;{{cv.jobCv}}</li>
+			{# <li>{{cv.shortUrl}}</li> #}
+		</ul>
+	</div>
+
+	{# Adresse #}
+	<div class="items user-adress user-adress-3">
+		<ul>
+			<li class="item-user-firstname item-user-firstname-3">{{user.firstName}}</li>
+			<li class="item-user-lastname item-user-lastname-3">{{user.lastName}}</li>
+			<li class="item-text item-text-2">{{user.streetAdress}}</li>
+			<li class="item-text item-text-2">{{user.postCode}}
+				{{user.city}}</li>
+			<li class="item-text item-text-2">{{user.phone}}</li>
+			<li class="item-text item-text-2">{{user.email}}</li>
+			<li class="item-text item-text-2">{{user.website}}</li>
+		</ul>
+	</div>
+
+</div>
+
+{# About #}
+<div class="items user-about">
+	<p class="item-text">"{{cv.about}}"</p>
+</div>
+
+{# Skills #}
+<div class="items user-skills">
+	<p class="item-title item-title-3">
+		<i class="fas fa-code-branch"></i>&nbsp;Compétences</p>
+	<div class="skill-container">
+		{% for skill in user.skills %}
+			<div class="skill-box skill-box-2">
+				<p class="item-skill-icon">
+					<i class="{{skill.icon}}"></i>
+				</p>
+				<p class="item-skill">&nbsp;{{skill.skillName}}</p>
 			</div>
-		{% endif %}
+		{% endfor %}
+	</div>
+</div>
 
+{# Xp #}
+<div class="items user-xp">
+	<p class="item-title item-title-3">
+		<i class="fas fa-code-branch"></i>&nbsp;Carrière</p>
+	{% for xp in user.xps %}
+		<ul>
+			<li class="item-text">
+				<strong>{{xp.jobDateFrom | date('d M y')}}
+				</strong>à<strong>
+					{{xp.jobDateTo | date('d M y')}}
+				</strong>
+				<em>{{xp.jobName}}
+					|
+					{{xp.companyName}}
+					-
+					{{xp.jobLocation}}</em>
+			</li>
+			<li class="item-text item-description">{{xp.jobDescription}}</li>
+		</ul>
+	{% endfor %}
+</div>
 
-{% endblock %}
+<div
+	class="resume-bottom">
+	{# Training #}
+	<div class="items user-training">
+		<p class="item-title item-title-3">
+			<i class="fas fa-code-branch"></i>&nbsp;Formations</p>
+		<ul>
+			{% for training in user.trainings %}
+				<div>
+					<li class="item-text">
+						<strong>{{training.trainingDateFrom | date('d M y')}}
+							à
+							{{training.trainingDateTo | date('d M y')}}
+						</strong>
+						<em>
+							{{training.diplomaName}}
+							|
+							{{training.schoolName}}
+							-
+							{{training.schoolLocation}}</li>
+					</li>
+				</em>
+				<li class="item-text item-description">{{training.diplomaDescription}}</li>
+			</div>
+		{% endfor %}
+	</ul>
+</div>
+
+{# Hobbies #}
+<div class="items user-hobbies">
+	<p class="item-title item-title-3">
+		<i class="fas fa-code-branch"></i>&nbsp;Hobbies</p>
+	<ul>
+		{% for hobby in user.hobbies %}
+			<li class="item-text item-hobbies">{{hobby.icon}}
+				{{hobby.hobbyName}}</li>
+		{% endfor %}
+	</ul>
+</div></div>{# Footer #}<div class="items resume-footer">
+<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p></div></div>{% endif %}{% endblock %}

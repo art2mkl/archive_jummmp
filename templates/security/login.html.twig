@@ -4,17 +4,19 @@
 {% endblock %}
 
 {% block body %}
-	
-	<main class="login">
+
+	<main
+		class="login">
 		{# Section Left #}
-		
-		<section class="login-left">
+
+		<section
+			class="login-left">
 			{# Header #}
 			<header>
-                <h2>Parle de&nbsp;<span class="brand-text">toi</span>,</h2>
-                <h1>Fais le grand saut.</h1>
-                <h3>Créé ton cv numérique rapidement et simplement avec&nbsp;<span class="bold-text">jummmp</span>, met à jour tes compétences quand tu le souhaites, emporte ta candidature partout avec toi et fais matcher ton profil avec les dernières offres d’emploi.</h3>
-            </header>
+				<h2>Parle de&nbsp;<span class="brand-text">toi</span>,</h2>
+				<h1>Fais le grand saut.</h1>
+				<h3>Créé ton cv numérique rapidement et simplement avec&nbsp;<span class="bold-text">jummmp</span>, met à jour tes compétences quand tu le souhaites, emporte ta candidature partout avec toi et fais matcher ton profil avec les dernières offres d’emploi.</h3>
+			</header>
 		</section>
 
 		{# Section Right #}
@@ -33,13 +35,13 @@
 				{% endif %}
 
 				<div class="fl-title">
-                	<img src="assets/mouse.png">
-                	<h4>Connecte toi !</h4>
-            	</div>
-				
+					<img src="assets/mouse.png">
+					<h4>Connecte toi !</h4>
+				</div>
+
 				<label for="inputEmail">Email</label>
 				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-				
+
 				<label for="inputPassword">Mot de passe</label>
 				<input type="password" name="password" id="inputPassword" class="form-control" required>
 
@@ -51,14 +53,14 @@
 				</div>
 
 				{# Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-				See https://symfony.com/doc/current/security/remember_me.html
-									
-				<div class="checkbox mb-3">
-					<label>
-						<input type="checkbox" name="_remember_me"> Remember me
-					</label>
-				</div>
-				#}
+								See https://symfony.com/doc/current/security/remember_me.html
+													
+								<div class="checkbox mb-3">
+									<label>
+										<input type="checkbox" name="_remember_me"> Remember me
+									</label>
+								</div>
+								#}
 
 				<button class="btn" type="submit">
 					C'est parti !
@@ -69,11 +71,14 @@
 				</div>
 
 				<div>
-					<p class="utilities-account">Pas de compte ?&nbsp;<a href="{{path('app_register')}}"><span class="signin">Inscris toi !</span></a></p>
+					<p class="utilities-account">Pas de compte ?&nbsp;<a href="{{path('app_register')}}">
+							<span class="signin">Inscris-toi !</span>
+						</a>
+					</p>
 				</div>
 			</form>
 		</section>
-		
+
 	</main>
-		
-	{% endblock %}
+
+{% endblock %}

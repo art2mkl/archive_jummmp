@@ -5,409 +5,476 @@
 
 {% block body %}
 
-	<main class="show">
+<main
+	class="show">
 
-		{# Template 1 #}
-		{% if cv.model == 1 %}
+	{# Template 1 #}
+	{% if cv.model == 1 %}
 
-			<div class="resume-display">
-				<div class="resume-info">
-					<p class="resume-title">{{cv.title}}</p>
-					<div class="resume-utilities">
-						<a class="btn-dashboard {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">Thème 1</a>
-						<a class="btn-dashboard {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">Thème 2</a>
-						<a class="btn-dashboard {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">Thème 3</a>
-						<a class="btn-dashboard" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">Exporter</a>
-						<a class="btn-dashboard" href="{{path('cv_index')}}"><i class="fas fa-undo-alt"></i></a>
-					</div>
-				</div>
-				<div class="resume-top">
-					{# Profil#}
-					<div class="items user-profile">
-						<ul class="item-user">
-							<li class="item-avatar">
-							<img src="							
-							{% if cv.photo == '' %}
-							{{asset('assets/images/default/homer.jpeg')}}
-							{% else %}
-							{{asset('assets/images/cv/' ~ cv.photo)}}
-							{% endif %}												
-							" alt="Avatar">
-							</li>						
-							
-							<li class="item-job">{{cv.jobCv}}</li>
-							{# <li>{{cv.shortUrl}}</li> #}
-						</ul>
-						<a class="edit" href="{{ path('cv_edit', {'id': cv.id}) }}"><i class="fas fa-pencil-alt"></i></a>		
-					</div>
-
-					{# Adresse #}
-					<div class="items user-adress">
-						<ul>
-							<li class="item-user-firstname">{{app.user.firstName}}</li>
-							<li class="item-user-lastname">{{app.user.lastName}}</li>
-							<li class="item-text">{{app.user.streetAdress}}</li>
-							<li class="item-text">{{app.user.postCode}} {{app.user.city}}</li>
-							<li class="item-text">{{app.user.phone}}</li>
-							<li class="item-text">{{app.user.email}}</li>
-							<li class="item-text">{{app.user.website}}</li>
-						</ul>
-						<a class="edit" href="{{ path('user_edit', {'id': app.user.id}) }}"><i class="fas fa-pencil-alt"></i></a>
-					</div>
-				</div>
-
-				{# About #}
-				<div class="items user-about">
-					<p class="item-text">"{{cv.about}}"</p>
-				</div>
-
-				{# SKills #}
-				<div class="items user-skills">
-					<p class="item-title">|&nbsp;Compétences</p>
-						<div class="skill-container">
-							{% for skill in app.user.skills %}
-							<div class="skill-box">
-								<p class="item-skill-icon"><i class="{{skill.icon}}"></i></p>
-								<p class="item-skill">&nbsp;{{skill.skillName}}</p>
-							</div>
-							{% endfor %}
-						</div>
-						<a class="edit" href="{{ path('skills_index') }}"><i class="fas fa-pencil-alt"></i></a>
-				</div>
-
-				{# Xp #}
-				<div class="items user-xp">
-					<p class="item-title">|&nbsp;Carrière</p>
-					{% for xp in app.user.xps %}
-					<ul>
-						<li class="item-text"><strong>{{xp.jobDateFrom | date('d M y')}}
-						</strong>à<strong>
-						{{xp.jobDateTo | date('d M y')}}
-						</strong>
-						<em>{{xp.jobName}}
-						|
-						{{xp.companyName}}
-						-
-						{{xp.jobLocation}}</em></li>
-						<li class="item-text item-description">{{xp.jobDescription}}</li>
-					</ul>
-					{% endfor %}
-					
-					<a class="edit" href="{{ path('xp_index') }}"><i class="fas fa-pencil-alt"></i></a>
-				</div>
-
-				<div class="resume-bottom">
-					{# Training #}
-					<div class="items user-training">
-						<p class="item-title">|&nbsp;Formations</p>
-						<ul>
-						{% for training in app.user.trainings %}
-							<div>
-								<li class="item-text">
-								<strong>{{training.trainingDateFrom | date('d M y')}}
-								à
-								{{training.trainingDateTo | date('d M y')}}
-								</strong>
-								<em>
-								{{training.diplomaName}}
-								|
-								{{training.schoolName}}
-								-
-								{{training.schoolLocation}}</li>
-								</em>
-								<li class="item-text item-description">{{training.diplomaDescription}}</li>
-							</div>
-							{% endfor %}
-						</ul>
-							<a class="edit" href="{{ path('training_index') }}"><i class="fas fa-pencil-alt"></i></a>
-					</div>
-
-					{# Hobbies #}
-					<div class="items user-hobbies">
-						<p class="item-title">|&nbsp;Hobbies</p>
-						<ul>
-							{% for hobby in app.user.hobbies %}
-							<li class="item-text item-hobbies">{{hobby.icon}} {{hobby.hobbyName}}</li>
-							{% endfor %}
-						</ul>
-						<a class="edit" href="{{ path('hobbies_index') }}"><i class="fas fa-pencil-alt"></i></a>		
-					</div>
-				</div>
-				{# Footer #}
-				<div class="items resume-footer">
-					<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
+		<div class="resume-display">
+			<div class="resume-info">
+				<p class="resume-title">{{cv.title}}</p>
+				<div class="resume-utilities">
+					<a class="btn-dashboard {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">Thème 1</a>
+					<a class="btn-dashboard {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">Thème 2</a>
+					<a class="btn-dashboard {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">Thème 3</a>
+					<a class="btn-dashboard" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">Exporter</a>
+					<a class="btn-dashboard" href="{{path('cv_index')}}">
+						<i class="fas fa-undo-alt"></i>
+					</a>
 				</div>
 			</div>
+			<div
+				class="resume-top">
+				{# Profil#}
+				<div class="items user-profile">
+					<ul class="item-user">
+						<li class="item-avatar">
+							<img src="
+															{% if cv.photo == '' %}
+															{{asset('assets/images/default/homer.jpeg')}}
+															{% else %}
+															{{asset('assets/images/cv/' ~ cv.photo)}}
+															{% endif %}
+															" alt="Avatar">
+						</li>
 
-		{% endif %}
-
-		{# Template 2 #}
-		{% if cv.model == 2 %}
-
-			<div class="resume-display">
-				<div class="resume-info">
-					<p class="resume-title">{{cv.title}}</p>
-					<div class="resume-utilities">
-						<a class="btn-dashboard {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">Thème 1</a>
-						<a class="btn-dashboard {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">Thème 2</a>
-						<a class="btn-dashboard {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">Thème 3</a>
-						<a class="btn-dashboard" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">Exporter</a>
-						<a class="btn-dashboard" href="{{path('cv_index')}}"><i class="fas fa-undo-alt"></i></a>
-					</div>
+						<li class="item-job">{{cv.jobCv}}</li>
+						{# <li>{{cv.shortUrl}}</li> #}
+					</ul>
+					<a class="edit" href="{{ path('cv_edit', {'id': cv.id}) }}">
+						<i class="fas fa-pencil-alt" title="edition"></i>
+					</a>
 				</div>
-				<div class="resume-top resume-top-2">
+
 				{# Adresse #}
-					<div class="items user-adress user-adress-2">
-						<ul>
-							<li class="item-user-firstname item-user-firstname-2">{{app.user.firstName}}</li>
-							<li class="item-user-lastname item-user-lastname-2">{{app.user.lastName}}</li>
-							<li class="item-text item-text-2">{{app.user.streetAdress}}</li>
-							<li class="item-text item-text-2">{{app.user.postCode}} {{app.user.city}}</li>
-							<li class="item-text item-text-2">{{app.user.phone}}</li>
-							<li class="item-text item-text-2">{{app.user.email}}</li>
-							<li class="item-text item-text-2">{{app.user.website}}</li>
-						</ul>
-						<a class="edit" href="{{ path('user_edit', {'id': app.user.id}) }}"><i class="fas fa-pencil-alt"></i></a>
-					</div>
-
-					{# Profil#}
-					<div class="items user-profile">
-						<ul class="item-user">
-							<li class="item-avatar">
-							<img src="							
-							{% if cv.photo == '' %}
-							{{asset('assets/images/default/homer.jpeg')}}
-							{% else %}
-							{{asset('assets/images/cv/' ~ cv.photo)}}
-							{% endif %}												
-							" alt="Avatar">
-							</li>
-							<li class="item-job item-job-2">{{cv.jobCv}}</li>
-							{# <li>{{cv.shortUrl}}</li> #}
-						</ul>
-						<a class="edit" href="{{ path('cv_edit', {'id': cv.id}) }}"><i class="fas fa-pencil-alt"></i></a>		
-					</div>
-
-				</div>
-
-				{# About #}
-				<div class="items user-about user-about-2">
-					<p class="item-text item-text-2">"{{cv.about}}"</p>
-				</div>
-
-				{# Xp #}
-				<div class="items user-xp user-xp-2">
-					<p class="item-title item-title-2"><i class="fas fa-user-tie"></i>&nbsp;Carrière</p>
-					{% for xp in app.user.xps %}
+				<div class="items user-adress">
 					<ul>
-						<li class="item-text"><strong>{{xp.jobDateFrom | date('d M y')}}
-						</strong>à<strong>
-						{{xp.jobDateTo | date('d M y')}}
-						</strong>
-						<em>{{xp.jobName}}
-						|
-						{{xp.companyName}}
-						-
-						{{xp.jobLocation}}</em></li>
+						<li class="item-user-firstname">{{app.user.firstName}}</li>
+						<li class="item-user-lastname">{{app.user.lastName}}</li>
+						<li class="item-text">{{app.user.streetAdress}}</li>
+						<li class="item-text">{{app.user.postCode}}
+							{{app.user.city}}</li>
+						<li class="item-text">{{app.user.phone}}</li>
+						<li class="item-text">{{app.user.email}}</li>
+						<li class="item-text">{{app.user.website}}</li>
+					</ul>
+					<a class="edit" href="{{ path('user_edit', {'id': app.user.id}) }}">
+						<i class="fas fa-pencil-alt" title="edition"></i>
+					</a>
+				</div>
+			</div>
+
+			{# About #}
+			<div class="items user-about">
+				<p class="item-text">"{{cv.about}}"</p>
+			</div>
+
+			{# SKills #}
+			<div class="items user-skills">
+				<p class="item-title">|&nbsp;Compétences</p>
+				<div class="skill-container">
+					{% for skill in app.user.skills %}
+						<div class="skill-box">
+							<p class="item-skill-icon">
+								<i class="{{skill.icon}}"></i>
+							</p>
+							<p class="item-skill">&nbsp;{{skill.skillName}}</p>
+						</div>
+					{% endfor %}
+				</div>
+				<a class="edit" href="{{ path('skills_index') }}">
+					<i class="fas fa-pencil-alt" title="edition"></i>
+				</a>
+			</div>
+
+			{# Xp #}
+			<div class="items user-xp">
+				<p class="item-title">|&nbsp;Carrière</p>
+				{% for xp in app.user.xps %}
+					<ul>
+						<li class="item-text">
+							<strong>{{xp.jobDateFrom | date('d M y')}}
+							</strong>à<strong>
+								{{xp.jobDateTo | date('d M y')}}
+							</strong>
+							<em>{{xp.jobName}}
+								|
+								{{xp.companyName}}
+								-
+								{{xp.jobLocation}}</em>
+						</li>
 						<li class="item-text item-description">{{xp.jobDescription}}</li>
 					</ul>
-					{% endfor %}
-					
-					<a class="edit" href="{{ path('xp_index') }}"><i class="fas fa-pencil-alt"></i></a>
-				</div>
+				{% endfor %}
 
-				{# SKills #}
-				<div class="items user-skills user-skills-2">
-					<p class="item-title item-title-2"><i class="fas fa-wrench"></i>&nbsp;Compétences</p>
-						<div class="skill-container">
-							{% for skill in app.user.skills %}
-							<div class="skill-box skill-box-2">
-								<p class="item-skill-icon"><i class="{{skill.icon}}"></i></p>
-								<p class="item-skill">&nbsp;{{skill.skillName}}</p>
-							</div>
-							{% endfor %}
-						</div>
-						<a class="edit" href="{{ path('skills_index') }}"><i class="fas fa-pencil-alt"></i></a>
-				</div>
+				<a class="edit" href="{{ path('xp_index') }}">
+					<i class="fas fa-pencil-alt" title="edition"></i>
+				</a>
+			</div>
 
-				<div class="resume-bottom">
-					{# Training #}
-					<div class="items user-training user-training-2">
-						<p class="item-title item-title-2"><i class="fas fa-user-graduate"></i>&nbsp;Formations</p>
-						<ul>
+			<div
+				class="resume-bottom">
+				{# Training #}
+				<div class="items user-training">
+					<p class="item-title">|&nbsp;Formations</p>
+					<ul>
 						{% for training in app.user.trainings %}
 							<div>
 								<li class="item-text">
+									<strong>{{training.trainingDateFrom | date('d M y')}}
+										à
+										{{training.trainingDateTo | date('d M y')}}
+									</strong>
+									<em>
+										{{training.diplomaName}}
+										|
+										{{training.schoolName}}
+										-
+										{{training.schoolLocation}}</li>
+								</li>
+							</em>
+							<li class="item-text item-description">{{training.diplomaDescription}}</li>
+						</div>
+					{% endfor %}
+				</ul>
+				<a class="edit" href="{{ path('training_index') }}">
+					<i class="fas fa-pencil-alt" title="edition"></i>
+				</a>
+			</div>
+
+			{# Hobbies #}
+			<div class="items user-hobbies">
+				<p class="item-title">|&nbsp;Hobbies</p>
+				<ul>
+					{% for hobby in app.user.hobbies %}
+						<li class="item-text item-hobbies">{{hobby.icon}}
+							{{hobby.hobbyName}}</li>
+					{% endfor %}
+				</ul>
+				<a class="edit" href="{{ path('hobbies_index') }}">
+					<i class="fas fa-pencil-alt" title="edition"></i>
+				</a>
+			</div>
+		</div>
+		{# Footer #}
+		<div class="items resume-footer">
+			<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
+		</div>
+	</div>
+
+{% endif %}
+
+{# Template 2 #}
+{% if cv.model == 2 %}
+
+	<div class="resume-display">
+		<div class="resume-info">
+			<p class="resume-title">{{cv.title}}</p>
+			<div class="resume-utilities">
+				<a class="btn-dashboard {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">Thème 1</a>
+				<a class="btn-dashboard {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">Thème 2</a>
+				<a class="btn-dashboard {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">Thème 3</a>
+				<a class="btn-dashboard" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">Exporter</a>
+				<a class="btn-dashboard" href="{{path('cv_index')}}">
+					<i class="fas fa-undo-alt"></i>
+				</a>
+			</div>
+		</div>
+		<div
+			class="resume-top resume-top-2">
+			{# Adresse #}
+			<div class="items user-adress user-adress-2">
+				<ul>
+					<li class="item-user-firstname item-user-firstname-2">{{app.user.firstName}}</li>
+					<li class="item-user-lastname item-user-lastname-2">{{app.user.lastName}}</li>
+					<li class="item-text item-text-2">{{app.user.streetAdress}}</li>
+					<li class="item-text item-text-2">{{app.user.postCode}}
+						{{app.user.city}}</li>
+					<li class="item-text item-text-2">{{app.user.phone}}</li>
+					<li class="item-text item-text-2">{{app.user.email}}</li>
+					<li class="item-text item-text-2">{{app.user.website}}</li>
+				</ul>
+				<a class="edit" href="{{ path('user_edit', {'id': app.user.id}) }}">
+					<i class="fas fa-pencil-alt" title="edition"></i>
+				</a>
+			</div>
+
+			{# Profil#}
+			<div class="items user-profile">
+				<ul class="item-user">
+					<li class="item-avatar">
+						<img src="
+														{% if cv.photo == '' %}
+														{{asset('assets/images/default/homer.jpeg')}}
+														{% else %}
+														{{asset('assets/images/cv/' ~ cv.photo)}}
+														{% endif %}
+														" alt="Avatar">
+					</li>
+					<li class="item-job item-job-2">{{cv.jobCv}}</li>
+					{# <li>{{cv.shortUrl}}</li> #}
+				</ul>
+				<a class="edit" href="{{ path('cv_edit', {'id': cv.id}) }}">
+					<i class="fas fa-pencil-alt" title="edition"></i>
+				</a>
+			</div>
+
+		</div>
+
+		{# About #}
+		<div class="items user-about user-about-2">
+			<p class="item-text item-text-2">"{{cv.about}}"</p>
+		</div>
+
+		{# Xp #}
+		<div class="items user-xp user-xp-2">
+			<p class="item-title item-title-2">
+				<i class="fas fa-user-tie"></i>&nbsp;Carrière</p>
+			{% for xp in app.user.xps %}
+				<ul>
+					<li class="item-text">
+						<strong>{{xp.jobDateFrom | date('d M y')}}
+						</strong>à<strong>
+							{{xp.jobDateTo | date('d M y')}}
+						</strong>
+						<em>{{xp.jobName}}
+							|
+							{{xp.companyName}}
+							-
+							{{xp.jobLocation}}</em>
+					</li>
+					<li class="item-text item-description">{{xp.jobDescription}}</li>
+				</ul>
+			{% endfor %}
+
+			<a class="edit" href="{{ path('xp_index') }}">
+				<i class="fas fa-pencil-alt" title="edition"></i>
+			</a>
+		</div>
+
+		{# SKills #}
+		<div class="items user-skills user-skills-2">
+			<p class="item-title item-title-2">
+				<i class="fas fa-wrench"></i>&nbsp;Compétences</p>
+			<div class="skill-container">
+				{% for skill in app.user.skills %}
+					<div class="skill-box skill-box-2">
+						<p class="item-skill-icon">
+							<i class="{{skill.icon}}"></i>
+						</p>
+						<p class="item-skill">&nbsp;{{skill.skillName}}</p>
+					</div>
+				{% endfor %}
+			</div>
+			<a class="edit" href="{{ path('skills_index') }}">
+				<i class="fas fa-pencil-alt" title="edition"></i>
+			</a>
+		</div>
+
+		<div
+			class="resume-bottom">
+			{# Training #}
+			<div class="items user-training user-training-2">
+				<p class="item-title item-title-2">
+					<i class="fas fa-user-graduate"></i>&nbsp;Formations</p>
+				<ul>
+					{% for training in app.user.trainings %}
+						<div>
+							<li class="item-text">
 								<strong>{{training.trainingDateFrom | date('d M y')}}
-								à
-								{{training.trainingDateTo | date('d M y')}}
+									à
+									{{training.trainingDateTo | date('d M y')}}
 								</strong>
 								<em>
+									{{training.diplomaName}}
+									|
+									{{training.schoolName}}
+									-
+									{{training.schoolLocation}}</li>
+							</li>
+						</em>
+						<li class="item-text item-description">{{training.diplomaDescription}}</li>
+					</div>
+				{% endfor %}
+			</ul>
+			<a class="edit" href="{{ path('training_index') }}">
+				<i class="fas fa-pencil-alt" title="edition"></i>
+			</a>
+		</div>
+
+		{# Hobbies #}
+		<div class="items user-hobbies user-hobbies-2">
+			<p class="item-title item-title-2">
+				<i class="fas fa-running"></i>&nbsp;Hobbies</p>
+			<ul>
+				{% for hobby in app.user.hobbies %}
+					<li class="item-text item-hobbies">{{hobby.icon}}
+						{{hobby.hobbyName}}</li>
+				{% endfor %}
+			</ul>
+			<a class="edit" href="{{ path('hobbies_index') }}">
+				<i class="fas fa-pencil-alt" title="edition"></i>
+			</a>
+		</div>
+	</div>
+	{# Footer #}
+	<div class="items resume-footer resume-footer-2">
+		<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
+	</div>
+</div>{% endif %}{# Template 3 #}{% if cv.model == 3 %}
+
+<div class="resume-display">
+	<div class="resume-info">
+		<p class="resume-title">{{cv.title}}</p>
+		<div class="resume-utilities">
+			<a class="btn-dashboard {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">Thème 1</a>
+			<a class="btn-dashboard {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">Thème 2</a>
+			<a class="btn-dashboard {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">Thème 3</a>
+			<a class="btn-dashboard" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">Exporter</a>
+			<a class="btn-dashboard" href="{{path('cv_index')}}">
+				<i class="fas fa-undo-alt"></i>
+			</a>
+		</div>
+	</div>
+	<div
+		class="resume-top resume-top-3">
+		{# Profil#}
+		<div class="items user-profile">
+			<ul class="item-user">
+				<li class="item-avatar item-avatar-3">
+					<img src="
+													{% if cv.photo == '' %}
+													{{asset('assets/images/default/homer.jpeg')}}
+													{% else %}
+													{{asset('assets/images/cv/' ~ cv.photo)}}
+													{% endif %}
+													" alt="Avatar">
+				</li>
+				<li class="item-job item-job-3">
+					<i class="fas fa-code-branch"></i>&nbsp;{{cv.jobCv}}</li>
+				{# <li>{{cv.shortUrl}}</li> #}
+			</ul>
+			<a class="edit" href="{{ path('cv_edit', {'id': cv.id}) }}">
+				<i class="fas fa-pencil-alt" title="edition"></i>
+			</a>
+		</div>
+
+		{# Adresse #}
+		<div class="items user-adress user-adress-3">
+			<ul>
+				<li class="item-user-firstname item-user-firstname-3">{{app.user.firstName}}</li>
+				<li class="item-user-lastname item-user-lastname-3">{{app.user.lastName}}</li>
+				<li class="item-text item-text-2">{{app.user.streetAdress}}</li>
+				<li class="item-text item-text-2">{{app.user.postCode}}
+					{{app.user.city}}</li>
+				<li class="item-text item-text-2">{{app.user.phone}}</li>
+				<li class="item-text item-text-2">{{app.user.email}}</li>
+				<li class="item-text item-text-2">{{app.user.website}}</li>
+			</ul>
+			<a class="edit" href="{{ path('user_edit', {'id': app.user.id}) }}">
+				<i class="fas fa-pencil-alt" title="edition"></i>
+			</a>
+		</div>
+	</div>
+
+	{# About #}
+	<div class="items user-about">
+		<p class="item-text">"{{cv.about}}"</p>
+	</div>
+
+	{# SKills #}
+	<div class="items user-skills">
+		<p class="item-title item-title-3">
+			<i class="fas fa-code-branch"></i>&nbsp;Compétences</p>
+		<div class="skill-container">
+			{% for skill in app.user.skills %}
+				<div class="skill-box skill-box-2">
+					<p class="item-skill-icon">
+						<i class="{{skill.icon}}"></i>
+					</p>
+					<p class="item-skill">&nbsp;{{skill.skillName}}</p>
+				</div>
+			{% endfor %}
+		</div>
+		<a class="edit" href="{{ path('skills_index') }}">
+			<i class="fas fa-pencil-alt" title="edition"></i>
+		</a>
+	</div>
+
+	{# Xp #}
+	<div class="items user-xp">
+		<p class="item-title item-title-3">
+			<i class="fas fa-code-branch"></i>&nbsp;Carrière</p>
+		{% for xp in app.user.xps %}
+			<ul>
+				<li class="item-text">
+					<strong>{{xp.jobDateFrom | date('d M y')}}
+					</strong>à<strong>
+						{{xp.jobDateTo | date('d M y')}}
+					</strong>
+					<em>{{xp.jobName}}
+						|
+						{{xp.companyName}}
+						-
+						{{xp.jobLocation}}</em>
+				</li>
+				<li class="item-text item-description">{{xp.jobDescription}}</li>
+			</ul>
+		{% endfor %}
+
+		<a class="edit" href="{{ path('xp_index') }}">
+			<i class="fas fa-pencil-alt" title="edition"></i>
+		</a>
+	</div>
+
+	<div
+		class="resume-bottom">
+		{# Training #}
+		<div class="items user-training">
+			<p class="item-title item-title-3">
+				<i class="fas fa-code-branch"></i>&nbsp;Formations</p>
+			<ul>
+				{% for training in app.user.trainings %}
+					<div>
+						<li class="item-text">
+							<strong>{{training.trainingDateFrom | date('d M y')}}
+								à
+								{{training.trainingDateTo | date('d M y')}}
+							</strong>
+							<em>
 								{{training.diplomaName}}
 								|
 								{{training.schoolName}}
 								-
 								{{training.schoolLocation}}</li>
-								</em>
-								<li class="item-text item-description">{{training.diplomaDescription}}</li>
-							</div>
-							{% endfor %}
-						</ul>
-							<a class="edit" href="{{ path('training_index') }}"><i class="fas fa-pencil-alt"></i></a>
-					</div>
-
-					{# Hobbies #}
-					<div class="items user-hobbies user-hobbies-2">
-						<p class="item-title item-title-2"><i class="fas fa-running"></i>&nbsp;Hobbies</p>
-						<ul>
-							{% for hobby in app.user.hobbies %}
-							<li class="item-text item-hobbies">{{hobby.icon}} {{hobby.hobbyName}}</li>
-							{% endfor %}
-						</ul>
-						<a class="edit" href="{{ path('hobbies_index') }}"><i class="fas fa-pencil-alt"></i></a>		
-					</div>
+						</li>
+					</em>
+					<li class="item-text item-description">{{training.diplomaDescription}}</li>
 				</div>
-				{# Footer #}
-				<div class="items resume-footer resume-footer-2">
-					<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
-				</div>
-			</div>
+			{% endfor %}
+		</ul>
+		<a class="edit" href="{{ path('training_index') }}">
+			<i class="fas fa-pencil-alt" title="edition"></i>
+		</a>
+	</div>
 
-		{% endif %}
-
-		{# Template 3 #}
-		{% if cv.model == 3 %}
-
-			<div class="resume-display">
-				<div class="resume-info">
-					<p class="resume-title">{{cv.title}}</p>
-					<div class="resume-utilities">
-						<a class="btn-dashboard {% if cv.model == 1 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 1}) }} ">Thème 1</a>
-						<a class="btn-dashboard {% if cv.model == 2 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 2}) }} ">Thème 2</a>
-						<a class="btn-dashboard {% if cv.model == 3 %}active{% endif %}" href="{{ path('cv_majModel', {'id': cv.id, 'model': 3}) }} ">Thème 3</a>
-						<a class="btn-dashboard" href="{{ path('user_export', {'id': app.user.id, 'cv': cv.id}) }} ">Exporter</a>
-						<a class="btn-dashboard" href="{{path('cv_index')}}"><i class="fas fa-undo-alt"></i></a>
-					</div>
-				</div>
-				<div class="resume-top resume-top-3">
-					{# Profil#}
-					<div class="items user-profile">
-						<ul class="item-user">
-							<li class="item-avatar item-avatar-3">
-							<img src="							
-							{% if cv.photo == '' %}
-							{{asset('assets/images/default/homer.jpeg')}}
-							{% else %}
-							{{asset('assets/images/cv/' ~ cv.photo)}}
-							{% endif %}												
-							" alt="Avatar">
-							</li>
-							<li class="item-job item-job-3"><i class="fas fa-code-branch"></i>&nbsp;{{cv.jobCv}}</li>
-							{# <li>{{cv.shortUrl}}</li> #}
-						</ul>
-						<a class="edit" href="{{ path('cv_edit', {'id': cv.id}) }}"><i class="fas fa-pencil-alt"></i></a>		
-					</div>
-
-					{# Adresse #}
-					<div class="items user-adress user-adress-3">
-						<ul>
-							<li class="item-user-firstname item-user-firstname-3">{{app.user.firstName}}</li>
-							<li class="item-user-lastname item-user-lastname-3">{{app.user.lastName}}</li>
-							<li class="item-text item-text-2">{{app.user.streetAdress}}</li>
-							<li class="item-text item-text-2">{{app.user.postCode}} {{app.user.city}}</li>
-							<li class="item-text item-text-2">{{app.user.phone}}</li>
-							<li class="item-text item-text-2">{{app.user.email}}</li>
-							<li class="item-text item-text-2">{{app.user.website}}</li>
-						</ul>
-						<a class="edit" href="{{ path('user_edit', {'id': app.user.id}) }}"><i class="fas fa-pencil-alt"></i></a>
-					</div>
-				</div>
-
-				{# About #}
-				<div class="items user-about">
-					<p class="item-text">"{{cv.about}}"</p>
-				</div>
-
-				{# SKills #}
-				<div class="items user-skills">
-					<p class="item-title item-title-3"><i class="fas fa-code-branch"></i>&nbsp;Compétences</p>
-						<div class="skill-container">
-							{% for skill in app.user.skills %}
-							<div class="skill-box skill-box-2">
-								<p class="item-skill-icon"><i class="{{skill.icon}}"></i></p>
-								<p class="item-skill">&nbsp;{{skill.skillName}}</p>
-							</div>
-							{% endfor %}
-						</div>
-						<a class="edit" href="{{ path('skills_index') }}"><i class="fas fa-pencil-alt"></i></a>
-				</div>
-
-				{# Xp #}
-				<div class="items user-xp">
-					<p class="item-title item-title-3"><i class="fas fa-code-branch"></i>&nbsp;Carrière</p>
-					{% for xp in app.user.xps %}
-					<ul>
-						<li class="item-text"><strong>{{xp.jobDateFrom | date('d M y')}}
-						</strong>à<strong>
-						{{xp.jobDateTo | date('d M y')}}
-						</strong>
-						<em>{{xp.jobName}}
-						|
-						{{xp.companyName}}
-						-
-						{{xp.jobLocation}}</em></li>
-						<li class="item-text item-description">{{xp.jobDescription}}</li>
-					</ul>
-					{% endfor %}
-					
-					<a class="edit" href="{{ path('xp_index') }}"><i class="fas fa-pencil-alt"></i></a>
-				</div>
-
-				<div class="resume-bottom">
-					{# Training #}
-					<div class="items user-training">
-						<p class="item-title item-title-3"><i class="fas fa-code-branch"></i>&nbsp;Formations</p>
-						<ul>
-						{% for training in app.user.trainings %}
-							<div>
-								<li class="item-text">
-								<strong>{{training.trainingDateFrom | date('d M y')}}
-								à
-								{{training.trainingDateTo | date('d M y')}}
-								</strong>
-								<em>
-								{{training.diplomaName}}
-								|
-								{{training.schoolName}}
-								-
-								{{training.schoolLocation}}</li>
-								</em>
-								<li class="item-text item-description">{{training.diplomaDescription}}</li>
-							</div>
-							{% endfor %}
-						</ul>
-							<a class="edit" href="{{ path('training_index') }}"><i class="fas fa-pencil-alt"></i></a>
-					</div>
-
-					{# Hobbies #}
-					<div class="items user-hobbies">
-						<p class="item-title item-title-3"><i class="fas fa-code-branch"></i>&nbsp;Hobbies</p>
-						<ul>
-							{% for hobby in app.user.hobbies %}
-							<li class="item-text item-hobbies">{{hobby.icon}} {{hobby.hobbyName}}</li>
-							{% endfor %}
-						</ul>
-						<a class="edit" href="{{ path('hobbies_index') }}"><i class="fas fa-pencil-alt"></i></a>		
-					</div>
-				</div>
-				{# Footer #}
-				<div class="items resume-footer">
-					<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
-				</div>
-			</div>
-
-		{% endif %}
-
-	</main>
-
-{% endblock %}
+	{# Hobbies #}
+	<div class="items user-hobbies">
+		<p class="item-title item-title-3">
+			<i class="fas fa-code-branch"></i>&nbsp;Hobbies</p>
+		<ul>
+			{% for hobby in app.user.hobbies %}
+				<li class="item-text item-hobbies">{{hobby.icon}}
+					{{hobby.hobbyName}}</li>
+			{% endfor %}
+		</ul>
+		<a class="edit" href="{{ path('hobbies_index') }}">
+			<i class="fas fa-pencil-alt" title="edition"></i>
+		</a>
+	</div>
+</div>
+{# Footer #}
+<div class="items resume-footer">
+	<p class="item-text item-text-footer">Ce CV a été créé avec jummmp. Rendez-vous sur jummmp.com pour en savoir plus.</p>
+</div></div>{% endif %}</main>{% endblock %}
