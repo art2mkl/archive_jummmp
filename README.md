@@ -19,7 +19,7 @@ L'utilisateur pourra ensuite générer un short URL de son curriculum vitae, afi
 `Développements complémentaires: `
 - Comparer les mots clés du CV avec les offres d'emploi actuelles.
 - Envoyer un email sponsorisé et mis en page vers les recruteurs.
-- Exporte au format PDF et imprimer.
+- Exporter au format PDF et imprimer.
 
 #
 
